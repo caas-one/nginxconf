@@ -1,36 +1,38 @@
 package temp
 
 import (
-	"bytes"
 	"fmt"
 	"text/template"
-
-	"github.com/caas-one/nginx-go/core"
 )
 
 // HTTPTpl http template
 var (
-	GlobalTpl *template.Template
+	globalTpl *template.Template
 )
 
 func init() {
 	var err error
-	GlobalTpl, err = template.New("global_tpl").Parse(Global)
+	globalTpl, err = template.New("global_tpl").Parse(GlobalTemp)
 	if err != nil {
 		panic(fmt.Errorf("init main_tpl failed err:%v", err))
 	}
 }
 
-// MainTempToConf use template reander global nginx config
-func MainTempToConf(conf *core.Global) ([]byte, error) {
-	content := new(bytes.Buffer)
-	err := GlobalTpl.Execute(content, conf)
-	return content.Bytes(), err
+// GetGlobalTpl get global template
+func GetGlobalTpl() *template.Template {
+	return globalTpl
 }
+
+// // MainTempToConf use template reander global nginx config
+// func MainTempToConf(conf *core.Global) ([]byte, error) {
+// 	content := new(bytes.Buffer)
+// 	err := GlobalTpl.Execute(content, conf)
+// 	return content.Bytes(), err
+// }
 
 // global template
 const (
-	Global = `{{- if .Daemon}}
+	GlobalTemp = `{{- if .Daemon}}
 daemon {{.Daemon}};
 {{- end }}
 {{- if .ErrorPage}}

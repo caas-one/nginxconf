@@ -1,36 +1,31 @@
 package temp
 
 import (
-	"bytes"
 	"fmt"
 	"text/template"
-
-	"github.com/caas-one/nginx-go/core"
 )
 
 // ServerTpl server template
 var (
-	ServerTpl *template.Template
+	serverTpl *template.Template
 )
 
 func init() {
 	var err error
-	ServerTpl, err = template.New("server_tpl").Parse(Server)
+	serverTpl, err = template.New("server_tpl").Parse(ServerTemp)
 	if err != nil {
 		panic(fmt.Errorf("init server_tpl failed err:%v", err))
 	}
 }
 
-// ServerTempToConf use template render server nginx config
-func ServerTempToConf(conf core.Server) ([]byte, error) {
-	content := new(bytes.Buffer)
-	err := ServerTpl.Execute(content, conf)
-	return content.Bytes(), err
+// GetServerTpl get server template
+func GetServerTpl() *template.Template {
+	return serverTpl
 }
 
 // server template
 const (
-	Server = `server {
+	ServerTemp = `server {
 	{{- if .Name}}
 	server_name {{.Name}};
 	{{- end }}

@@ -74,12 +74,12 @@ func trimNewline(arg string) string {
 }
 
 var (
-	old, new = fmt.Sprintf("%s", "\""), fmt.Sprintf("\\%s", "\"")
+	oldstr, newstr = fmt.Sprintf("%s", "\""), fmt.Sprintf("\\%s", "\"")
 )
 
 func nonescapeQuotation(str string) string {
-	if strings.Contains(str, old) {
-		return strings.Replace(str, old, new, -1)
+	if strings.Contains(str, oldstr) {
+		return strings.Replace(str, oldstr, newstr, -1)
 	}
 	return str
 }

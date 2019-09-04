@@ -1,48 +1,41 @@
 package temp
 
 import (
-	"bytes"
 	"fmt"
 	"text/template"
-
-	"github.com/caas-one/nginx-go/core"
 )
 
 // ServerTpl upstream template
 var (
-	UpstreamTpl           *template.Template
-	AnnotationUpstreamTpl *template.Template
+	upstreamTpl           *template.Template
+	annotationUpstreamTpl *template.Template
 )
 
 func init() {
 	var err error
-	UpstreamTpl, err = template.New("upstream_tpl").Parse(Upstream)
+	upstreamTpl, err = template.New("upstream_tpl").Parse(UpstreamTemp)
 	if err != nil {
 		panic(fmt.Errorf("init upstream_tpl failed err:%v", err))
 	}
-	AnnotationUpstreamTpl, err = template.New("annotation_upstream_tpl").Parse(AnnotationUpstream)
+	annotationUpstreamTpl, err = template.New("annotation_upstream_tpl").Parse(AnnotationUpstreamTemp)
 	if err != nil {
 		panic(fmt.Errorf("init annotation_upstream_tpl failed err:%v", err))
 	}
 }
 
-// UpstreamToConf use template render upstream config
-func UpstreamToConf(conf core.Upstream) ([]byte, error) {
-	content := new(bytes.Buffer)
-	err := UpstreamTpl.Execute(content, conf)
-	return content.Bytes(), err
+// GetUpstreamTpl get upstream template
+func GetUpstreamTpl() *template.Template {
+	return upstreamTpl
 }
 
-// AnnotationUpstreamToConf use template render upstream config
-func AnnotationUpstreamToConf(conf core.Upstream) ([]byte, error) {
-	content := new(bytes.Buffer)
-	err := AnnotationUpstreamTpl.Execute(content, conf)
-	return content.Bytes(), err
+// GetAnnotationUpstreamTpl get annotation-upstream template
+func GetAnnotationUpstreamTpl() *template.Template {
+	return annotationUpstreamTpl
 }
 
 // upstream module
 const (
-	Upstream = `upstream {{.Name}} {
+	UpstreamTemp = `upstream {{.Name}} {
 	{{- if .Method}}
 	{{.Method}};
 	{{- end -}}
@@ -60,7 +53,7 @@ const (
 
 // AnnotationUpstream annotation upstream
 const (
-	AnnotationUpstream = `# upstream {{.Name}} {
+	AnnotationUpstreamTemp = `# upstream {{.Name}} {
  	{{- if .Method}}
 # 	{{.Method}};
  	{{- end -}}

@@ -37,6 +37,9 @@ type Upstream struct {
 	Servers           []UpstreamServer  `json:"servers,omitempty" key:"server" eg:"server 10.10.12.45:80"` // server 192.168.240.229:80 weight=99 max_fails=2 fail_timeout=30s
 }
 
+// AnnotationUpstream annotation upstream
+type AnnotationUpstream Upstream
+
 // NewUpstream func
 func NewUpstream() *Upstream {
 	return &Upstream{Servers: make([]UpstreamServer, 0)}

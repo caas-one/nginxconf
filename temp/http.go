@@ -1,36 +1,31 @@
 package temp
 
 import (
-	"bytes"
 	"fmt"
 	"text/template"
-
-	"github.com/caas-one/nginx-go/core"
 )
 
 // HTTPTpl init http template
 var (
-	HTTPTpl *template.Template
+	httpTpl *template.Template
 )
 
 func init() {
 	var err error
-	HTTPTpl, err = template.New("http_tpl").Parse(HTTP)
+	httpTpl, err = template.New("http_tpl").Parse(HTTPTemp)
 	if err != nil {
 		panic(fmt.Errorf("init http_tpl failed err:%v", err))
 	}
 }
 
-// HTTPTempToConf use http template render http nginx config
-func HTTPTempToConf(conf *core.Http) ([]byte, error) {
-	content := new(bytes.Buffer)
-	err := HTTPTpl.Execute(content, conf)
-	return content.Bytes(), err
+// GetHTTPTpl get http module template
+func GetHTTPTpl() *template.Template {
+	return httpTpl
 }
 
 // http template
 const (
-	HTTP = `http {
+	HTTPTemp = `http {
 	{{- if .AddHeader}}
 	{{range $header := .AddHeader}}
 	add_header {{$header}};

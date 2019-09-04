@@ -1,9 +1,8 @@
-package parse
+package python
 
 import (
 	"errors"
 	"fmt"
-	"os/exec"
 
 	"github.com/sbinet/go-python"
 )
@@ -41,9 +40,9 @@ func NginxConf(filePath string) (string, error) {
 }
 
 // CMDNginxConf parse nginx conf by crossplane parse directive
-func CMDNginxConf(filePath string) (string, error) {
-	args := []string{"parse", filePath}
-	execCmd := exec.Command("crossplane", args...)
-	out, err := execCmd.CombinedOutput()
-	return string(out), err
-}
+// func CMDNginxConf(filePath string) (string, error) {
+// 	args := []string{"parse", filePath}
+// 	execCmd := exec.Command("crossplane", args...)
+// 	out, err := execCmd.CombinedOutput()
+// 	return string(out), err
+// }

@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-// 判断是否是upstream的指令
+// determine whether it is a upstream directive
 func isUpstreamDirective(directive string) bool {
 	if isEqualString(directive, UpstreamDirective) {
 		return true
@@ -13,7 +13,7 @@ func isUpstreamDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是keepalive_timeout指令
+// determine whether it is a keepalive_timeout directive
 func isUpstreamKeepaliveTimeoutDirective(directive string) bool {
 	if isEqualString(directive, UpstreamKeepaliveTimeoutDirective) {
 		return true
@@ -21,9 +21,7 @@ func isUpstreamKeepaliveTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 获取upstream的名字
-// upstream模块中，upstream关键字后面的字符串是upsteram的名字
-// 在parsed结构体下面第一级的args中，理论上args数组只含有一个元素
+// upstream name
 func processUpstreamName(args []string) (string, error) {
 	if len(args) == 1 {
 		return args[0], nil
@@ -31,7 +29,7 @@ func processUpstreamName(args []string) (string, error) {
 	return "", errors.New("Bad number of args in parsed struct within upstream module")
 }
 
-// 判断是否是负载均衡指令
+// determine whether it is a load blance directive
 func isUpstreamLBMethodDirecitive(block InnerBlock) bool {
 	if isEqualString(block.Directive, IPHash) || isEqualString(block.Directive, LeastConn) {
 		return true
@@ -39,8 +37,8 @@ func isUpstreamLBMethodDirecitive(block InnerBlock) bool {
 	return false
 }
 
-// 处理upstream的负载均衡策略
-// 负载均衡策略包括ip_hash和least_conn两种，rr轮询的方式不需要显式指定
+// process upstream load blance
+//  load blance include  ip_hash, least_conn，rr is default
 func processUpstreamLBMethod(block InnerBlock) (string, error) {
 	if !isEqualString(block.Directive, "") {
 		return block.Directive, nil
@@ -48,7 +46,7 @@ func processUpstreamLBMethod(block InnerBlock) (string, error) {
 	return "", errors.New("Bad directive of LBMethod within upstream module")
 }
 
-// 判断是否是server指令
+// determine whether it is a server directive
 func isUpstreamServerDirective(block InnerBlock) bool {
 	if isEqualString(block.Directive, UpstreamServerDirective) {
 		return true
@@ -56,10 +54,9 @@ func isUpstreamServerDirective(block InnerBlock) bool {
 	return false
 }
 
-// 判断是否是Server指令中的地址
-// 地址的组成大概分为三种：10.10.12.45:80, app.example.com:80, unix:/tmp/backend3
+// determine whether it is a Server directive
+// there are three types of address: 10.10.12.45:80, app.example.com:80, unix:/tmp/backend3
 func isUpstreamServerAddress(arg string) bool {
-	// 是否包括":"字符
 	if strings.Contains(arg, ":") {
 		ss := strings.Split(arg, ":")
 		if len(ss) == 2 {
@@ -79,8 +76,7 @@ func isUpstreamServerAddress(arg string) bool {
 	return false
 }
 
-// 判断是否是upstream中server字段的参数
-// 并给相应的参数赋值
+// determine whether it is a upstream server parameters
 func processUpstreamServerParameters(parameters *UpstreamServerParameters, arg string) error {
 	ss := strings.Split(arg, "=")
 	// eg.: "weight=99", "max_fails=2"
@@ -125,8 +121,7 @@ func processUpstreamServerParameters(parameters *UpstreamServerParameters, arg s
 	return errors.New("No args match the server parameters within upstream module")
 }
 
-// 处理upstream中的server指令
-// server指令主要判断args里面的各个部分，并给UpstreamServerParameters结构体赋值
+// process upstream module server directive
 func processUpstreamServerDirective(block InnerBlock) (*UpstreamServer, error) {
 	if !isUpstreamServerDirective(block) {
 		return nil, errors.New("Bad directive of server within upstream module")
@@ -140,7 +135,6 @@ func processUpstreamServerDirective(block InnerBlock) (*UpstreamServer, error) {
 			server.Address = arg
 		}
 
-		// 处理其他参数: weight, max_conns等
 		processUpstreamServerParameters(parameters, arg)
 	}
 
@@ -148,8 +142,7 @@ func processUpstreamServerDirective(block InnerBlock) (*UpstreamServer, error) {
 	return server, nil
 }
 
-// 判断是否是keepalive指令
-// 在keepalive指令部分，args数组包含一个值
+// determine whether it is a keepalive directive
 func isUpstreamKeepaliveDirective(block InnerBlock) bool {
 	if isEqualString(block.Directive, UpstreamKeepaliveDirective) {
 		return true
@@ -157,7 +150,7 @@ func isUpstreamKeepaliveDirective(block InnerBlock) bool {
 	return false
 }
 
-// 处理keepalive指令的参数，提取里面的值
+// process keepalive directive
 func processKeepaliveValue(args []string) (string, error) {
 	if len(args) == 1 {
 		return args[0], nil
@@ -180,12 +173,13 @@ func processUpstreamKeepaliveDirective(block InnerBlock) (*UpstreamKeepalive, er
 	return keepalive, nil
 }
 
+// ProcessUpstream process upstream  module
 func ProcessUpstream(block *Block) (*Upstream, error) {
 	if !isUpstreamDirective(block.Directive) {
 		return nil, errors.New("Not upstream directive")
 	}
 
-	// 处理upsteam的name
+	// process upsteam name
 	upstream := NewUpstream()
 	name, err := processUpstreamName(block.Args)
 	if err != nil {
@@ -194,10 +188,8 @@ func ProcessUpstream(block *Block) (*Upstream, error) {
 
 	upstream.Name = name
 
-	// 处理Parsed.Blocks，里面包括upstream中的server, lbmethod等
 	for _, innerBlock := range block.InnerBlocks {
 
-		// 处理负载均衡策略
 		if isUpstreamLBMethodDirecitive(innerBlock) {
 			method, err := processUpstreamLBMethod(innerBlock)
 			if err != nil {
@@ -211,7 +203,7 @@ func ProcessUpstream(block *Block) (*Upstream, error) {
 			continue
 		}
 
-		// 处理keepalive指令
+		// process keepalive directive
 		if isUpstreamKeepaliveDirective(innerBlock) {
 			keepalive, err := processUpstreamKeepaliveDirective(innerBlock)
 			if err != nil {
@@ -220,7 +212,6 @@ func ProcessUpstream(block *Block) (*Upstream, error) {
 			upstream.UpstreamKeepalive = *keepalive
 		}
 
-		// 处理Server部分，里面包含了UpstreamName的解析
 		if isUpstreamServerDirective(innerBlock) {
 			server, err := processUpstreamServerDirective(innerBlock)
 			if err != nil {

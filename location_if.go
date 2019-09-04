@@ -1,6 +1,6 @@
 package nginx
 
-// 判断是否是Location结构中If里的proxy_pass指令
+// determine whether it is a Location module If field proxy_pass directive
 func isLocationIfProxyPassDirective(directive string) bool {
 	if isEqualString(directive, LocationProxyPassDirective) {
 		return true
@@ -8,7 +8,7 @@ func isLocationIfProxyPassDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是Location结构中If里的sendfile指令
+// determine whether it is a Location module If field sendfile directive
 func isLocationIfSendFileDirective(directive string) bool {
 	if isEqualString(directive, LocationSendFileDirective) {
 		return true
@@ -16,7 +16,7 @@ func isLocationIfSendFileDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是Location结构中If里的root指令
+// determine whether it is a Location module If field root directive
 func isLocationIfRootDirective(directive string) bool {
 	if isEqualString(directive, LocationRootDirective) {
 		return true
@@ -24,7 +24,7 @@ func isLocationIfRootDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是Location结构中rewrite里的root指令
+// determine whether it is a Location module rewrite field root directive
 func isLocationRewriteRootDirective(directive string) bool {
 	if isEqualString(directive, LocationRewriteDirective) {
 		return true
@@ -32,7 +32,7 @@ func isLocationRewriteRootDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是location结构体中的if指令
+// determine whether it is a location module If directive
 func isLocationIfDirective(directive string) bool {
 	if isEqualString(directive, LocationIfDirective) {
 		return true
@@ -40,7 +40,7 @@ func isLocationIfDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是location if结构体中的add_header指令
+// determine whether it is a location module If field add_header directive
 func isLocationIfAddHeaderDirective(directive string) bool {
 	if isEqualString(directive, AddHeaderDirective) {
 		return true
@@ -48,7 +48,7 @@ func isLocationIfAddHeaderDirective(directive string) bool {
 	return false
 }
 
-// 处理If里面的判断条件
+// process If conditions
 func processLocationIfCondition(args []string) string {
 	ss := processArgsArray(args)
 	return trimNewline(ss)
@@ -56,10 +56,8 @@ func processLocationIfCondition(args []string) string {
 
 func processLocationIfDirective(block InmostBlock) (*LocationIfBlock, error) {
 	ifBlock := NewLocationIfBlock()
-
-	// 判断If语句里是否需要加引号
 	args := processQuote(block.Args)
-	// If的条件condition
+	// If condition need to add quotation marks
 	ifBlock.Condition = processLocationIfCondition(args)
 	for _, metaBlock := range block.MetaBlocks {
 		// proxy_pass
@@ -82,7 +80,7 @@ func processLocationIfDirective(block InmostBlock) (*LocationIfBlock, error) {
 
 		// rewrite
 		if isLocationRewriteRootDirective(metaBlock.Directive) {
-			// 判断rewrite指令里是否需要加引号
+			// rewrite directive need to add quotation marks
 			args := processQuote(metaBlock.Args)
 			ifBlock.Rewrite = append(ifBlock.Rewrite, processArgsArray(args))
 		}
@@ -94,7 +92,7 @@ func processLocationIfDirective(block InmostBlock) (*LocationIfBlock, error) {
 
 		// add_header
 		if isLocationIfAddHeaderDirective(metaBlock.Directive) {
-			// 判断add_header指令里是否需要加引号
+			// add_header directive need to add quotation marks
 			for i := range metaBlock.Args {
 				metaBlock.Args[i] = nonescapeQuotation(metaBlock.Args[i])
 			}

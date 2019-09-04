@@ -4,7 +4,7 @@ import (
 	"strings"
 )
 
-// 判断是否是Server结构体中的ProxyPass指令
+// determine whether it is a Server module ProxyPass directive
 func isServerIfProxyPassDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyPassDirective) {
 		return true
@@ -12,7 +12,7 @@ func isServerIfProxyPassDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是Server结构体中的SendFile指令
+// determine whether it is a Server module SendFile directive
 func isServerIfSendFileDirective(directive string) bool {
 	if isEqualString(directive, ServerSendFileDirective) {
 		return true
@@ -20,7 +20,7 @@ func isServerIfSendFileDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是Server结构体中的Root指令
+// determine whether it is a Server module Root directive
 func isServerIfRootDirective(directive string) bool {
 	if isEqualString(directive, ServerRootDirective) {
 		return true
@@ -28,7 +28,7 @@ func isServerIfRootDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是Server结构体中的Rewrite指令
+// determine whether it is a Server module Rewrite directive
 func isServerIfRewriteDirective(directive string) bool {
 	if isEqualString(directive, ServerRewriteDirective) {
 		return true
@@ -36,7 +36,7 @@ func isServerIfRewriteDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是Server结构体中的Return指令
+// determine whether it is a Server module Return directive
 func isServerIfReturnDirective(directive string) bool {
 	if isEqualString(directive, ServerReturnDirective) {
 		return true
@@ -44,7 +44,7 @@ func isServerIfReturnDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是Server结构体中的Set指令
+// determine whether it is a Server module Set directive
 func isServerIfSetDirective(directive string) bool {
 	if isEqualString(directive, ServerSetDirecrive) {
 		return true
@@ -52,7 +52,7 @@ func isServerIfSetDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是Server结构体中的LimitRateAfter指令
+// determine whether it is a Server module LimitRateAfter directive
 func isServerIfLimitRateAfterDirective(directive string) bool {
 	if isEqualString(directive, ServerLimitRateAfterDirective) {
 		return true
@@ -60,21 +60,17 @@ func isServerIfLimitRateAfterDirective(directive string) bool {
 	return false
 }
 
-// 处理If里面的判断条件
+// process If conditions
 func processServerIfCondition(args []string) string {
 	ss := processArgsArray(args)
-
-	// 判断condition里面是否有换行
 	return trimNewline(ss)
 }
 
+// ProcessServerIfBlocks process server if blocks
 func ProcessServerIfBlocks(innerBlock InnerBlock) (*ServerIfBlock, error) {
 	ifBlock := NewServerIfBlock()
-
-	// 过滤condition是否需要加引号
 	args := processQuote(innerBlock.Args)
-
-	// If的条件condition
+	// If condition
 	ifBlock.Condition = processServerIfCondition(args)
 
 	for _, inmost := range innerBlock.InmostBlocks {
@@ -98,7 +94,6 @@ func ProcessServerIfBlocks(innerBlock InnerBlock) (*ServerIfBlock, error) {
 
 		// Rewrite
 		if isServerIfRewriteDirective(inmost.Directive) {
-			// 判断rewrite指令是否需要加引号
 			args := processQuote(inmost.Args)
 			ifBlock.Rewrite = append(ifBlock.Rewrite, processArgsArray(args))
 			continue

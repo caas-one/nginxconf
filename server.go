@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-// 判断是否是proxy_ssl_password_file指令
+// determine whether it is a proxy_ssl_password_file directive
 func isServerProxySslPasswordFileDirective(directive string) bool {
 	if isEqualString(directive, ServerProxySslPasswordFileDirective) {
 		return true
@@ -13,7 +13,7 @@ func isServerProxySslPasswordFileDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是read_ahead指令
+// determine whether it is a read_ahead directive
 func isServerReadAheadDirective(directive string) bool {
 	if isEqualString(directive, ServerReadAheadDirective) {
 		return true
@@ -21,7 +21,7 @@ func isServerReadAheadDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_buffering指令
+// determine whether it is a proxy_buffering directive
 func isServerProxyBufferingDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyBufferingDirective) {
 		return true
@@ -29,7 +29,7 @@ func isServerProxyBufferingDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_connect_timeout指令
+// determine whether it is a proxy_connect_timeout directive
 func isServerProxyConnectTimeoutDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyConnectTimeoutDirective) {
 		return true
@@ -37,7 +37,7 @@ func isServerProxyConnectTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ignore_client_abort指令
+// determine whether it is a proxy_ignore_client_abort directive
 func isServerProxyIgnoreClientAbortDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyIgnoreClientAbortDirective) {
 		return true
@@ -45,7 +45,7 @@ func isServerProxyIgnoreClientAbortDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是keepalive_disable指令
+// determine whether it is a keepalive_disable directive
 func isServerKeepaliveDisableDirective(directive string) bool {
 	if isEqualString(directive, ServerKeepaliveDisableDirective) {
 		return true
@@ -53,7 +53,7 @@ func isServerKeepaliveDisableDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是send_timeout指令
+// determine whether it is a send_timeout directive
 func isServerSendTimeoutDirective(directive string) bool {
 	if isEqualString(directive, ServerSendTimeoutDirective) {
 		return true
@@ -61,7 +61,7 @@ func isServerSendTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_next_upstream_timeout指令
+// determine whether it is a proxy_next_upstream_timeout directive
 func isServerProxyNextUpstreamTimeoutDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyNextUpstreamTimeoutDirective) {
 		return true
@@ -69,7 +69,7 @@ func isServerProxyNextUpstreamTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_temp_file_write_size指令
+// determine whether it is a proxy_temp_file_write_size directive
 func isServerProxyTempFileWriteSizeDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyTempFileWriteSizeDirective) {
 		return true
@@ -77,7 +77,7 @@ func isServerProxyTempFileWriteSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是keepalive_timeout指令
+// determine whether it is a keepalive_timeout directive
 func isServerKeepaliveTimeoutDirective(directive string) bool {
 	if isEqualString(directive, ServerKeepaliveTimeoutDirective) {
 		return true
@@ -85,7 +85,7 @@ func isServerKeepaliveTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是lingering_close指令
+// determine whether it is a lingering_close directive
 func isServerLingeringCloseDirective(directive string) bool {
 	if isEqualString(directive, ServerLingeringCloseDirective) {
 		return true
@@ -93,7 +93,7 @@ func isServerLingeringCloseDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_use_stale指令
+// determine whether it is a proxy_cache_use_stale directive
 func isServerProxyCacheUseStaleDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyCacheUseStaleDirective) {
 		return true
@@ -101,7 +101,7 @@ func isServerProxyCacheUseStaleDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_read_timeout指令
+// determine whether it is a proxy_read_timeout directive
 func isServerProxyReadTimeoutDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyReadTimeoutDirective) {
 		return true
@@ -109,7 +109,7 @@ func isServerProxyReadTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_bypass指令
+// determine whether it is a proxy_cache_bypass directive
 func isServerProxyCacheBypassDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyCacheBypassDirective) {
 		return true
@@ -117,7 +117,7 @@ func isServerProxyCacheBypassDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_certificate指令
+// determine whether it is a proxy_ssl_certificate directive
 func isServerProxySslCertificateDirective(directive string) bool {
 	if isEqualString(directive, ServerProxySslCertificateDirective) {
 		return true
@@ -125,7 +125,7 @@ func isServerProxySslCertificateDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_certificate_key指令
+// determine whether it is a proxy_ssl_certificate_key directive
 func isServerProxySslCertificateKeyDirective(directive string) bool {
 	if isEqualString(directive, ServerProxySslCertificateKeyDirective) {
 		return true
@@ -133,7 +133,7 @@ func isServerProxySslCertificateKeyDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_protocols指令
+// determine whether it is a proxy_ssl_protocols directive
 func isServerProxySslProtocolsDirective(directive string) bool {
 	if isEqualString(directive, ServerProxySslProtocolsDirective) {
 		return true
@@ -141,7 +141,7 @@ func isServerProxySslProtocolsDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是rewrite指令
+// determine whether it is a rewrite directive
 func isServerRewriteDirective(directive string) bool {
 	if isEqualString(directive, ServerRewriteDirective) {
 		return true
@@ -149,7 +149,7 @@ func isServerRewriteDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是keepalive_requests指令
+// determine whether it is a keepalive_requests directive
 func isServerKeepaliveRequestsDirective(directive string) bool {
 	if isEqualString(directive, ServerKeepaliveRequestsDirective) {
 		return true
@@ -157,7 +157,7 @@ func isServerKeepaliveRequestsDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是client_body_buffer_size指令
+// determine whether it is a client_body_buffer_size directive
 func isServerClientBodyBufferSizeDirective(directive string) bool {
 	if isEqualString(directive, ServerClientBodyBufferSizeDirective) {
 		return true
@@ -165,7 +165,7 @@ func isServerClientBodyBufferSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_buffer_size指令
+// determine whether it is a proxy_buffer_size directive
 func isServerProxyBufferSizeDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyBufferSizeDirective) {
 		return true
@@ -173,7 +173,7 @@ func isServerProxyBufferSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_trusted_certificate指令
+// determine whether it is a proxy_ssl_trusted_certificate directive
 func isServerProxySslTrustedCertificateDirective(directive string) bool {
 	if isEqualString(directive, ServerProxySslTrustedCertificateDirective) {
 		return true
@@ -181,7 +181,7 @@ func isServerProxySslTrustedCertificateDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是server_name指令
+// determine whether it is a server_name directive
 func isServerNameDirective(directive string) bool {
 	if isEqualString(directive, ServerNameDirective) {
 		return true
@@ -189,7 +189,7 @@ func isServerNameDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cookie_path指令
+// determine whether it is a proxy_cookie_path directive
 func isServerProxyCookiePathDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyCookiePathDirective) {
 		return true
@@ -197,15 +197,15 @@ func isServerProxyCookiePathDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_http_version指令
-func isServerProxyHttpVersionDirective(directive string) bool {
+// determine whether it is a proxy_http_version directive
+func isServerProxyHTTPVersionDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyHTTPVersionDirective) {
 		return true
 	}
 	return false
 }
 
-// 判断是否是proxy_ssl_ciphers指令
+// determine whether it is a proxy_ssl_ciphers directive
 func isServerProxySslCiphersDirective(directive string) bool {
 	if isEqualString(directive, ServerProxySslCiphersDirective) {
 		return true
@@ -213,7 +213,7 @@ func isServerProxySslCiphersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是msie_padding指令
+// determine whether it is a msie_padding directive
 func isServerMsiePaddingDirective(directive string) bool {
 	if isEqualString(directive, ServerMsiePaddingDirective) {
 		return true
@@ -221,7 +221,7 @@ func isServerMsiePaddingDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是request_pool_size指令
+// determine whether it is a request_pool_size directive
 func isServerRequestPoolSizeDirective(directive string) bool {
 	if isEqualString(directive, ServerRequestPoolSizeDirective) {
 		return true
@@ -229,7 +229,7 @@ func isServerRequestPoolSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_lock_age指令
+// determine whether it is a proxy_cache_lock_age directive
 func isServerProxyCacheLockAgeDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyCacheLockAgeDirective) {
 		return true
@@ -237,7 +237,7 @@ func isServerProxyCacheLockAgeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是try_files指令
+// determine whether it is a try_files directive
 func isServerTryFilesDirective(directive string) bool {
 	if isEqualString(directive, ServerTryFilesDirective) {
 		return true
@@ -245,7 +245,7 @@ func isServerTryFilesDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_max_temp_file_size指令
+// determine whether it is a proxy_max_temp_file_size directive
 func isServerProxyMaxTempFileSizeDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyMaxTempFileSizeDirective) {
 		return true
@@ -253,7 +253,7 @@ func isServerProxyMaxTempFileSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是absolute_redirect指令
+// determine whether it is a absolute_redirect directive
 func isServerAbsoluteRedirectDirective(directive string) bool {
 	if isEqualString(directive, ServerAbsoluteRedirectDirective) {
 		return true
@@ -261,7 +261,7 @@ func isServerAbsoluteRedirectDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是chunked_transfer_encoding指令
+// determine whether it is a chunked_transfer_encoding directive
 func isServerChunkedTransferEncodingDirective(directive string) bool {
 	if isEqualString(directive, ServerChunkedTransferEncodingDirective) {
 		return true
@@ -269,7 +269,7 @@ func isServerChunkedTransferEncodingDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_buffers指令
+// determine whether it is a proxy_buffers directive
 func isServerProxyBuffersDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyBuffersDirective) {
 		return true
@@ -277,7 +277,7 @@ func isServerProxyBuffersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cookie_domain指令
+// determine whether it is a proxy_cookie_domain directive
 func isServerProxyCookieDomainDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyCookieDomainDirective) {
 		return true
@@ -285,7 +285,7 @@ func isServerProxyCookieDomainDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是merge_slashes指令
+// determine whether it is a merge_slashes directive
 func isServerMergeSlashesDirective(directive string) bool {
 	if isEqualString(directive, ServerMergeSlashesDirective) {
 		return true
@@ -293,7 +293,7 @@ func isServerMergeSlashesDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是msie_refresh指令
+// determine whether it is a msie_refresh directive
 func isServerMsieRefreshDirective(directive string) bool {
 	if isEqualString(directive, ServerMsieRefreshDirective) {
 		return true
@@ -301,7 +301,7 @@ func isServerMsieRefreshDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是subrequest_output_buffer_size指令
+// determine whether it is a subrequest_output_buffer_size directive
 func isServerSubrequestOutputBufferSizeDirective(directive string) bool {
 	if isEqualString(directive, ServerSubrequestOutputBufferSizeDirective) {
 		return true
@@ -309,7 +309,7 @@ func isServerSubrequestOutputBufferSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是types_hash_max_size指令
+// determine whether it is a types_hash_max_size directive
 func isServerTypesHashMaxSizeDirective(directive string) bool {
 	if isEqualString(directive, ServerTypesHashMaxSizeDirective) {
 		return true
@@ -317,7 +317,7 @@ func isServerTypesHashMaxSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_pass_request_body指令
+// determine whether it is a proxy_pass_request_body directive
 func isServerProxyPassRequestBodyDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyPassRequestBodyDirective) {
 		return true
@@ -325,7 +325,7 @@ func isServerProxyPassRequestBodyDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_send_timeout指令
+// determine whether it is a proxy_send_timeout directive
 func isServerProxySendTimeoutDirective(directive string) bool {
 	if isEqualString(directive, ServerProxySendTimeoutDirective) {
 		return true
@@ -333,7 +333,7 @@ func isServerProxySendTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是ignore_invalid_headers指令
+// determine whether it is a ignore_invalid_headers directive
 func isServerIgnoreInvalidHeadersDirective(directive string) bool {
 	if isEqualString(directive, ServerIgnoreInvalidHeadersDirective) {
 		return true
@@ -341,7 +341,7 @@ func isServerIgnoreInvalidHeadersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是ssl_prefer_server_ciphers指令
+// determine whether it is a ssl_prefer_server_ciphers directive
 func isServerSslPreferServerCiphersDirective(directive string) bool {
 	if isEqualString(directive, ServerSslPreferServerCiphersDirective) {
 		return true
@@ -349,7 +349,7 @@ func isServerSslPreferServerCiphersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是open_file_cache指令
+// determine whether it is a open_file_cache directive
 func isServerOpenFileCacheDirective(directive string) bool {
 	if isEqualString(directive, ServerOpenFileCacheDirective) {
 		return true
@@ -357,7 +357,7 @@ func isServerOpenFileCacheDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是underscores_in_headers指令
+// determine whether it is a underscores_in_headers directive
 func isServerUnderscoresInHeadersDirective(directive string) bool {
 	if isEqualString(directive, ServerUnderscoresInHeadersDirective) {
 		return true
@@ -365,7 +365,7 @@ func isServerUnderscoresInHeadersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是types_hash_bucket_size指令
+// determine whether it is a types_hash_bucket_size directive
 func isServerTypesHashBucketSizeDirective(directive string) bool {
 	if isEqualString(directive, ServerTypesHashBucketSizeDirective) {
 		return true
@@ -373,7 +373,7 @@ func isServerTypesHashBucketSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是output_buffers指令
+// determine whether it is a output_buffers directive
 func isServerOutputBuffersDirective(directive string) bool {
 	if isEqualString(directive, ServerOutputBuffersDirective) {
 		return true
@@ -381,7 +381,7 @@ func isServerOutputBuffersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_pass_request_headers指令
+// determine whether it is a proxy_pass_request_headers directive
 func isServerProxyPassRequestHeadersDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyPassRequestHeadersDirective) {
 		return true
@@ -389,7 +389,7 @@ func isServerProxyPassRequestHeadersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_verify指令
+// determine whether it is a proxy_ssl_verify directive
 func isServerProxySslVerifyDirective(directive string) bool {
 	if isEqualString(directive, ServerProxySslVerifyDirective) {
 		return true
@@ -397,7 +397,7 @@ func isServerProxySslVerifyDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是ssl_certificate_key指令
+// determine whether it is a ssl_certificate_key directive
 func isServerSslCertificateKeyDirective(directive string) bool {
 	if isEqualString(directive, ServerSslCertificateKeyDirective) {
 		return true
@@ -405,7 +405,7 @@ func isServerSslCertificateKeyDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_lock指令
+// determine whether it is a proxy_cache_lock directive
 func isServerProxyCacheLockDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyCacheLockDirective) {
 		return true
@@ -413,7 +413,7 @@ func isServerProxyCacheLockDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_valid指令
+// determine whether it is a proxy_cache_valid directive
 func isServerProxyCacheValidDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyCacheValidDirective) {
 		return true
@@ -421,7 +421,7 @@ func isServerProxyCacheValidDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_verify_depth指令
+// determine whether it is a proxy_ssl_verify_depth directive
 func isServerProxySslVerifyDepthDirective(directive string) bool {
 	if isEqualString(directive, ServerProxySslVerifyDepthDirective) {
 		return true
@@ -429,7 +429,7 @@ func isServerProxySslVerifyDepthDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是deny指令
+// determine whether it is a deny directive
 func isServerDenyDirective(directive string) bool {
 	if isEqualString(directive, ServerDenyDirective) {
 		return true
@@ -437,7 +437,7 @@ func isServerDenyDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是listen指令
+// determine whether it is a listen directive
 func isServerListenDirective(directive string) bool {
 	if isEqualString(directive, ServerListenDirective) {
 		return true
@@ -445,7 +445,7 @@ func isServerListenDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是lingering_timeout指令
+// determine whether it is a lingering_timeout directive
 func isServerLingeringTimeoutDirective(directive string) bool {
 	if isEqualString(directive, ServerLingeringTimeoutDirective) {
 		return true
@@ -453,7 +453,7 @@ func isServerLingeringTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_bind指令
+// determine whether it is a proxy_bind directive
 func isServerProxyBindDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyBindDirective) {
 		return true
@@ -461,7 +461,7 @@ func isServerProxyBindDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_key指令
+// determine whether it is a proxy_cache_key directive
 func isServerProxyCacheKeyDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyCacheKeyDirective) {
 		return true
@@ -469,7 +469,7 @@ func isServerProxyCacheKeyDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_socket_keepalive指令
+// determine whether it is a proxy_socket_keepalive directive
 func isServerProxySocketKeepaliveDirective(directive string) bool {
 	if isEqualString(directive, ServerProxySocketKeepaliveDirective) {
 		return true
@@ -477,7 +477,7 @@ func isServerProxySocketKeepaliveDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_store_access指令
+// determine whether it is a proxy_store_access directive
 func isServerProxyStoreAccessDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyStoreAccessDirective) {
 		return true
@@ -485,7 +485,7 @@ func isServerProxyStoreAccessDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_session_reuse指令
+// determine whether it is a proxy_ssl_session_reuse directive
 func isServerProxySslSessionReuseDirective(directive string) bool {
 	if isEqualString(directive, ServerProxySslSessionReuseDirective) {
 		return true
@@ -493,7 +493,7 @@ func isServerProxySslSessionReuseDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是if指令
+// determine whether it is a if directive
 func isServerIfBlocksDirective(directive string) bool {
 	if isEqualString(directive, ServerIfBlocksDirective) {
 		return true
@@ -501,7 +501,7 @@ func isServerIfBlocksDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是client_header_timeout指令
+// determine whether it is a client_header_timeout directive
 func isServerClientHeaderTimeoutDirective(directive string) bool {
 	if isEqualString(directive, ServerClientHeaderTimeoutDirective) {
 		return true
@@ -509,7 +509,7 @@ func isServerClientHeaderTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_methods指令
+// determine whether it is a proxy_cache_methods directive
 func isServerProxyCacheMethodsDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyCacheMethodsDirective) {
 		return true
@@ -517,7 +517,7 @@ func isServerProxyCacheMethodsDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_force_ranges指令
+// determine whether it is a proxy_force_ranges directive
 func isServerProxyForceRangesDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyForceRangesDirective) {
 		return true
@@ -525,7 +525,7 @@ func isServerProxyForceRangesDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是return指令
+// determine whether it is a return directive
 func isServerReturnDirective(directive string) bool {
 	if isEqualString(directive, ServerReturnDirective) {
 		return true
@@ -533,7 +533,7 @@ func isServerReturnDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是port_in_redirect指令
+// determine whether it is a port_in_redirect directive
 func isServerPortInRedirectDirective(directive string) bool {
 	if isEqualString(directive, ServerPortInRedirectDirective) {
 		return true
@@ -541,7 +541,7 @@ func isServerPortInRedirectDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是directio_alignment指令
+// determine whether it is a directio_alignment directive
 func isServerDirectioAlignmentDirective(directive string) bool {
 	if isEqualString(directive, ServerDirectioAlignmentDirective) {
 		return true
@@ -549,7 +549,7 @@ func isServerDirectioAlignmentDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_pass指令
+// determine whether it is a proxy_pass directive
 func isServerProxyPassDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyPassDirective) {
 		return true
@@ -557,7 +557,7 @@ func isServerProxyPassDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是limit_rate指令
+// determine whether it is a limit_rate directive
 func isServerLimitRateDirective(directive string) bool {
 	if isEqualString(directive, ServerLimitRateDirective) {
 		return true
@@ -565,7 +565,7 @@ func isServerLimitRateDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是postpone_output指令
+// determine whether it is a postpone_output directive
 func isServerPostponeOutputDirective(directive string) bool {
 	if isEqualString(directive, ServerPostponeOutputDirective) {
 		return true
@@ -573,7 +573,7 @@ func isServerPostponeOutputDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是aio指令
+// determine whether it is a aio directive
 func isServerAioDirective(directive string) bool {
 	if isEqualString(directive, ServerAioDirective) {
 		return true
@@ -581,7 +581,7 @@ func isServerAioDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_headers_hash_max_size指令
+// determine whether it is a proxy_headers_hash_max_size directive
 func isServerProxyHeadersHashMaxSizeDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyHeadersHashMaxSizeDirective) {
 		return true
@@ -589,7 +589,7 @@ func isServerProxyHeadersHashMaxSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是aio_write指令
+// determine whether it is a aio_write directive
 func isServerAioWriteDirective(directive string) bool {
 	if isEqualString(directive, ServerAioWriteDirective) {
 		return true
@@ -597,7 +597,7 @@ func isServerAioWriteDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是client_body_in_single_buffer指令
+// determine whether it is a client_body_in_single_buffer directive
 func isServerClientBodyInSingleBufferDirective(directive string) bool {
 	if isEqualString(directive, ServerClientBodyInSingleBufferDirective) {
 		return true
@@ -605,7 +605,7 @@ func isServerClientBodyInSingleBufferDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是error_page指令
+// determine whether it is a error_page directive
 func isServerErrorPageDirective(directive string) bool {
 	if isEqualString(directive, ServerErrorPageDirective) {
 		return true
@@ -613,7 +613,7 @@ func isServerErrorPageDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_set_body指令
+// determine whether it is a proxy_set_body directive
 func isServerProxySetBodyDirective(directive string) bool {
 	if isEqualString(directive, ServerProxySetBodyDirective) {
 		return true
@@ -621,7 +621,7 @@ func isServerProxySetBodyDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是ssl指令
+// determine whether it is a ssl directive
 func isServerSslDirective(directive string) bool {
 	if isEqualString(directive, ServerSslDirective) {
 		return true
@@ -629,7 +629,7 @@ func isServerSslDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是limit_conn指令
+// determine whether it is a limit_conn directive
 func isServerLimitConnDirective(directive string) bool {
 	if isEqualString(directive, ServerLimitConnDirective) {
 		return true
@@ -637,7 +637,7 @@ func isServerLimitConnDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是limit_req指令
+// determine whether it is a limit_req directive
 func isServerLimitReqDirective(directive string) bool {
 	if isEqualString(directive, ServerLimitReqDirective) {
 		return true
@@ -645,7 +645,7 @@ func isServerLimitReqDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是send_lowat指令
+// determine whether it is a send_lowat directive
 func isServerSendLowatDirective(directive string) bool {
 	if isEqualString(directive, ServerSendLowatDirective) {
 		return true
@@ -653,7 +653,7 @@ func isServerSendLowatDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是sendfile指令
+// determine whether it is a sendfile directive
 func isServerSendFileDirective(directive string) bool {
 	if isEqualString(directive, ServerSendFileDirective) {
 		return true
@@ -661,15 +661,15 @@ func isServerSendFileDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是tcp_nopush指令
-func isServerTcpNopushDirective(directive string) bool {
+// determine whether it is a tcp_nopush directive
+func isServerTCPNopushDirective(directive string) bool {
 	if isEqualString(directive, ServerTCPNopushDirective) {
 		return true
 	}
 	return false
 }
 
-// 判断是否是directio指令
+// determine whether it is a directio directive
 func isServerDirectIODirective(directive string) bool {
 	if isEqualString(directive, ServerDirectIODirective) {
 		return true
@@ -677,7 +677,7 @@ func isServerDirectIODirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ignore_headers指令
+// determine whether it is a proxy_ignore_headers directive
 func isServerProxyIgnoreHeadersDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyIgnoreHeadersDirective) {
 		return true
@@ -685,7 +685,7 @@ func isServerProxyIgnoreHeadersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_pass_header指令
+// determine whether it is a proxy_pass_header directive
 func isServerProxyPassHeaderDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyPassHeaderDirective) {
 		return true
@@ -693,7 +693,7 @@ func isServerProxyPassHeaderDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache指令
+// determine whether it is a proxy_cache directive
 func isServerProxyCacheDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyCacheDirective) {
 		return true
@@ -701,7 +701,7 @@ func isServerProxyCacheDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_min_uses指令
+// determine whether it is a proxy_cache_min_uses directive
 func isServerProxyCacheMinUsesDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyCacheMinUsesDirective) {
 		return true
@@ -709,7 +709,7 @@ func isServerProxyCacheMinUsesDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_path指令
+// determine whether it is a proxy_cache_path directive
 func isServerProxyCachePathDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyCachePathDirective) {
 		return true
@@ -717,7 +717,7 @@ func isServerProxyCachePathDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是server指令
+// determine whether it is a server directive
 func isServerDirective(directive string) bool {
 	if isEqualString(directive, ServerDirective) {
 		return true
@@ -725,7 +725,7 @@ func isServerDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是root指令
+// determine whether it is a root directive
 func isServerRootDirective(directive string) bool {
 	if isEqualString(directive, ServerRootDirective) {
 		return true
@@ -733,7 +733,7 @@ func isServerRootDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是large_client_header_buffers指令
+// determine whether it is a large_client_header_buffers directive
 func isServerLargeClientHeaderBuffersDirective(directive string) bool {
 	if isEqualString(directive, ServerLargeClientHeaderBuffersDirective) {
 		return true
@@ -741,7 +741,7 @@ func isServerLargeClientHeaderBuffersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是server_name_in_redirect指令
+// determine whether it is a server_name_in_redirect directive
 func isServerServerNameInRedirectDirective(directive string) bool {
 	if isEqualString(directive, ServerServerNameInRedirectDirective) {
 		return true
@@ -749,7 +749,7 @@ func isServerServerNameInRedirectDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是client_body_temp_path指令
+// determine whether it is a client_body_temp_path directive
 func isServerClientBodyTempPathDirective(directive string) bool {
 	if isEqualString(directive, ServerClientBodyTempPathDirective) {
 		return true
@@ -757,7 +757,7 @@ func isServerClientBodyTempPathDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_headers_hash_bucket_size指令
+// determine whether it is a proxy_headers_hash_bucket_size directive
 func isServerProxyHeadersHashBucketSizeDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyHeadersHashBucketSizeDirective) {
 		return true
@@ -765,7 +765,7 @@ func isServerProxyHeadersHashBucketSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_name指令
+// determine whether it is a proxy_ssl_name directive
 func isServerProxySslNameDirective(directive string) bool {
 	if isEqualString(directive, ServerProxySslNameDirective) {
 		return true
@@ -773,7 +773,7 @@ func isServerProxySslNameDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_store指令
+// determine whether it is a proxy_store directive
 func isServerProxyStoreDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyStoreDirective) {
 		return true
@@ -781,7 +781,7 @@ func isServerProxyStoreDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是access_log指令
+// determine whether it is a access_log directive
 func isServerAccessLogDirective(directive string) bool {
 	if isEqualString(directive, ServerAccessLogDirective) {
 		return true
@@ -789,7 +789,7 @@ func isServerAccessLogDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是client_max_body_size指令
+// determine whether it is a client_max_body_size directive
 func isServerClientMaxBodySizeDirective(directive string) bool {
 	if isEqualString(directive, ServerClientMaxBodySizeDirective) {
 		return true
@@ -797,7 +797,7 @@ func isServerClientMaxBodySizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_temp_path指令
+// determine whether it is a proxy_temp_path directive
 func isServerProxyTempPathDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyTempPathDirective) {
 		return true
@@ -805,7 +805,7 @@ func isServerProxyTempPathDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是ssl_session_timeout指令
+// determine whether it is a ssl_session_timeout directive
 func isServerSslSessionTimeoutDirective(directive string) bool {
 	if isEqualString(directive, ServerSslSessionTimeoutDirective) {
 		return true
@@ -813,7 +813,7 @@ func isServerSslSessionTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是lingering_time指令
+// determine whether it is a lingering_time directive
 func isServerLingeringTimeDirective(directive string) bool {
 	if isEqualString(directive, ServerLingeringTimeDirective) {
 		return true
@@ -821,7 +821,7 @@ func isServerLingeringTimeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是disable_symlinks指令
+// determine whether it is a disable_symlinks directive
 func isServerDisableSymlinksDirective(directive string) bool {
 	if isEqualString(directive, ServerDisableSymlinksDirective) {
 		return true
@@ -829,7 +829,7 @@ func isServerDisableSymlinksDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_next_upstream_tries指令
+// determine whether it is a proxy_next_upstream_tries directive
 func isServerProxyNextUpstreamTriesDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyNextUpstreamTriesDirective) {
 		return true
@@ -837,7 +837,7 @@ func isServerProxyNextUpstreamTriesDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是ssl_certificate指令
+// determine whether it is a ssl_certificate directive
 func isServerSslCertificateDirective(directive string) bool {
 	if isEqualString(directive, ServerSslCertificateDirective) {
 		return true
@@ -845,7 +845,7 @@ func isServerSslCertificateDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_background_update指令
+// determine whether it is a proxy_cache_background_update directive
 func isServerProxyCacheBackgroundUpdateDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyCacheBackgroundUpdateDirective) {
 		return true
@@ -853,7 +853,7 @@ func isServerProxyCacheBackgroundUpdateDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_crl指令
+// determine whether it is a proxy_ssl_crl directive
 func isServerProxySslCrlDirective(directive string) bool {
 	if isEqualString(directive, ServerProxySslCrlDirective) {
 		return true
@@ -861,7 +861,7 @@ func isServerProxySslCrlDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_redirect指令
+// determine whether it is a proxy_redirect directive
 func isServerProxyRedirectDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyRedirectDirective) {
 		return true
@@ -869,7 +869,7 @@ func isServerProxyRedirectDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_request_buffering指令
+// determine whether it is a proxy_request_buffering directive
 func isServerProxyRequestBufferingDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyRequestBufferingDirective) {
 		return true
@@ -877,7 +877,7 @@ func isServerProxyRequestBufferingDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_server_name指令
+// determine whether it is a proxy_ssl_server_name directive
 func isServerProxySslServerNameDirective(directive string) bool {
 	if isEqualString(directive, ServerProxySslServerNameDirective) {
 		return true
@@ -885,7 +885,7 @@ func isServerProxySslServerNameDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是location指令
+// determine whether it is a location directive
 func isServerLocationsDirective(directive string) bool {
 	if isEqualString(directive, ServerLocationsDirective) {
 		return true
@@ -893,7 +893,7 @@ func isServerLocationsDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是log_not_found指令
+// determine whether it is a log_not_found directive
 func isServerLogNotFoundDirective(directive string) bool {
 	if isEqualString(directive, ServerLogNotFoundDirective) {
 		return true
@@ -901,15 +901,15 @@ func isServerLogNotFoundDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是cp_nodelay指令
-func isServerTcpNodelayDirective(directive string) bool {
+// determine whether it is a cp_nodelay directive
+func isServerTCPNodelayDirective(directive string) bool {
 	if isEqualString(directive, ServerTCPNodelayDirective) {
 		return true
 	}
 	return false
 }
 
-// 判断是否是proxy_cache_purge指令
+// determine whether it is a proxy_cache_purge directive
 func isServerProxyCachePurgeDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyCachePurgeDirective) {
 		return true
@@ -917,7 +917,7 @@ func isServerProxyCachePurgeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是ssl_protocols指令
+// determine whether it is a ssl_protocols directive
 func isServerSslProtocolsDirective(directive string) bool {
 	if isEqualString(directive, ServerSslProtocolsDirective) {
 		return true
@@ -925,7 +925,7 @@ func isServerSslProtocolsDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是resolver指令
+// determine whether it is a resolver directive
 func isServerResolverDirective(directive string) bool {
 	if isEqualString(directive, ServerResolverDirective) {
 		return true
@@ -933,7 +933,7 @@ func isServerResolverDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是sendfile_max_chunk指令
+// determine whether it is a sendfile_max_chunk directive
 func isServerSendFileMaxChunkDirective(directive string) bool {
 	if isEqualString(directive, ServerSendFileMaxChunkDirective) {
 		return true
@@ -941,7 +941,7 @@ func isServerSendFileMaxChunkDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_lock_timeout指令
+// determine whether it is a proxy_cache_lock_timeout directive
 func isServerProxyCacheLockTimeoutDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyCacheLockTimeoutDirective) {
 		return true
@@ -949,7 +949,7 @@ func isServerProxyCacheLockTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是connection_pool_size指令
+// determine whether it is a connection_pool_size directive
 func isServerConnectionPoolSizeDirective(directive string) bool {
 	if isEqualString(directive, ServerConnectionPoolSizeDirective) {
 		return true
@@ -957,7 +957,7 @@ func isServerConnectionPoolSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_no_cache指令
+// determine whether it is a proxy_no_cache directive
 func isServerProxyNoCacheDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyNoCacheDirective) {
 		return true
@@ -965,7 +965,7 @@ func isServerProxyNoCacheDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是client_body_timeout指令
+// determine whether it is a client_body_timeout directive
 func isServerClientBodyTimeoutDirective(directive string) bool {
 	if isEqualString(directive, ServerClientBodyTimeoutDirective) {
 		return true
@@ -973,7 +973,7 @@ func isServerClientBodyTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是satisfy指令
+// determine whether it is a satisfy directive
 func isServerSatisfyDirective(directive string) bool {
 	if isEqualString(directive, ServerSatisfyDirective) {
 		return true
@@ -981,7 +981,7 @@ func isServerSatisfyDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是client_header_buffer_size指令
+// determine whether it is a client_header_buffer_size directive
 func isServerClientHeaderBufferSizeDirective(directive string) bool {
 	if isEqualString(directive, ServerClientHeaderBufferSizeDirective) {
 		return true
@@ -989,7 +989,7 @@ func isServerClientHeaderBufferSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_intercept_errors指令
+// determine whether it is a proxy_intercept_errors directive
 func isServerProxyInterceptErrorsDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyInterceptErrorsDirective) {
 		return true
@@ -997,7 +997,7 @@ func isServerProxyInterceptErrorsDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是ssl_ciphers指令
+// determine whether it is a ssl_ciphers directive
 func isServerSslCiphersDirective(directive string) bool {
 	if isEqualString(directive, ServerSslCiphersDirective) {
 		return true
@@ -1005,7 +1005,7 @@ func isServerSslCiphersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是limit_rate_after指令
+// determine whether it is a limit_rate_after directive
 func isServerLimitRateAfterDirective(directive string) bool {
 	if isEqualString(directive, ServerLimitRateAfterDirective) {
 		return true
@@ -1013,7 +1013,7 @@ func isServerLimitRateAfterDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是open_file_cache_min_uses指令
+// determine whether it is a open_file_cache_min_uses directive
 func isServerOpenFileCacheMinUsesDirective(directive string) bool {
 	if isEqualString(directive, ServerOpenFileCacheMinUsesDirective) {
 		return true
@@ -1021,7 +1021,7 @@ func isServerOpenFileCacheMinUsesDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是open_file_cache_valid指令
+// determine whether it is a open_file_cache_valid directive
 func isServerOpenFileCacheValidDirective(directive string) bool {
 	if isEqualString(directive, ServerOpenFileCacheValidDirective) {
 		return true
@@ -1029,7 +1029,7 @@ func isServerOpenFileCacheValidDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_set_header指令
+// determine whether it is a proxy_set_header directive
 func isServerProxySetHeaderDirective(directive string) bool {
 	if isEqualString(directive, ServerProxySetHeaderDirective) {
 		return true
@@ -1037,7 +1037,7 @@ func isServerProxySetHeaderDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是allow指令
+// determine whether it is a allow directive
 func isServerAllowDirective(directive string) bool {
 	if isEqualString(directive, ServerAllowDirective) {
 		return true
@@ -1045,7 +1045,7 @@ func isServerAllowDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是log_subrequest指令
+// determine whether it is a log_subrequest directive
 func isServerLogSubrequestDirective(directive string) bool {
 	if isEqualString(directive, ServerLogSubrequestDirective) {
 		return true
@@ -1053,7 +1053,7 @@ func isServerLogSubrequestDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是max_ranges指令
+// determine whether it is a max_ranges directive
 func isServerMaxRangesDirective(directive string) bool {
 	if isEqualString(directive, ServerMaxRangesDirective) {
 		return true
@@ -1061,7 +1061,7 @@ func isServerMaxRangesDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_max_range_offset指令
+// determine whether it is a proxy_cache_max_range_offset directive
 func isServerProxyCacheMaxRangeOffsetDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyCacheMaxRangeOffsetDirective) {
 		return true
@@ -1069,7 +1069,7 @@ func isServerProxyCacheMaxRangeOffsetDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_send_lowat指令
+// determine whether it is a proxy_send_lowat directive
 func isServerProxySendLowatDirective(directive string) bool {
 	if isEqualString(directive, ServerProxySendLowatDirective) {
 		return true
@@ -1077,7 +1077,7 @@ func isServerProxySendLowatDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_convert_head指令
+// determine whether it is a proxy_cache_convert_head directive
 func isServerProxyCacheConvertHeadDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyCacheConvertHeadDirective) {
 		return true
@@ -1085,7 +1085,7 @@ func isServerProxyCacheConvertHeadDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_limit_rate指令
+// determine whether it is a proxy_limit_rate directive
 func isServerProxyLimitRateDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyLimitRateDirective) {
 		return true
@@ -1093,7 +1093,7 @@ func isServerProxyLimitRateDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_method指令
+// determine whether it is a proxy_method directive
 func isServerProxyMethodDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyMethodDirective) {
 		return true
@@ -1101,7 +1101,7 @@ func isServerProxyMethodDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_next_upstream指令
+// determine whether it is a proxy_next_upstream directive
 func isServerProxyNextUpstreamDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyNextUpstreamDirective) {
 		return true
@@ -1109,7 +1109,7 @@ func isServerProxyNextUpstreamDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是open_file_cache_errors指令
+// determine whether it is a open_file_cache_errors directive
 func isServerOpenFileCacheErrorsDirective(directive string) bool {
 	if isEqualString(directive, ServerOpenFileCacheErrorsDirective) {
 		return true
@@ -1117,7 +1117,7 @@ func isServerOpenFileCacheErrorsDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是recursive_error_pages指令
+// determine whether it is a recursive_error_pages directive
 func isServerRecursiveErrorPagesDirective(directive string) bool {
 	if isEqualString(directive, ServerRecursiveErrorPagesDirective) {
 		return true
@@ -1125,7 +1125,7 @@ func isServerRecursiveErrorPagesDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是client_body_in_file_only指令
+// determine whether it is a client_body_in_file_only directive
 func isServerClientBodyInFileOnlyDirective(directive string) bool {
 	if isEqualString(directive, ServerClientBodyInFileOnlyDirective) {
 		return true
@@ -1133,7 +1133,7 @@ func isServerClientBodyInFileOnlyDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是set指令
+// determine whether it is a set directive
 func isServerSetDirective(directive string) bool {
 	if isEqualString(directive, ServerSetDirecrive) {
 		return true
@@ -1141,7 +1141,7 @@ func isServerSetDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_busy_buffers_size指令
+// determine whether it is a proxy_busy_buffers_size directive
 func isServerProxyBusyBuffersSizeDirective(directive string) bool {
 	if isEqualString(directive, ServerProxyBusyBuffersSizeDirective) {
 		return true
@@ -1149,7 +1149,7 @@ func isServerProxyBusyBuffersSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是add_header指令
+// determine whether it is a add_header directive
 func isServerAddHeaderDirective(directive string) bool {
 	if isEqualString(directive, AddHeaderDirective) {
 		return true
@@ -1157,7 +1157,7 @@ func isServerAddHeaderDirective(directive string) bool {
 	return false
 }
 
-// 判断是否gzip指令
+// gzip directive
 func isServerGzipDirective(directive string) bool {
 	if isEqualString(directive, ServerGzipDirective) {
 		return true
@@ -1165,7 +1165,7 @@ func isServerGzipDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是gzip_min_length指令
+// determine whether it is a gzip_min_length directive
 func isServerGzipMinLengthDirective(directive string) bool {
 	if isEqualString(directive, ServerGzipMinLengthDirective) {
 		return true
@@ -1173,7 +1173,7 @@ func isServerGzipMinLengthDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是gzip_buffers指令
+// determine whether it is a gzip_buffers directive
 func isServerGzipBuffersDirective(directive string) bool {
 	if isEqualString(directive, ServerGzipBuffersDirective) {
 		return true
@@ -1181,7 +1181,7 @@ func isServerGzipBuffersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是gzip_comp_level指令
+// determine whether it is a gzip_comp_level directive
 func isServerGzipCompLevelDirective(directive string) bool {
 	if isEqualString(directive, ServerGzipCompLevelDirective) {
 		return true
@@ -1189,7 +1189,7 @@ func isServerGzipCompLevelDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是gzip_types指令
+// determine whether it is a gzip_types directive
 func isServerGzipTypesDirective(directive string) bool {
 	if isEqualString(directive, ServerGzipTypesDirective) {
 		return true
@@ -1197,7 +1197,7 @@ func isServerGzipTypesDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是gzip_vary指令
+// determine whether it is a gzip_vary directive
 func isServerGzipVaryDirective(directive string) bool {
 	if isEqualString(directive, ServerGzipVaryDirective) {
 		return true
@@ -1205,7 +1205,7 @@ func isServerGzipVaryDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是gzip_disable指令
+// determine whether it is a gzip_disable directive
 func isServerGzipDisableDirective(directive string) bool {
 	if isEqualString(directive, ServerGzipDisableDirective) {
 		return true
@@ -1213,15 +1213,15 @@ func isServerGzipDisableDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是gzip_http_version指令
-func isServerGzipHttpVersionDirective(directive string) bool {
+// determine whether it is a gzip_http_version directive
+func isServerGzipHTTPVersionDirective(directive string) bool {
 	if isEqualString(directive, ServerGzipHTTPVersionDirective) {
 		return true
 	}
 	return false
 }
 
-// 判断是否是gzip_proxied指令
+// determine whether it is a gzip_proxied directive
 func isServerGzipProxiedDirective(directive string) bool {
 	if isEqualString(directive, ServerGzipProxiedDirective) {
 		return true
@@ -1229,7 +1229,7 @@ func isServerGzipProxiedDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_hide_header指令
+// determine whether it is a proxy_hide_header directive
 func isServerProxyHideHeaderDirective(directive string) bool {
 	if isEqualString(directive, ServerGzipProxiedDirective) {
 		return true
@@ -1237,25 +1237,7 @@ func isServerProxyHideHeaderDirective(directive string) bool {
 	return false
 }
 
-// 处理Server中的指令
-// 只处理如下用到的Server指令
-/*
-error_page
-if
-listen
-location
-return
-rewrite
-server_name
-ssl
-ssl_certificate
-ssl_certificate_key
-ssl_ciphers
-ssl_prefer_server_ciphers
-ssl_protocols
-ssl_session_timeout
-*/
-
+// ProcessServer process server module
 func ProcessServer(block *Block) (*Server, error) {
 	if !isServerDirective(block.Directive) {
 		return nil, errors.New("Not server directive")
@@ -1264,74 +1246,69 @@ func ProcessServer(block *Block) (*Server, error) {
 	server := NewServer()
 	for _, innerBlock := range block.InnerBlocks {
 
-		// 处理listen指令
+		// process listen directive
 		if isServerListenDirective(innerBlock.Directive) {
 			server.Listen = processArgsArray(innerBlock.Args)
 			continue
 		}
 
-		// 处理return指令
+		// process return directive
 		if isServerReturnDirective(innerBlock.Directive) {
 			server.Return = processArgsArray(innerBlock.Args)
 			continue
 		}
 
-		// 处理server_name指令
+		// process server_name directive
 		if isServerNameDirective(innerBlock.Directive) {
 			server.Name = processArgsArray(innerBlock.Args)
 			continue
 		}
 
-		// 处理ssl指令
+		// process ssl directive
 		if isServerSslDirective(innerBlock.Directive) {
 			server.Ssl = processArgsArray(innerBlock.Args)
 			continue
 		}
 
-		// 处理ssl_ciphers指令
+		// process ssl_ciphers directive
 		if isServerSslCiphersDirective(innerBlock.Directive) {
 			ss := processArgsArray(innerBlock.Args)
 
-			// 判断是否需要去除换行符
 			server.SslCiphers = trimNewline(ss)
-
-			// ToDo: add '${{sslCipher}}'
-			// server.SslCiphers = "'" + server.SslCiphers + "'"
-
 			continue
 		}
 
-		// 处理ssl_protocols指令
+		// process ssl_protocols directive
 		if isServerSslProtocolsDirective(innerBlock.Directive) {
 			server.SslProtocols = processArgsArray(innerBlock.Args)
 			continue
 		}
 
-		// 处理ssl_session_timeout指令
+		// process ssl_session_timeout directive
 		if isServerSslSessionTimeoutDirective(innerBlock.Directive) {
 			server.SslSessionTimeout = processArgsArray(innerBlock.Args)
 			continue
 		}
 
-		// 处理error_page指令
+		// process error_page directive
 		if isServerErrorPageDirective(innerBlock.Directive) {
 			server.ErrorPage = processArgsArray(innerBlock.Args)
 			continue
 		}
 
-		// 处理ssl_certificate_key指令
+		// process ssl_certificate_key directive
 		if isServerSslCertificateKeyDirective(innerBlock.Directive) {
 			server.SslCertificateKey = processArgsArray(innerBlock.Args)
 			continue
 		}
 
-		// 处理ssl_prefer_server_ciphers指令
+		// process ssl_prefer_server_ciphers directive
 		if isServerSslPreferServerCiphersDirective(innerBlock.Directive) {
 			server.SslPreferServerCiphers = processArgsArray(innerBlock.Args)
 			continue
 		}
 
-		// 处理ssl_certificate指令
+		// process ssl_certificate directive
 		if isServerSslCertificateDirective(innerBlock.Directive) {
 			server.SslCertificate = processArgsArray(innerBlock.Args)
 			continue
@@ -1456,7 +1433,7 @@ func ProcessServer(block *Block) (*Server, error) {
 			continue
 		}
 
-		if isServerProxyHttpVersionDirective(innerBlock.Directive) {
+		if isServerProxyHTTPVersionDirective(innerBlock.Directive) {
 			server.ProxyHttpVersion = processArgsArray(innerBlock.Args)
 			continue
 		}
@@ -1676,7 +1653,7 @@ func ProcessServer(block *Block) (*Server, error) {
 			server.SendFile = processArgsArray(innerBlock.Args)
 			continue
 		}
-		if isServerTcpNopushDirective(innerBlock.Directive) {
+		if isServerTCPNopushDirective(innerBlock.Directive) {
 			server.TcpNopush = processArgsArray(innerBlock.Args)
 			continue
 		}
@@ -1782,7 +1759,7 @@ func ProcessServer(block *Block) (*Server, error) {
 			server.LogNotFound = processArgsArray(innerBlock.Args)
 			continue
 		}
-		if isServerTcpNodelayDirective(innerBlock.Directive) {
+		if isServerTCPNodelayDirective(innerBlock.Directive) {
 			server.TcpNodelay = processArgsArray(innerBlock.Args)
 			continue
 		}
@@ -1887,69 +1864,69 @@ func ProcessServer(block *Block) (*Server, error) {
 			continue
 		}
 
-		// 处理gzip指令
+		// process gzip directive
 		if isServerGzipDirective(innerBlock.Directive) {
 			server.Gzip = processArgsArray(innerBlock.Args)
 		}
 
-		// 处理gzip_min_length指令
+		// process gzip_min_length directive
 		if isServerGzipMinLengthDirective(innerBlock.Directive) {
 			server.GzipMinLength = processArgsArray(innerBlock.Args)
 		}
 
-		// 处理gzip_buffers指令
+		// process gzip_buffers directive
 		if isServerGzipBuffersDirective(innerBlock.Directive) {
 			server.GzipBuffers = processArgsArray(innerBlock.Args)
 		}
 
-		// 处理gzip_comp_level指令
+		// process gzip_comp_level directive
 		if isServerGzipCompLevelDirective(innerBlock.Directive) {
 			server.GzipCompLevel = processArgsArray(innerBlock.Args)
 		}
 
-		// 处理gzip_types指令
+		// process gzip_types directive
 		if isServerGzipTypesDirective(innerBlock.Directive) {
 			server.GzipTypes = processArgsArray(innerBlock.Args)
 		}
 
-		// 处理gzip_vary指令
+		// process gzip_vary directive
 		if isServerGzipVaryDirective(innerBlock.Directive) {
 			server.GzipVary = processArgsArray(innerBlock.Args)
 		}
 
-		// 处理gzip_disable指令
+		// process gzip_disable directive
 		if isServerGzipDisableDirective(innerBlock.Directive) {
 			server.GzipDisable = processArgsArray(innerBlock.Args)
 		}
 
-		// 处理gzip_http_version指令
-		if isServerGzipHttpVersionDirective(innerBlock.Directive) {
+		// process gzip_http_version directive
+		if isServerGzipHTTPVersionDirective(innerBlock.Directive) {
 			server.GzipHttpVersion = processArgsArray(innerBlock.Args)
 		}
 
-		// 处理gzip_proxied指令
+		// process gzip_proxied directive
 		if isServerGzipProxiedDirective(innerBlock.Directive) {
 			server.GzipProxied = processArgsArray(innerBlock.Args)
 		}
 
-		// 处理proxy_hide_header指令
+		// process proxy_hide_header directive
 		if isServerProxyHideHeaderDirective(innerBlock.Directive) {
 			server.ProxyHideHeader = processArgsArray(innerBlock.Args)
 		}
 
-		// 处理allow指令
+		// process allow directive
 		if isServerAllowDirective(innerBlock.Directive) {
 			server.Allow = append(server.Allow, processArgsArray(innerBlock.Args))
 			continue
 		}
 
-		// 处理deny指令
+		// process deny directive
 		if isServerDenyDirective(innerBlock.Directive) {
 			server.Deny = append(server.Deny, processArgsArray(innerBlock.Args))
 			continue
 		}
 
-		// 处理set指令
+		// process set directive
 		if isServerSetDirective(innerBlock.Directive) {
 			if len(innerBlock.Args) > 1 {
 				for index := range innerBlock.Args {
@@ -1962,7 +1939,7 @@ func ProcessServer(block *Block) (*Server, error) {
 			continue
 		}
 
-		// 处理if指令
+		// process if directive
 		if isServerIfBlocksDirective(innerBlock.Directive) {
 			ifBlocks, err := ProcessServerIfBlocks(innerBlock)
 			if err != nil {
@@ -1971,7 +1948,7 @@ func ProcessServer(block *Block) (*Server, error) {
 			server.IfBlocks = append(server.IfBlocks, *ifBlocks)
 		}
 
-		// 处理location指令
+		// process location directive
 		if isServerLocationsDirective(innerBlock.Directive) {
 			location, err := ProcessLocation(&innerBlock)
 			if err != nil {
@@ -1980,7 +1957,7 @@ func ProcessServer(block *Block) (*Server, error) {
 			server.Locations = append(server.Locations, *location)
 		}
 
-		// 处理rewrite指令
+		// process rewrite directive
 		if isServerRewriteDirective(innerBlock.Directive) {
 			args := processQuote(innerBlock.Args)
 			server.Rewrite = append(server.Rewrite, processArgsArray(args))
@@ -1988,7 +1965,6 @@ func ProcessServer(block *Block) (*Server, error) {
 
 		// add_header
 		if isServerAddHeaderDirective(innerBlock.Directive) {
-			// 判断add_header指令里是否需要加引号
 			for i := range innerBlock.Args {
 				innerBlock.Args[i] = nonescapeQuotation(innerBlock.Args[i])
 			}

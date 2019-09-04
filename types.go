@@ -9,9 +9,9 @@ import (
 
 // UpstreamServerParameters struct
 type UpstreamServerParameters struct {
-	Weight      string `json:"weight,omitempty key:"weight" eg:"weight=99"`                    // weight=number
+	Weight      string `json:"weight,omitempty" key:"weight" eg:"weight=99"`                   // weight=number
 	MaxConns    string `json:"maxConns,omitempty" key:"max_conns" eg:"max_conns=3"`            // max_conns=number
-	MaxFails    string `json:"maxFails,omitempty key:"max_fails" eg:"max_fails=3"`             // max_fails=number
+	MaxFails    string `json:"maxFails,omitempty" key:"max_fails" eg:"max_fails=3"`            // max_fails=number
 	FailTimeout string `json:"failTimeout,omitempty" key:"fail_timeout" eg:"fail_timeout=30s"` // fail_timeout=time (eg. 30s)
 	Backup      string `json:"backup,omitempty" key:"backup" eg:"backup"`                      // backup
 	Down        string `json:"down,omitempty" key:"down" eg:"down"`                            // down
@@ -19,7 +19,7 @@ type UpstreamServerParameters struct {
 
 // UpstreamKeepalive struct
 type UpstreamKeepalive struct {
-	Time string `json:"time,omitempty key:"time" eg:"16"`
+	Time string `json:"time,omitempty" key:"time" eg:"16"`
 }
 
 // UpstreamServer struct
@@ -30,11 +30,6 @@ type UpstreamServer struct {
 
 // Upstream struct
 type Upstream struct {
-	TrafficRatio      TrafficRatio      `json:"trafficRatio"`
-	SinglePoint       string            `json:"singlePoint"` // 单点应用,不受流量比例的控制,若值为"T",表明是单点
-	NCAddress         []string          `json:"ncAddress"`
-	GMAddress         []string          `json:"gmAddress"`
-	SJHLAddress       []string          `json:"sjhlAddress"`
 	Name              string            `json:"name,omitempty" key:"upstream" eg:"upstream example_app_airsupport_http"` // example_app_airsupport_http
 	KeepaliveTimeout  string            `json:"keepaliveTimeout,omitempty" key:"keepalive_timeout" eg:"keepalive_timeout 20s"`
 	Method            string            `json:"method,omitempty" key:"ip_hash" eg:"ip_hash"`               // ip_hash
@@ -42,27 +37,19 @@ type Upstream struct {
 	Servers           []UpstreamServer  `json:"servers,omitempty" key:"server" eg:"server 10.10.12.45:80"` // server 192.168.240.229:80 weight=99 max_fails=2 fail_timeout=30s
 }
 
-// TrafficRatio 流量比例
-type TrafficRatio struct {
-	LocalRatio string `json:"localRatio"`
-	OtherRatio string `json:"otherRatio"`
-}
-
 // NewUpstream func
 func NewUpstream() *Upstream {
-	return &Upstream{
-		Servers: make([]UpstreamServer, 0),
-	}
-} // return 403;
+	return &Upstream{Servers: make([]UpstreamServer, 0)}
+}
 
 // LocationIfBlock struct
 type LocationIfBlock struct {
-	Condition string   `json:"condition,omitempty" key:"if" eg:"( $request_uri ~* /app-merchant-proxy/ )"`                  // ( $request_uri ~* /app-merchant-proxy/ )
+	Condition string   `json:"condition,omitempty" key:"if" eg:"( $request_uri ~* /app-merchant-proxy/ )"`                   // ( $request_uri ~* /app-merchant-proxy/ )
 	ProxyPass string   `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://example_app_airsupport_http"`      // proxy_pass http://example_app_airsupport_http;
-	SendFile  string   `json:"sendFile,omitempty" key:"send_file" eg:"send_file on"`                                        // sendfile on;
-	Root      string   `json:"root,omitempty" key:"root" eg:"root /data/w3"`                                                // root /data/w3;
-	Rewrite   []string `json:"rewrite,omitempty key:"rewrite" eg:"rewrite ^/docs/(.*)$ /yop_doc/doc/$1/default.html break"` // rewrite ^/docs/(.*)$ /yop_doc/doc/$1/default.html break;
-	Set       []string `json:"set,omitempty" key:"set" eg:"set $limit_rate 4k"`                                             // set $limit_rate 4k;
+	SendFile  string   `json:"sendFile,omitempty" key:"send_file" eg:"send_file on"`                                         // sendfile on;
+	Root      string   `json:"root,omitempty" key:"root" eg:"root /data/w3"`                                                 // root /data/w3;
+	Rewrite   []string `json:"rewrite,omitempty" key:"rewrite" eg:"rewrite ^/docs/(.*)$ /yop_doc/doc/$1/default.html break"` // rewrite ^/docs/(.*)$ /yop_doc/doc/$1/default.html break;
+	Set       []string `json:"set,omitempty" key:"set" eg:"set $limit_rate 4k"`                                              // set $limit_rate 4k;
 	AddHeader []string `json:"addHeader,omitempty" key:"add_header" eg:"add_header X-Frame-Options SAMEORIGIN"`
 }
 
@@ -174,7 +161,7 @@ type Location struct {
 	ProxyNextUpstreamTimeout   string            `json:"proxyNextUpstreamTimeout,omitempty" key:"proxy_next_upstream_timeout" eg:"proxy_next_upstream_timeout 0"`               // proxy_next_upstream_timeout 0;
 	ProxyNextUpstreamTries     string            `json:"proxyNextUpstreamTries,omitempty" key:"proxy_next_upstream_tries" eg:"proxy_next_upstream_tries 0"`                     // proxy_next_upstream_tries 0;
 	ProxyNoCache               string            `json:"proxyNoCache,omitempty" key:"proxy_no_cache" eg:"proxy_no_cache string ..."`                                            // proxy_no_cache string ...;
-	ProxyPass                  string            `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://example_app_airsupport_http"`                                // proxy_pass http://example_app_airsupport_http;
+	ProxyPass                  string            `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://example_app_airsupport_http"`                               // proxy_pass http://example_app_airsupport_http;
 	ProxyPassHeader            string            `json:"proxyPassHeader,omitempty" key:"proxy_pass_header" eg:"proxy_pass_header field"`                                        // proxy_pass_header field
 	ProxyPassRequestBody       string            `json:"proxyPassRequestBody,omitempty" key:"proxy_pass_request_body" eg:"proxy_pass_request_body on"`                          // proxy_pass_request_body on;
 	ProxyPassRequestHeaders    string            `json:"proxyPassRequestHeaders,omitempty" key:"proxy_pass_request_headers" eg:"proxy_pass_request_headers on"`                 // proxy_pass_request_headers on;
@@ -223,6 +210,7 @@ type Location struct {
 	ProxyHideHeader            string            `json:"proxyHideHeader,omitempty" key:"proxy_hide_header" eg:"proxy_hide_header X-Powered-By"`
 }
 
+// NewLocation  location module
 func NewLocation() *Location {
 	return &Location{
 		LogFormat:        make([]string, 0),
@@ -238,9 +226,10 @@ func NewLocation() *Location {
 	}
 }
 
+// ServerIfBlock serverif block
 type ServerIfBlock struct {
 	Condition      string   `json:"condition,omitempty"  key:"condition" eg:"( $request_uri ~* /app-merchant-proxy/ )"`           // ( $request_uri ~* /app-merchant-proxy/ )
-	ProxyPass      string   `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://example_app_airsupport_http"`       // proxy_pass http://example_app_airsupport_http;
+	ProxyPass      string   `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://example_app_airsupport_http"`      // proxy_pass http://example_app_airsupport_http;
 	SendFile       string   `json:"sendFile,omitempty" key:"sendfile" eg:"sendfile on"`                                           // sendfile on;
 	Root           string   `json:"root,omitempty" key:"root" eg:"root /data/w3"`                                                 // root /data/w3;
 	Rewrite        []string `json:"rewrite,omitempty" key:"rewrite" eg:"rewrite ^/docs/(.*)$ /yop_doc/doc/$1/default.html break"` // rewrite ^/docs/(.*)$ /yop_doc/doc/$1/default.html break;
@@ -249,6 +238,7 @@ type ServerIfBlock struct {
 	LimitRateAfter string   `json:"limitRateAfter,omitempty" key:"limit_rate_after" eg:"limit_rate_after 0"`                      // limit_rate_after 0;
 }
 
+// NewServerIfBlock new serverif
 func NewServerIfBlock() *ServerIfBlock {
 	return &ServerIfBlock{
 		Rewrite: make([]string, 0),
@@ -256,6 +246,7 @@ func NewServerIfBlock() *ServerIfBlock {
 	}
 }
 
+// Server server module
 type Server struct {
 	IndexNum                   int             `json:"indexNum"`                                                                                           // 前端排序的时候需要
 	Staging                    string          `json:"staging"`                                                                                            // 此节点是否内测有
@@ -270,7 +261,7 @@ type Server struct {
 	SslCiphers                 string          `json:"sslCiphers,omitempty" key:"ssl_ciphers" eg:"ssl_ciphers         HIGH:!aNULL:!MD5"`                   // ssl_ciphers         HIGH:!aNULL:!MD5;
 	SslSessionTimeout          string          `json:"sslSessionTimeout,omitempty" key:"ssl_session_timeout" eg:"ssl_session_timeout 5m"`                  //  ssl_session_timeout 5m;
 	SslPreferServerCiphers     string          `json:"sslPreferServerCiphers,omitempty" key:"ssl_prefer_server_ciphers" eg:"ssl_prefer_server_ciphers on"` // ssl_prefer_server_ciphers on;
-	Rewrite                    []string        `json:"rewrite,omitempty" key:"rewrite" eg:"rewrite \"^/(.*)$\" https://app.example.com/$1 permanent"`   // rewrite "^/(.*)$" https://app.example.com/$1 permanent;
+	Rewrite                    []string        `json:"rewrite,omitempty" key:"rewrite" eg:"rewrite \"^/(.*)$\" https://app.example.com/$1 permanent"`      // rewrite "^/(.*)$" https://app.example.com/$1 permanent;
 	IfBlocks                   []ServerIfBlock `json:"ifInServer,omitempty" key:"ifInServer"`                                                              //
 	Locations                  []Location      `json:"locations,omitempty" key:"locations"`
 	LimitConn                  string          `json:"limitConn,omitempty" key:"limit_conn" eg:"limit_conn conn_zone 1"`
@@ -370,7 +361,7 @@ type Server struct {
 	ProxyNextUpstreamTimeout   string          `json:"proxyNextUpstreamTimeout,omitempty" key:"proxy_next_upstream_timeout" eg:"proxy_next_upstream_timeout 0"`                                    // proxy_next_upstream_timeout 0;
 	ProxyNextUpstreamTries     string          `json:"proxyNextUpstreamTries,omitempty" key:"proxy_next_upstream_tries" eg:"proxy_next_upstream_tries 0"`                                          // proxy_next_upstream_tries 0;
 	ProxyNoCache               string          `json:"proxyNoCache,omitempty" key:"proxy_no_cache" eg:"proxy_no_cache string ..."`                                                                 // proxy_no_cache string ...;
-	ProxyPass                  string          `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://example_app_airsupport_http"`                                                     // proxy_pass http://example_app_airsupport_http;
+	ProxyPass                  string          `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://example_app_airsupport_http"`                                                    // proxy_pass http://example_app_airsupport_http;
 	ProxyPassHeader            string          `json:"proxyPassHeader,omitempty" key:"proxy_pass_header" eg:"proxy_pass_header field"`                                                             // proxy_pass_header field
 	ProxyPassRequestBody       string          `json:"proxyPassRequestBody,omitempty" key:"proxy_pass_request_body" eg:"proxy_pass_request_body on"`                                               // proxy_pass_request_body on;
 	ProxyPassRequestHeaders    string          `json:"proxyPassRequestHeaders,omitempty" key:"proxy_pass_request_headers" eg:"proxy_pass_request_headers on"`                                      // proxy_pass_request_headers on;
@@ -414,6 +405,7 @@ type Server struct {
 	ProxyHideHeader            string          `json:"proxyHideHeader,omitempty" key:"proxy_hide_header" eg:"proxy_hide_header X-Powered-By"`
 }
 
+// NewServer new server module
 func NewServer() *Server {
 	return &Server{
 		Rewrite:          make([]string, 0),
@@ -437,9 +429,8 @@ type Group struct {
 	Upstreams     []Upstream `json:"upstreams"`
 }
 
+// Http http module
 type Http struct {
-	Metadata                   Meta       `json:"metadata,omitempty"`
-	Group                      []Group    `json:"group,omitempty"`
 	Gzip                       string     `json:"gzip,omitempty" key:"gzip" eg:"gzip on"`                                  // gzip on;
 	GzipMinLength              string     `json:"gzipMinLength,omitempty" key:"gzip_min_length" eg:"gzip_min_length 1100"` // gzip_min_length 1100;
 	GzipBuffers                string     `json:"gzipBuffers,omitempty" key:"gzip_buffers" eg:"gzip_buffers 4 8k"`         // gzip_buffers 4 8k;
@@ -550,7 +541,7 @@ type Http struct {
 	ProxyNextUpstreamTimeout   string     `json:"proxyNextUpstreamTimeout,omitempty" key:"proxy_next_upstream_timeout" eg:"proxy_next_upstream_timeout 0"`                   // proxy_next_upstream_timeout 0;
 	ProxyNextUpstreamTries     string     `json:"proxyNextUpstreamTries,omitempty" key:"proxy_next_upstream_tries" eg:"proxy_next_upstream_tries 0"`                         // proxy_next_upstream_tries 0;
 	ProxyNoCache               string     `json:"proxyNoCache,omitempty" key:"proxy_no_cache" eg:"proxy_no_cache string ..."`                                                // proxy_no_cache string ...;
-	ProxyPass                  string     `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://example_app_airsupport_http"`                                    // proxy_pass http://example_app_airsupport_http;
+	ProxyPass                  string     `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://example_app_airsupport_http"`                                   // proxy_pass http://example_app_airsupport_http;
 	ProxyPassHeader            string     `json:"proxyPassHeader,omitempty" key:"proxy_pass_header" eg:"proxy_pass_header field"`                                            // proxy_pass_header field
 	ProxyPassRequestBody       string     `json:"proxyPassRequestBody,omitempty" key:"proxy_pass_request_body" eg:"proxy_pass_request_body on"`                              // proxy_pass_request_body on;
 	ProxyPassRequestHeaders    string     `json:"proxyPassRequestHeaders,omitempty" key:"proxy_pass_request_headers" eg:"proxy_pass_request_headers on"`                     // proxy_pass_request_headers on;
@@ -589,6 +580,7 @@ type Http struct {
 	ProxyHideHeader            string     `json:"proxyHideHeader,omitempty" key:"proxy_hide_header" eg:"proxy_hide_header X-Powered-By"`
 }
 
+// NewHttp new http module
 func NewHttp() *Http {
 	return &Http{
 		Server:           make([]Server, 0),
@@ -605,6 +597,7 @@ func NewHttp() *Http {
 	}
 }
 
+// Marshal http json marshal
 func (hp *Http) Marshal() (string, error) {
 	var json = jsoniter.ConfigCompatibleWithStandardLibrary
 	data, err := json.Marshal(hp)
@@ -614,10 +607,12 @@ func (hp *Http) Marshal() (string, error) {
 	return string(data), nil
 }
 
+// Unmarshal http json unmarshal
 func (hp *Http) Unmarshal(data []byte) error {
 	return jsoniter.Unmarshal(data, hp)
 }
 
+// UnmarshalFormFile http json unmarshal form file
 func (hp *Http) UnmarshalFormFile(path string) error {
 	data, err := ioutil.ReadFile(path)
 	if err != nil {
@@ -628,6 +623,7 @@ func (hp *Http) UnmarshalFormFile(path string) error {
 	return jsoniter.Unmarshal(data, hp)
 }
 
+// Geo module
 type Geo struct {
 	Name           string   `json:"name" key:"geo" eg:"geo [$address] $variable { ... }"`                          // geo [$address] $variable { ... };
 	Ranges         string   `json:"ranges,omitempty" key:"ranges"`                                                 // ranges;
@@ -639,12 +635,12 @@ type Geo struct {
 	List           []string `json:"list,omitempty" key:"list" eg:"127.0.0.0-127.0.0.0 US; 127.0.0.1-127.0.0.1 RU"` // 127.0.0.0-127.0.0.0 US; 127.0.0.1-127.0.0.1 RU;
 }
 
+// NewGeo new geo
 func NewGeo() *Geo {
-	return &Geo{
-		List: make([]string, 0),
-	}
+	return &Geo{List: make([]string, 0)}
 }
 
+// Event event module
 type Event struct {
 	AcceptMutex       string   `json:"acceptMutex,omitempty" key:"accept_mutex" eg:"accept_mutex off"`                                               // accept_mutex off;
 	AcceptMutexDelay  string   `json:"acceptMutexDelay,omitempty" key:"accept_mutex_delay" eg:"accept_mutex_delay 500ms"`                            // accept_mutex_delay 500ms;
@@ -654,24 +650,13 @@ type Event struct {
 	WorkerConnections string   `json:"workerConnections,omitempty" key:"worker_connections" eg:"worker_connections 512"`                             // worker_connections 512;
 }
 
+// NewEvent new event module
 func NewEvent() *Event {
-	return &Event{
-		DebugConnection: make([]string, 0),
-	}
+	return &Event{DebugConnection: make([]string, 0)}
 }
 
-type Meta struct {
-	SelfUserKey  string `json:"selfUserKey"`
-	FromKey      string `json:"fromKey"` // 如果是回滚版本的话则指向回滚版本
-	NodeName     string `json:"nodeName,omitempty"`
-	Syntax       string `json:"syntax"`       //语法检查结果
-	UserVersion  string `json:"userVersion"`  // 本质是时间戳
-	SyncStatus   string `json:"syncStatus"`   //同步结果
-	RollBackTime string `json:"rollBackTime"` //回滚时间
-	Reason       string `json:"reason"`       //  回滚原因
-}
-type Main struct {
-	Metadata              Meta     `json:"metadata,omitempty"`
+// Global global module
+type Global struct {
 	Daemon                string   `json:"daemon,omitempty" key:"daemon" eg:"daemon on"`                                                    // daemon on;
 	Env                   []string `json:"env,omitempty" key:"env" eg:"env MALLOC_OPTIONS"`                                                 // env MALLOC_OPTIONS;
 	ErrorPage             string   `json:"errorPage,omitempty" key:"error_page" eg:"error_page 500 502 503 504 /50x.html"`                  // error_page 500 502 503 504 /50x.html;
@@ -697,8 +682,9 @@ type Main struct {
 	Http                  []Http   `json:"http,omitempty" key:"http" eg:"http {...}"`                                                       // http {...}
 }
 
-func NewMain() *Main {
-	return &Main{
+// NewGlobal new global module
+func NewGlobal() *Global {
+	return &Global{
 		Env:     make([]string, 0),
 		Include: make([]string, 0),
 		Http:    make([]Http, 0),

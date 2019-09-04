@@ -1,20 +1,19 @@
 package nginx
 
 import (
-	"fmt"
 	"io/ioutil"
 
 	"github.com/json-iterator/go"
 )
 
-// 元Block，最内层的Block
+// MetaBlock meta Block, the innermost Block
 type MetaBlock struct {
 	Line      int      `json:"line"`
 	Args      []string `json:"args"`
 	Directive string   `json:"directive"`
 }
 
-// 倒数第二层的Block
+// InmostBlock block on the penultimate level
 type InmostBlock struct {
 	Line       int         `json:"line"`
 	Args       []string    `json:"args"`
@@ -22,7 +21,7 @@ type InmostBlock struct {
 	Directive  string      `json:"directive"`
 }
 
-// 倒数第三层的Block
+// InnerBlock Block on the penultimate third tier
 type InnerBlock struct {
 	Line         int           `json:"line"`
 	Args         []string      `json:"args"`
@@ -30,7 +29,7 @@ type InnerBlock struct {
 	InmostBlocks []InmostBlock `json:"block,omitempty"`
 }
 
-// 最外面的Block, Parsed的子元素
+// Block Outermost Block, a child element of Parsed
 type Block struct {
 	Line        int          `json:"line"`
 	Args        []string     `json:"args"`
@@ -39,7 +38,7 @@ type Block struct {
 	Includes    []string     `json:"includes,omitempty"`
 }
 
-// Parsed结构体
+// Parsed block
 type Parsed struct {
 	Line      int      `json:"line"`
 	Args      []string `json:"args"`
@@ -47,7 +46,7 @@ type Parsed struct {
 	Directive string   `json:"directive"`
 }
 
-// Config结构体
+// Config python crossplan library
 type Config struct {
 	Status string        `json:"status"`
 	Errors []interface{} `json:"errors"`
@@ -55,27 +54,29 @@ type Config struct {
 	File   string        `json:"file"`
 }
 
-// Nginx结构体
-type NginxConfig struct {
+// CrossplaneOut parse nginx conf result
+type CrossplaneOut struct {
 	Status  string        `json:"status"`
 	Errors  []interface{} `json:"errors"`
 	Configs []Config      `json:"config"`
 }
 
-func (ng *NginxConfig) Marshal() ([]byte, error) {
+// Marshal json marshal
+func (ng *CrossplaneOut) Marshal() ([]byte, error) {
 	var json = jsoniter.ConfigCompatibleWithStandardLibrary
 	data, err := json.Marshal(ng)
 	return data, err
 }
 
-func (ng *NginxConfig) Unmarshal(data []byte) error {
+// Unmarshal json unmarshal
+func (ng *CrossplaneOut) Unmarshal(data []byte) error {
 	return jsoniter.Unmarshal(data, ng)
 }
 
-func (ng *NginxConfig) UnmarshalFromFile(path string) error {
+// UnmarshalFromFile json unmarshal from file
+func (ng *CrossplaneOut) UnmarshalFromFile(path string) error {
 	data, err := ioutil.ReadFile(path)
 	if err != nil {
-		fmt.Printf("ioutil ReadFile error: err=%s", err)
 		return err
 	}
 

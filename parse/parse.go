@@ -15,7 +15,7 @@ func init() {
 	}
 }
 
-// NginxConf  parse nginxconf  by python crossplane library
+// NginxConf parse nginxconf  by python crossplane library
 func NginxConf(filePath string) (string, error) {
 	m := python.PyImport_ImportModule("sys")
 	if m == nil {

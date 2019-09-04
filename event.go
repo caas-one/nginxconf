@@ -2,7 +2,7 @@ package nginx
 
 import "errors"
 
-// 判断是否是event指令
+// determine whether it is a event directive
 func isEventDirective(directive string) bool {
 	if isEqualString(directive, EventDirective) {
 		return true
@@ -10,7 +10,7 @@ func isEventDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是accept_mutex指令
+// determine whether it is a accept_mutex directive
 func isEventAcceptMutexDirective(directive string) bool {
 	if isEqualString(directive, EventAcceptMutexDirective) {
 		return true
@@ -18,7 +18,7 @@ func isEventAcceptMutexDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是accept_mutex_delay指令
+// determine whether it is a accept_mutex_delay directive
 func isEventAcceptMutexDelayDirective(directive string) bool {
 	if isEqualString(directive, EventAcceptMutexDelayDirective) {
 		return true
@@ -26,7 +26,7 @@ func isEventAcceptMutexDelayDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是debug_connection指令
+// determine whether it is a debug_connection directive
 func isEventDebugConnectionDirective(directive string) bool {
 	if isEqualString(directive, EventDebugConnectionDirective) {
 		return true
@@ -34,7 +34,7 @@ func isEventDebugConnectionDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是use指令
+// determine whether it is a use directive
 func isEventUseDirective(directive string) bool {
 	if isEqualString(directive, EventUseDirective) {
 		return true
@@ -42,7 +42,7 @@ func isEventUseDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是worker_aio_requests指令
+// determine whether it is a worker_aio_requests directive
 func isEventWorkerAioRequestsDirective(directive string) bool {
 	if isEqualString(directive, EventWorkerAioRequestsDirective) {
 		return true
@@ -50,7 +50,7 @@ func isEventWorkerAioRequestsDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是worker_connections指令
+// determine whether it is a worker_connections directive
 func isEventWorkerConnectionsDirective(directive string) bool {
 	if isEqualString(directive, EventWorkerConnectionsDirective) {
 		return true
@@ -65,37 +65,37 @@ func ProcessEvent(parsed *Parsed) (*Event, error) {
 	}
 	event := NewEvent()
 	for _, block := range parsed.Blocks {
-		// 处理accept_mutex指令
+		// process accept_mutex directive
 		if isEventAcceptMutexDirective(block.Directive) {
 			event.AcceptMutex = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理accept_mutex_delay指令
+		// process accept_mutex_delay directive
 		if isEventAcceptMutexDelayDirective(block.Directive) {
 			event.AcceptMutexDelay = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理use指令
+		// process use directive
 		if isEventUseDirective(block.Directive) {
 			event.Use = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理worker_aio_requests指令
+		// process worker_aio_requests directive
 		if isEventWorkerAioRequestsDirective(block.Directive) {
 			event.WorkerAioRequests = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理worker_connections指令
+		// process worker_connections directive
 		if isEventWorkerConnectionsDirective(block.Directive) {
 			event.WorkerConnections = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理debug_connection指令
+		// process debug_connection directive
 		if isEventDebugConnectionDirective(block.Directive) {
 			event.DebugConnection = append(event.DebugConnection, processArgsArray(block.Args))
 		}

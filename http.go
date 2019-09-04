@@ -4,7 +4,7 @@ import (
 	"errors"
 )
 
-// 判断是否是gzip_buffers指令
+// determine whether it is a gzip_buffers directive
 func isHTTPGzipBuffersDirective(directive string) bool {
 	if isEqualString(directive, HTTPGzipBuffersDirective) {
 		return true
@@ -12,7 +12,7 @@ func isHTTPGzipBuffersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是output_buffers指令
+// determine whether it is a output_buffers directive
 func isHTTPOutputBuffersDirective(directive string) bool {
 	if isEqualString(directive, HTTPOutputBuffersDirective) {
 		return true
@@ -20,7 +20,7 @@ func isHTTPOutputBuffersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是request_pool_size指令
+// determine whether it is a request_pool_size directive
 func isHTTPRequestPoolSizeDirective(directive string) bool {
 	if isEqualString(directive, HTTPRequestPoolSizeDirective) {
 		return true
@@ -28,7 +28,7 @@ func isHTTPRequestPoolSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_send_lowat指令
+// determine whether it is a proxy_send_lowat directive
 func isHTTPProxySendLowatDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxySendLowatDirective) {
 		return true
@@ -36,7 +36,7 @@ func isHTTPProxySendLowatDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是absolute_redirect指令
+// determine whether it is a absolute_redirect directive
 func isHTTPAbsoluteRedirectDirective(directive string) bool {
 	if isEqualString(directive, HTTPAbsoluteRedirectDirective) {
 		return true
@@ -44,7 +44,7 @@ func isHTTPAbsoluteRedirectDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是directio_alignment指令
+// determine whether it is a directio_alignment directive
 func isHTTPDirectioAlignmentDirective(directive string) bool {
 	if isEqualString(directive, HTTPDirectioAlignmentDirective) {
 		return true
@@ -52,7 +52,7 @@ func isHTTPDirectioAlignmentDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_request_buffering指令
+// determine whether it is a proxy_request_buffering directive
 func isHTTPProxyRequestBufferingDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyRequestBufferingDirective) {
 		return true
@@ -60,7 +60,7 @@ func isHTTPProxyRequestBufferingDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是log_subrequest指令
+// determine whether it is a log_subrequest directive
 func isHTTPLogSubrequestDirective(directive string) bool {
 	if isEqualString(directive, HTTPLogSubrequestDirective) {
 		return true
@@ -68,7 +68,7 @@ func isHTTPLogSubrequestDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是postpone_output指令
+// determine whether it is a postpone_output directive
 func isHTTPPostponeOutputDirective(directive string) bool {
 	if isEqualString(directive, HTTPPostponeOutputDirective) {
 		return true
@@ -76,7 +76,7 @@ func isHTTPPostponeOutputDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是client_body_timeout指令
+// determine whether it is a client_body_timeout directive
 func isHTTPClientBodyTimeoutDirective(directive string) bool {
 	if isEqualString(directive, HTTPClientBodyTimeoutDirective) {
 		return true
@@ -84,7 +84,7 @@ func isHTTPClientBodyTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是server指令
+// determine whether it is a server directive
 func isHTTPServersDirective(directive string) bool {
 	if isEqualString(directive, HTTPServersDirective) {
 		return true
@@ -92,7 +92,7 @@ func isHTTPServersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_force_ranges指令
+// determine whether it is a proxy_force_ranges directive
 func isHTTPProxyForceRangesDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyForceRangesDirective) {
 		return true
@@ -100,7 +100,7 @@ func isHTTPProxyForceRangesDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是gzip指令
+// determine whether it is a gzip directive
 func isHTTPGzipDirective(directive string) bool {
 	if isEqualString(directive, HTTPGzipDirective) {
 		return true
@@ -108,7 +108,7 @@ func isHTTPGzipDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是limit_conn_zone指令
+// determine whether it is a limit_conn_zone directive
 func isHTTPLimitConnZoneDirective(directive string) bool {
 	if isEqualString(directive, HTTPLimitConnZoneDirective) {
 		return true
@@ -116,7 +116,7 @@ func isHTTPLimitConnZoneDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是limit_req_zone指令
+// determine whether it is a limit_req_zone directive
 func isHTTPLimitReqZoneDirective(directive string) bool {
 	if isEqualString(directive, HTTPLimitReqZoneDirective) {
 		return true
@@ -124,7 +124,7 @@ func isHTTPLimitReqZoneDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是types_hash_max_size指令
+// determine whether it is a types_hash_max_size directive
 func isHTTPTypesHashMaxSizeDirective(directive string) bool {
 	if isEqualString(directive, HTTPTypesHashMaxSizeDirective) {
 		return true
@@ -132,7 +132,7 @@ func isHTTPTypesHashMaxSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_buffering指令
+// determine whether it is a proxy_buffering directive
 func isHTTPProxyBufferingDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyBufferingDirective) {
 		return true
@@ -140,7 +140,7 @@ func isHTTPProxyBufferingDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_crl指令
+// determine whether it is a proxy_ssl_crl directive
 func isHTTPProxySslCrlDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxySslCrlDirective) {
 		return true
@@ -148,7 +148,7 @@ func isHTTPProxySslCrlDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是keepalive_timeout指令
+// determine whether it is a keepalive_timeout directive
 func isHTTPKeepaliveTimeoutDirective(directive string) bool {
 	if isEqualString(directive, HTTPKeepaliveTimeoutDirective) {
 		return true
@@ -156,7 +156,7 @@ func isHTTPKeepaliveTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是limit_rate指令
+// determine whether it is a limit_rate directive
 func isHTTPLimitRateDirective(directive string) bool {
 	if isEqualString(directive, HTTPLimitRateDirective) {
 		return true
@@ -164,7 +164,7 @@ func isHTTPLimitRateDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是lingering_close指令
+// determine whether it is a lingering_close directive
 func isHTTPLingeringCloseDirective(directive string) bool {
 	if isEqualString(directive, HTTPLingeringCloseDirective) {
 		return true
@@ -172,7 +172,7 @@ func isHTTPLingeringCloseDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是variables_hash_max_size指令
+// determine whether it is a variables_hash_max_size directive
 func isHTTPVariablesHashMaxSizeDirective(directive string) bool {
 	if isEqualString(directive, HTTPVariablesHashMaxSizeDirective) {
 		return true
@@ -180,7 +180,7 @@ func isHTTPVariablesHashMaxSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是client_body_in_file_only指令
+// determine whether it is a client_body_in_file_only directive
 func isHTTPClientBodyInFileOnlyDirective(directive string) bool {
 	if isEqualString(directive, HTTPClientBodyInFileOnlyDirective) {
 		return true
@@ -188,7 +188,7 @@ func isHTTPClientBodyInFileOnlyDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_next_upstream指令
+// determine whether it is a proxy_next_upstream directive
 func isHTTPProxyNextUpstreamDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyNextUpstreamDirective) {
 		return true
@@ -196,7 +196,7 @@ func isHTTPProxyNextUpstreamDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_trusted_certificate指令
+// determine whether it is a proxy_ssl_trusted_certificate directive
 func isHTTPProxySslTrustedCertificateDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxySslTrustedCertificateDirective) {
 		return true
@@ -204,7 +204,7 @@ func isHTTPProxySslTrustedCertificateDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_temp_file_write_size指令
+// determine whether it is a proxy_temp_file_write_size directive
 func isHTTPProxyTempFileWriteSizeDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyTempFileWriteSizeDirective) {
 		return true
@@ -212,7 +212,7 @@ func isHTTPProxyTempFileWriteSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是max_ranges指令
+// determine whether it is a max_ranges directive
 func isHTTPMaxRangesDirective(directive string) bool {
 	if isEqualString(directive, HTTPMaxRangesDirective) {
 		return true
@@ -220,7 +220,7 @@ func isHTTPMaxRangesDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是variables_hash_bucket_size指令
+// determine whether it is a variables_hash_bucket_size directive
 func isHTTPVariablesHashBucketSizeDirective(directive string) bool {
 	if isEqualString(directive, HTTPVariablesHashBucketSizeDirective) {
 		return true
@@ -228,7 +228,7 @@ func isHTTPVariablesHashBucketSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是client_body_in_single_buffer指令
+// determine whether it is a client_body_in_single_buffer directive
 func isHTTPClientBodyInSingleBufferDirective(directive string) bool {
 	if isEqualString(directive, HTTPClientBodyInSingleBufferDirective) {
 		return true
@@ -236,7 +236,7 @@ func isHTTPClientBodyInSingleBufferDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_use_stale指令
+// determine whether it is a proxy_cache_use_stale directive
 func isHTTPProxyCacheUseStaleDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyCacheUseStaleDirective) {
 		return true
@@ -244,7 +244,7 @@ func isHTTPProxyCacheUseStaleDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_pass_header指令
+// determine whether it is a proxy_pass_header directive
 func isHTTPProxyPassHeaderDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyPassHeaderDirective) {
 		return true
@@ -252,7 +252,7 @@ func isHTTPProxyPassHeaderDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_pass_request_body指令
+// determine whether it is a proxy_pass_request_body directive
 func isHTTPProxyPassRequestBodyDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyPassRequestBodyDirective) {
 		return true
@@ -260,7 +260,7 @@ func isHTTPProxyPassRequestBodyDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是sendfile_max_chunk指令
+// determine whether it is a sendfile_max_chunk directive
 func isHTTPSendFileMaxChunkDirective(directive string) bool {
 	if isEqualString(directive, HTTPSendFileMaxChunkDirective) {
 		return true
@@ -268,7 +268,7 @@ func isHTTPSendFileMaxChunkDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是aio指令
+// determine whether it is a aio directive
 func isHTTPAioDirective(directive string) bool {
 	if isEqualString(directive, HTTPAioDirective) {
 		return true
@@ -276,7 +276,7 @@ func isHTTPAioDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_min_uses指令
+// determine whether it is a proxy_cache_min_uses directive
 func isHTTPProxyCacheMinUsesDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyCacheMinUsesDirective) {
 		return true
@@ -284,7 +284,7 @@ func isHTTPProxyCacheMinUsesDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是keepalive_disable指令
+// determine whether it is a keepalive_disable directive
 func isHTTPKeepaliveDisableDirective(directive string) bool {
 	if isEqualString(directive, HTTPKeepaliveDisableDirective) {
 		return true
@@ -292,7 +292,7 @@ func isHTTPKeepaliveDisableDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是error_page指令
+// determine whether it is a error_page directive
 func isHTTPErrorPageDirective(directive string) bool {
 	if isEqualString(directive, HTTPErrorPageDirective) {
 		return true
@@ -300,7 +300,7 @@ func isHTTPErrorPageDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_http_version指令
+// determine whether it is a proxy_http_version directive
 func isHTTPProxyHTTPVersionDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyHTTPVersionDirective) {
 		return true
@@ -308,7 +308,7 @@ func isHTTPProxyHTTPVersionDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_verify_depth指令
+// determine whether it is a proxy_ssl_verify_depth directive
 func isHTTPProxySslVerifyDepthDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxySslVerifyDepthDirective) {
 		return true
@@ -316,7 +316,7 @@ func isHTTPProxySslVerifyDepthDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是server_name_in_redirect指令
+// determine whether it is a server_name_in_redirect directive
 func isHTTPServerNameInRedirectDirective(directive string) bool {
 	if isEqualString(directive, HTTPServerNameInRedirectDirective) {
 		return true
@@ -324,7 +324,7 @@ func isHTTPServerNameInRedirectDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是server_names_hash_bucket_size指令
+// determine whether it is a server_names_hash_bucket_size directive
 func isHTTPServerNamesHashBucketSizeDirective(directive string) bool {
 	if isEqualString(directive, HTTPServerNamesHashBucketSizeDirective) {
 		return true
@@ -332,7 +332,7 @@ func isHTTPServerNamesHashBucketSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是client_body_buffer_size指令
+// determine whether it is a client_body_buffer_size directive
 func isHTTPClientBodyBufferSizeDirective(directive string) bool {
 	if isEqualString(directive, HTTPClientBodyBufferSizeDirective) {
 		return true
@@ -340,7 +340,7 @@ func isHTTPClientBodyBufferSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_valid指令
+// determine whether it is a proxy_cache_valid directive
 func isHTTPProxyCacheValidDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyCacheValidDirective) {
 		return true
@@ -348,7 +348,7 @@ func isHTTPProxyCacheValidDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_headers_hash_bucket_size指令
+// determine whether it is a proxy_headers_hash_bucket_size directive
 func isHTTPProxyHeadersHashBucketSizeDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyHeadersHashBucketSizeDirective) {
 		return true
@@ -356,7 +356,7 @@ func isHTTPProxyHeadersHashBucketSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_temp_path指令
+// determine whether it is a proxy_temp_path directive
 func isHTTPProxyTempPathDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyTempPathDirective) {
 		return true
@@ -364,7 +364,7 @@ func isHTTPProxyTempPathDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是deny指令
+// determine whether it is a deny directive
 func isHTTPDenyDirective(directive string) bool {
 	if isEqualString(directive, HTTPDenyDirective) {
 		return true
@@ -372,7 +372,7 @@ func isHTTPDenyDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是send_timeout指令
+// determine whether it is a send_timeout directive
 func isHTTPSendTimeoutDirective(directive string) bool {
 	if isEqualString(directive, HTTPSendTimeoutDirective) {
 		return true
@@ -380,7 +380,7 @@ func isHTTPSendTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_max_range_offset指令
+// determine whether it is a proxy_cache_max_range_offset directive
 func isHTTPProxyCacheMaxRangeOffsetDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyCacheMaxRangeOffsetDirective) {
 		return true
@@ -388,7 +388,7 @@ func isHTTPProxyCacheMaxRangeOffsetDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_busy_buffers_size指令
+// determine whether it is a proxy_busy_buffers_size directive
 func isHTTPProxyBusyBuffersSizeDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyBusyBuffersSizeDirective) {
 		return true
@@ -396,7 +396,7 @@ func isHTTPProxyBusyBuffersSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_lock指令
+// determine whether it is a proxy_cache_lock directive
 func isHTTPProxyCacheLockDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyCacheLockDirective) {
 		return true
@@ -404,7 +404,7 @@ func isHTTPProxyCacheLockDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cookie_domain指令
+// determine whether it is a proxy_cookie_domain directive
 func isHTTPProxyCookieDomainDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyCookieDomainDirective) {
 		return true
@@ -412,7 +412,7 @@ func isHTTPProxyCookieDomainDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是open_file_cache_errors指令
+// determine whether it is a open_file_cache_errors directive
 func isHTTPOpenFileCacheErrorsDirective(directive string) bool {
 	if isEqualString(directive, HTTPOpenFileCacheErrorsDirective) {
 		return true
@@ -420,7 +420,7 @@ func isHTTPOpenFileCacheErrorsDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是open_file_cache_valid指令
+// determine whether it is a open_file_cache_valid directive
 func isHTTPOpenFileCacheValidDirective(directive string) bool {
 	if isEqualString(directive, HTTPOpenFileCacheValidDirective) {
 		return true
@@ -428,7 +428,7 @@ func isHTTPOpenFileCacheValidDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_background_update指令
+// determine whether it is a proxy_cache_background_update directive
 func isHTTPProxyCacheBackgroundUpdateDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyCacheBackgroundUpdateDirective) {
 		return true
@@ -436,7 +436,7 @@ func isHTTPProxyCacheBackgroundUpdateDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_intercept_errors指令
+// determine whether it is a proxy_intercept_errors directive
 func isHTTPProxyInterceptErrorsDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyInterceptErrorsDirective) {
 		return true
@@ -444,7 +444,7 @@ func isHTTPProxyInterceptErrorsDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_store_access指令
+// determine whether it is a proxy_store_access directive
 func isHTTPProxyStoreAccessDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyStoreAccessDirective) {
 		return true
@@ -452,7 +452,7 @@ func isHTTPProxyStoreAccessDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是http指令
+// determine whether it is a http directive
 func isHTTPDirective(directive string) bool {
 	if isEqualString(directive, HTTPDirective) {
 		return true
@@ -460,7 +460,7 @@ func isHTTPDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_lock_timeout指令
+// determine whether it is a proxy_cache_lock_timeout directive
 func isHTTPProxyCacheLockTimeoutDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyCacheLockTimeoutDirective) {
 		return true
@@ -468,7 +468,7 @@ func isHTTPProxyCacheLockTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_send_timeout指令
+// determine whether it is a proxy_send_timeout directive
 func isHTTPProxySendTimeoutDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxySendTimeoutDirective) {
 		return true
@@ -476,7 +476,7 @@ func isHTTPProxySendTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是underscores_in_headers指令
+// determine whether it is a underscores_in_headers directive
 func isHTTPUnderscoresInHeadersDirective(directive string) bool {
 	if isEqualString(directive, HTTPUnderscoresInHeadersDirective) {
 		return true
@@ -484,7 +484,7 @@ func isHTTPUnderscoresInHeadersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是connection_pool_size指令
+// determine whether it is a connection_pool_size directive
 func isHTTPConnectionPoolSizeDirective(directive string) bool {
 	if isEqualString(directive, HTTPConnectionPoolSizeDirective) {
 		return true
@@ -492,7 +492,7 @@ func isHTTPConnectionPoolSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cookie_path指令
+// determine whether it is a proxy_cookie_path directive
 func isHTTPProxyCookiePathDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyCookiePathDirective) {
 		return true
@@ -500,7 +500,7 @@ func isHTTPProxyCookiePathDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_method指令
+// determine whether it is a proxy_method directive
 func isHTTPProxyMethodDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyMethodDirective) {
 		return true
@@ -508,7 +508,7 @@ func isHTTPProxyMethodDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_read_timeout指令
+// determine whether it is a proxy_read_timeout directive
 func isHTTPProxyReadTimeoutDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyReadTimeoutDirective) {
 		return true
@@ -516,7 +516,7 @@ func isHTTPProxyReadTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_server_name指令
+// determine whether it is a proxy_ssl_server_name directive
 func isHTTPProxySslServerNameDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxySslServerNameDirective) {
 		return true
@@ -524,7 +524,7 @@ func isHTTPProxySslServerNameDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是large_client_header_buffers指令
+// determine whether it is a large_client_header_buffers directive
 func isHTTPLargeClientHeaderBuffersDirective(directive string) bool {
 	if isEqualString(directive, HTTPLargeClientHeaderBuffersDirective) {
 		return true
@@ -532,7 +532,7 @@ func isHTTPLargeClientHeaderBuffersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是log_not_found指令
+// determine whether it is a log_not_found directive
 func isHTTPLogNotFoundDirective(directive string) bool {
 	if isEqualString(directive, HTTPLogNotFoundDirective) {
 		return true
@@ -540,7 +540,7 @@ func isHTTPLogNotFoundDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是open_file_cache指令
+// determine whether it is a open_file_cache directive
 func isHTTPOpenFileCacheDirective(directive string) bool {
 	if isEqualString(directive, HTTPOpenFileCacheDirective) {
 		return true
@@ -548,7 +548,7 @@ func isHTTPOpenFileCacheDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是recursive_error_pages指令
+// determine whether it is a recursive_error_pages directive
 func isHTTPRecursiveErrorPagesDirective(directive string) bool {
 	if isEqualString(directive, HTTPRecursiveErrorPagesDirective) {
 		return true
@@ -556,7 +556,7 @@ func isHTTPRecursiveErrorPagesDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是gzip_min_length指令
+// determine whether it is a gzip_min_length directive
 func isHTTPGzipMinLengthDirective(directive string) bool {
 	if isEqualString(directive, HTTPGzipMinLengthDirective) {
 		return true
@@ -564,7 +564,7 @@ func isHTTPGzipMinLengthDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是msie_padding指令
+// determine whether it is a msie_padding directive
 func isHTTPMsiePaddingDirective(directive string) bool {
 	if isEqualString(directive, HTTPMsiePaddingDirective) {
 		return true
@@ -572,7 +572,7 @@ func isHTTPMsiePaddingDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是msie_refresh指令
+// determine whether it is a msie_refresh directive
 func isHTTPMsieRefreshDirective(directive string) bool {
 	if isEqualString(directive, HTTPMsieRefreshDirective) {
 		return true
@@ -580,7 +580,7 @@ func isHTTPMsieRefreshDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_no_cache指令
+// determine whether it is a proxy_no_cache directive
 func isHTTPProxyNoCacheDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyNoCacheDirective) {
 		return true
@@ -588,7 +588,7 @@ func isHTTPProxyNoCacheDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是access_log指令
+// determine whether it is a access_log directive
 func isHTTPAccessLogDirective(directive string) bool {
 	if isEqualString(directive, HTTPAccessLogDirective) {
 		return true
@@ -596,7 +596,7 @@ func isHTTPAccessLogDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_redirect指令
+// determine whether it is a proxy_redirect directive
 func isHTTPProxyRedirectDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyRedirectDirective) {
 		return true
@@ -604,7 +604,7 @@ func isHTTPProxyRedirectDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_set_header指令
+// determine whether it is a proxy_set_header directive
 func isHTTPProxySetHeaderDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxySetHeaderDirective) {
 		return true
@@ -612,7 +612,7 @@ func isHTTPProxySetHeaderDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是client_header_timeout指令
+// determine whether it is a client_header_timeout directive
 func isHTTPClientHeaderTimeoutDirective(directive string) bool {
 	if isEqualString(directive, HTTPClientHeaderTimeoutDirective) {
 		return true
@@ -620,7 +620,7 @@ func isHTTPClientHeaderTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是ignore_invalid_headers指令
+// determine whether it is a ignore_invalid_headers directive
 func isHTTPIgnoreInvalidHeadersDirective(directive string) bool {
 	if isEqualString(directive, HTTPIgnoreInvalidHeadersDirective) {
 		return true
@@ -628,7 +628,7 @@ func isHTTPIgnoreInvalidHeadersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_purge指令
+// determine whether it is a proxy_cache_purge directive
 func isHTTPProxyCachePurgeDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyCachePurgeDirective) {
 		return true
@@ -636,7 +636,7 @@ func isHTTPProxyCachePurgeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_max_temp_file_size指令
+// determine whether it is a proxy_max_temp_file_size directive
 func isHTTPProxyMaxTempFileSizeDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyMaxTempFileSizeDirective) {
 		return true
@@ -644,7 +644,7 @@ func isHTTPProxyMaxTempFileSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_store指令
+// determine whether it is a proxy_store directive
 func isHTTPProxyStoreDirectiveDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyStoreDirectiveDirective) {
 		return true
@@ -652,7 +652,7 @@ func isHTTPProxyStoreDirectiveDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是gzip_types指令
+// determine whether it is a gzip_types directive
 func isHTTPGzipTypesDirective(directive string) bool {
 	if isEqualString(directive, HTTPGzipTypesDirective) {
 		return true
@@ -660,7 +660,7 @@ func isHTTPGzipTypesDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_buffer_size指令
+// determine whether it is a proxy_buffer_size directive
 func isHTTPProxyBufferSizeDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyBufferSizeDirective) {
 		return true
@@ -668,7 +668,7 @@ func isHTTPProxyBufferSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是send_lowat指令
+// determine whether it is a send_lowat directive
 func isHTTPSendLowatDirective(directive string) bool {
 	if isEqualString(directive, HTTPSendLowatDirective) {
 		return true
@@ -676,7 +676,7 @@ func isHTTPSendLowatDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_connect_timeout指令
+// determine whether it is a proxy_connect_timeout directive
 func isHTTPProxyConnectTimeoutDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyConnectTimeoutDirective) {
 		return true
@@ -684,7 +684,7 @@ func isHTTPProxyConnectTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_next_upstream_tries指令
+// determine whether it is a proxy_next_upstream_tries directive
 func isHTTPProxyNextUpstreamTriesDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyNextUpstreamTriesDirective) {
 		return true
@@ -692,7 +692,7 @@ func isHTTPProxyNextUpstreamTriesDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是open_file_cache_min_uses指令
+// determine whether it is a open_file_cache_min_uses directive
 func isHTTPOpenFileCacheMinUsesDirective(directive string) bool {
 	if isEqualString(directive, HTTPOpenFileCacheMinUsesDirective) {
 		return true
@@ -700,7 +700,7 @@ func isHTTPOpenFileCacheMinUsesDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是read_ahead指令
+// determine whether it is a read_ahead directive
 func isHTTPReadAheadDirective(directive string) bool {
 	if isEqualString(directive, HTTPReadAheadDirective) {
 		return true
@@ -708,7 +708,7 @@ func isHTTPReadAheadDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是directio指令
+// determine whether it is a directio directive
 func isHTTPDirectIODirective(directive string) bool {
 	if isEqualString(directive, HTTPDirectIODirective) {
 		return true
@@ -716,7 +716,7 @@ func isHTTPDirectIODirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ignore_headers指令
+// determine whether it is a proxy_ignore_headers directive
 func isHTTPProxyIgnoreHeadersDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyIgnoreHeadersDirective) {
 		return true
@@ -724,7 +724,7 @@ func isHTTPProxyIgnoreHeadersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_limit_rate指令
+// determine whether it is a proxy_limit_rate directive
 func isHTTPProxyLimitRateDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyLimitRateDirective) {
 		return true
@@ -732,7 +732,7 @@ func isHTTPProxyLimitRateDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_socket_keepalive指令
+// determine whether it is a proxy_socket_keepalive directive
 func isHTTPProxySocketKeepaliveDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxySocketKeepaliveDirective) {
 		return true
@@ -740,7 +740,7 @@ func isHTTPProxySocketKeepaliveDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是root指令
+// determine whether it is a root directive
 func isHTTPRootDirective(directive string) bool {
 	if isEqualString(directive, HTTPRootDirective) {
 		return true
@@ -748,7 +748,7 @@ func isHTTPRootDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是subrequest_output_buffer_size指令
+// determine whether it is a subrequest_output_buffer_size directive
 func isHTTPSubrequestOutputBufferSizeDirective(directive string) bool {
 	if isEqualString(directive, HTTPSubrequestOutputBufferSizeDirective) {
 		return true
@@ -756,7 +756,7 @@ func isHTTPSubrequestOutputBufferSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是types_hash_bucket_size指令
+// determine whether it is a types_hash_bucket_size directive
 func isHTTPTypesHashBucketSizeDirective(directive string) bool {
 	if isEqualString(directive, HTTPTypesHashBucketSizeDirective) {
 		return true
@@ -764,7 +764,7 @@ func isHTTPTypesHashBucketSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是disable_symlinks指令
+// determine whether it is a disable_symlinks directive
 func isHTTPDisableSymlinksDirective(directive string) bool {
 	if isEqualString(directive, HTTPDisableSymlinksDirective) {
 		return true
@@ -772,7 +772,7 @@ func isHTTPDisableSymlinksDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_convert_head指令
+// determine whether it is a proxy_cache_convert_head directive
 func isHTTPProxyCacheConvertHeadDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyCacheConvertHeadDirective) {
 		return true
@@ -780,7 +780,7 @@ func isHTTPProxyCacheConvertHeadDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_certificate指令
+// determine whether it is a proxy_ssl_certificate directive
 func isHTTPProxySslCertificateDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxySslCertificateDirective) {
 		return true
@@ -788,7 +788,7 @@ func isHTTPProxySslCertificateDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_password_file指令
+// determine whether it is a proxy_ssl_password_file directive
 func isHTTPProxySslPasswordFile(directive string) bool {
 	if isEqualString(directive, HTTPProxySslPasswordFile) {
 		return true
@@ -796,7 +796,7 @@ func isHTTPProxySslPasswordFile(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_buffers指令
+// determine whether it is a proxy_buffers directive
 func isHTTPProxyBuffersDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyBuffersDirective) {
 		return true
@@ -804,7 +804,7 @@ func isHTTPProxyBuffersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_key指令
+// determine whether it is a proxy_cache_key directive
 func isHTTPProxyCacheKeyDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyCacheKeyDirective) {
 		return true
@@ -812,7 +812,7 @@ func isHTTPProxyCacheKeyDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_certificate_key指令
+// determine whether it is a proxy_ssl_certificate_key directive
 func isHTTPProxySslCertificateKeyDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxySslCertificateKeyDirective) {
 		return true
@@ -820,7 +820,7 @@ func isHTTPProxySslCertificateKeyDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_verify指令
+// determine whether it is a proxy_ssl_verify directive
 func isHTTPProxySslVerifyDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxySslVerifyDirective) {
 		return true
@@ -828,7 +828,7 @@ func isHTTPProxySslVerifyDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是cp_nodelay指令
+// determine whether it is a cp_nodelay directive
 func isHTTPTcpNodelayDirective(directive string) bool {
 	if isEqualString(directive, HTTPTcpNodelayDirective) {
 		return true
@@ -836,7 +836,7 @@ func isHTTPTcpNodelayDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ignore_client_abort指令
+// determine whether it is a proxy_ignore_client_abort directive
 func isHTTPProxyIgnoreClientAbortDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyIgnoreClientAbortDirective) {
 		return true
@@ -844,7 +844,7 @@ func isHTTPProxyIgnoreClientAbortDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_pass指令
+// determine whether it is a proxy_pass directive
 func isHTTPProxyPassDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyPassDirective) {
 		return true
@@ -852,7 +852,7 @@ func isHTTPProxyPassDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是allow指令
+// determine whether it is a allow directive
 func isHTTPAllowDirective(directive string) bool {
 	if isEqualString(directive, HTTPAllowDirective) {
 		return true
@@ -860,7 +860,7 @@ func isHTTPAllowDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是lingering_time指令
+// determine whether it is a lingering_time directive
 func isHTTPLingeringTimeDirective(directive string) bool {
 	if isEqualString(directive, HTTPLingeringTimeDirective) {
 		return true
@@ -868,7 +868,7 @@ func isHTTPLingeringTimeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是tcp_nopush指令
+// determine whether it is a tcp_nopush directive
 func isHTTPTcpNopushDirective(directive string) bool {
 	if isEqualString(directive, HTTPTcpNopushDirective) {
 		return true
@@ -876,7 +876,7 @@ func isHTTPTcpNopushDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_pass_request_headers指令
+// determine whether it is a proxy_pass_request_headers directive
 func isHTTPProxyPassRequestHeadersDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyPassRequestHeadersDirective) {
 		return true
@@ -884,7 +884,7 @@ func isHTTPProxyPassRequestHeadersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_name指令
+// determine whether it is a proxy_ssl_name directive
 func isHTTPProxySslNameDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxySslNameDirective) {
 		return true
@@ -892,7 +892,7 @@ func isHTTPProxySslNameDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_next_upstream_timeout指令
+// determine whether it is a proxy_next_upstream_timeout directive
 func isHTTPProxyNextUpstreamTimeoutDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyNextUpstreamTimeoutDirective) {
 		return true
@@ -900,7 +900,7 @@ func isHTTPProxyNextUpstreamTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是reset_timedout_connection指令
+// determine whether it is a reset_timedout_connection directive
 func isHTTPResetTimedoutConnectionDirective(directive string) bool {
 	if isEqualString(directive, HTTPResetTimedoutConnectionDirective) {
 		return true
@@ -908,7 +908,7 @@ func isHTTPResetTimedoutConnectionDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是resolver指令
+// determine whether it is a resolver directive
 func isHTTPResolverDirective(directive string) bool {
 	if isEqualString(directive, HTTPResolverDirective) {
 		return true
@@ -916,7 +916,7 @@ func isHTTPResolverDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是server_names_hash_max_size指令
+// determine whether it is a server_names_hash_max_size directive
 func isHTTPServerNamesHashMaxSizeDirective(directive string) bool {
 	if isEqualString(directive, HTTPServerNamesHashMaxSizeDirective) {
 		return true
@@ -924,7 +924,7 @@ func isHTTPServerNamesHashMaxSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是client_max_body_size指令
+// determine whether it is a client_max_body_size directive
 func isHTTPClientMaxBodySizeDirective(directive string) bool {
 	if isEqualString(directive, HTTPClientMaxBodySizeDirective) {
 		return true
@@ -932,7 +932,7 @@ func isHTTPClientMaxBodySizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是aio_write指令
+// determine whether it is a aio_write directive
 func isHTTPAioWriteDirective(directive string) bool {
 	if isEqualString(directive, HTTPAioWriteDirective) {
 		return true
@@ -940,7 +940,7 @@ func isHTTPAioWriteDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是client_header_buffer_size指令
+// determine whether it is a client_header_buffer_size directive
 func isHTTPClientHeaderBufferSizeDirective(directive string) bool {
 	if isEqualString(directive, HTTPClientHeaderBufferSizeDirective) {
 		return true
@@ -948,7 +948,7 @@ func isHTTPClientHeaderBufferSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache指令
+// determine whether it is a proxy_cache directive
 func isHTTPProxyCacheDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyCacheDirective) {
 		return true
@@ -956,7 +956,7 @@ func isHTTPProxyCacheDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是chunked_transfer_encoding指令
+// determine whether it is a chunked_transfer_encoding directive
 func isHTTPChunkedTransferEncodingDirective(directive string) bool {
 	if isEqualString(directive, HTTPChunkedTransferEncodingDirective) {
 		return true
@@ -964,7 +964,7 @@ func isHTTPChunkedTransferEncodingDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是client_body_temp_path指令
+// determine whether it is a client_body_temp_path directive
 func isHTTPClientBodyTempPathDirective(directive string) bool {
 	if isEqualString(directive, HTTPClientBodyTempPathDirective) {
 		return true
@@ -972,7 +972,7 @@ func isHTTPClientBodyTempPathDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_bind指令
+// determine whether it is a proxy_bind directive
 func isHTTPProxyBindDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyBindDirective) {
 		return true
@@ -980,7 +980,7 @@ func isHTTPProxyBindDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_lock_age指令
+// determine whether it is a proxy_cache_lock_age directive
 func isHTTPProxyCacheLockAgeDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyCacheLockAgeDirective) {
 		return true
@@ -988,7 +988,7 @@ func isHTTPProxyCacheLockAgeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是lingering_timeout指令
+// determine whether it is a lingering_timeout directive
 func isHTTPLingeringTimeoutDirective(directive string) bool {
 	if isEqualString(directive, HTTPLingeringTimeoutDirective) {
 		return true
@@ -996,7 +996,7 @@ func isHTTPLingeringTimeoutDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是satisfy指令
+// determine whether it is a satisfy directive
 func isHTTPSatisfyDirective(directive string) bool {
 	if isEqualString(directive, HTTPSatisfyDirective) {
 		return true
@@ -1004,7 +1004,7 @@ func isHTTPSatisfyDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是sendfile指令
+// determine whether it is a sendfile directive
 func isHTTPSendFileDirective(directive string) bool {
 	if isEqualString(directive, HTTPSendFileDirective) {
 		return true
@@ -1012,7 +1012,7 @@ func isHTTPSendFileDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_methods指令
+// determine whether it is a proxy_cache_methods directive
 func isHTTPProxyCacheMethodsDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyCacheMethodsDirective) {
 		return true
@@ -1020,7 +1020,7 @@ func isHTTPProxyCacheMethodsDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_headers_hash_max_size指令
+// determine whether it is a proxy_headers_hash_max_size directive
 func isHTTPProxyHeadersHashMaxSizeDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyHeadersHashMaxSizeDirective) {
 		return true
@@ -1028,7 +1028,7 @@ func isHTTPProxyHeadersHashMaxSizeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_set_body指令
+// determine whether it is a proxy_set_body directive
 func isHTTPProxySetBodyDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxySetBodyDirective) {
 		return true
@@ -1036,7 +1036,7 @@ func isHTTPProxySetBodyDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_ciphers指令
+// determine whether it is a proxy_ssl_ciphers directive
 func isHTTPProxySslCiphersDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxySslCiphersDirective) {
 		return true
@@ -1044,7 +1044,7 @@ func isHTTPProxySslCiphersDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_protocols指令
+// determine whether it is a proxy_ssl_protocols directive
 func isHTTPProxySslProtocolsDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxySslProtocolsDirective) {
 		return true
@@ -1052,7 +1052,7 @@ func isHTTPProxySslProtocolsDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_session_reuse指令
+// determine whether it is a proxy_ssl_session_reuse directive
 func isHTTPProxySslSessionReuseDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxySslSessionReuseDirective) {
 		return true
@@ -1060,7 +1060,7 @@ func isHTTPProxySslSessionReuseDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是keepalive_requests指令
+// determine whether it is a keepalive_requests directive
 func isHTTPKeepaliveRequestsDirective(directive string) bool {
 	if isEqualString(directive, HTTPKeepaliveRequestsDirective) {
 		return true
@@ -1068,7 +1068,7 @@ func isHTTPKeepaliveRequestsDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是limit_rate_after指令
+// determine whether it is a limit_rate_after directive
 func isHTTPLimitRateAfterDirective(directive string) bool {
 	if isEqualString(directive, HTTPLimitRateAfterDirective) {
 		return true
@@ -1076,7 +1076,7 @@ func isHTTPLimitRateAfterDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_bypass指令
+// determine whether it is a proxy_cache_bypass directive
 func isHTTPProxyCacheBypassDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyCacheBypassDirective) {
 		return true
@@ -1084,7 +1084,7 @@ func isHTTPProxyCacheBypassDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_cache_path指令
+// determine whether it is a proxy_cache_path directive
 func isHTTPProxyCachePathDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyCachePathDirective) {
 		return true
@@ -1092,7 +1092,7 @@ func isHTTPProxyCachePathDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是geo指令
+// determine whether it is a geo directive
 func isHTTPGeoDirective(directive string) bool {
 	if isEqualString(directive, HTTPGeoDirective) {
 		return true
@@ -1100,7 +1100,7 @@ func isHTTPGeoDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是log_format指令
+// determine whether it is a log_format directive
 func isHTTPLogFormatDirective(directive string) bool {
 	if isEqualString(directive, HTTPLogFormatDirective) {
 		return true
@@ -1108,7 +1108,7 @@ func isHTTPLogFormatDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是server指令
+// determine whether it is a server directive
 func isHTTPServerDirective(directive string) bool {
 	if isEqualString(directive, HTTPServerDirective) {
 		return true
@@ -1116,7 +1116,7 @@ func isHTTPServerDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是upsteam指令
+// determine whether it is a upsteam directive
 func isHTTPUpstreamDirective(directive string) bool {
 	if isEqualString(directive, HTTPUpstreamDirective) {
 		return true
@@ -1124,7 +1124,7 @@ func isHTTPUpstreamDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是default_type指令
+// determine whether it is a default_type directive
 func isHTTPDefaultTypeDirective(directive string) bool {
 	if isEqualString(directive, HTTPDefaultTypeDirective) {
 		return true
@@ -1132,7 +1132,7 @@ func isHTTPDefaultTypeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_ssl_password_file指令
+// determine whether it is a proxy_ssl_password_file directive
 func isHTTPProxySslPasswordFileDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxySslPasswordFile) {
 		return true
@@ -1140,7 +1140,7 @@ func isHTTPProxySslPasswordFileDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是proxy_store_access指令
+// determine whether it is a proxy_store_access directive
 func isHTTPProxyStoreDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyStoreAccessDirective) {
 		return true
@@ -1148,7 +1148,7 @@ func isHTTPProxyStoreDirective(directive string) bool {
 	return false
 }
 
-// 判断是否是include指令
+// determine whether it is a include directive
 func isHTTPIncludeDirective(directive string) bool {
 	if isEqualString(directive, HTTPIncludeDirective) {
 		return true
@@ -1156,7 +1156,7 @@ func isHTTPIncludeDirective(directive string) bool {
 	return false
 }
 
-// 判断是否为add_header指令
+// determine whether it is a add_header directive
 func isHTTPAddHeaderDirective(directive string) bool {
 	if isEqualString(directive, AddHeaderDirective) {
 		return true
@@ -1164,7 +1164,7 @@ func isHTTPAddHeaderDirective(directive string) bool {
 	return false
 }
 
-// 判断是否为gzip_comp_level指令
+// determine whether it is a gzip_comp_level directive
 func isHTTPGzipCompLevelDirective(directive string) bool {
 	if isEqualString(directive, HTTPGzipCompLevelDirective) {
 		return true
@@ -1172,7 +1172,7 @@ func isHTTPGzipCompLevelDirective(directive string) bool {
 	return false
 }
 
-// 判断是否为gzip_vary指令
+// determine whether it is a gzip_vary directive
 func isHTTPGzipVaryDirective(directive string) bool {
 	if isEqualString(directive, HTTPGzipVaryDirective) {
 		return true
@@ -1180,7 +1180,7 @@ func isHTTPGzipVaryDirective(directive string) bool {
 	return false
 }
 
-// 判断是否为gzip_disable指令
+// determine whether it is a gzip_disable directive
 func isHTTPGzipDisableDirective(directive string) bool {
 	if isEqualString(directive, HTTPGzipDisableDirective) {
 		return true
@@ -1188,15 +1188,15 @@ func isHTTPGzipDisableDirective(directive string) bool {
 	return false
 }
 
-// 判断是否为gzip_http_version指令
-func isHTTPGzipHttpVersionDirective(directive string) bool {
+// determine whether it is a gzip_http_version directive
+func isHTTPGzipHTTPVersionDirective(directive string) bool {
 	if isEqualString(directive, HTTPGzipHTTPVersionDirective) {
 		return true
 	}
 	return false
 }
 
-// 判断是否为gzip_proxied指令
+// determine whether it is a gzip_proxied directive
 func isHTTPGzipProxiedDirective(directive string) bool {
 	if isEqualString(directive, HTTPGzipProxiedDirective) {
 		return true
@@ -1204,7 +1204,7 @@ func isHTTPGzipProxiedDirective(directive string) bool {
 	return false
 }
 
-// 判断是否为proxy_hide_header指令
+// determine whether it is a proxy_hide_header directive
 func isHTTPProxyHideHeaderDirective(directive string) bool {
 	if isEqualString(directive, HTTPProxyHideHeaderDirective) {
 		return true
@@ -1212,866 +1212,866 @@ func isHTTPProxyHideHeaderDirective(directive string) bool {
 	return false
 }
 
-// 处理Http部分指令
-func ProcessHttp(parsed *Parsed) (*Http, error) {
+// ProcessHTTP process Http module
+func ProcessHTTP(parsed *Parsed) (*Http, error) {
 	if !isHTTPDirective(parsed.Directive) {
 		return nil, errors.New("Not http directive")
 	}
 	http := NewHttp()
 	for _, block := range parsed.Blocks {
 
-		// 处理gzip_types指令
+		// process gzip_types directive
 		if isHTTPGzipTypesDirective(block.Directive) {
 			http.GzipTypes = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理log_not_found指令
+		// process log_not_found directive
 		if isHTTPLogNotFoundDirective(block.Directive) {
 			http.LogNotFound = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理types_hash_max_size指令
+		// process types_hash_max_size directive
 		if isHTTPTypesHashMaxSizeDirective(block.Directive) {
 			http.TypesHashMaxSize = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理client_header_buffer_size指令
+		// process client_header_buffer_size directive
 		if isHTTPClientHeaderBufferSizeDirective(block.Directive) {
 			http.ClientHeaderBufferSize = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_headers_hash_max_size指令
+		// process proxy_headers_hash_max_size directive
 		if isHTTPProxyHeadersHashMaxSizeDirective(block.Directive) {
 			http.ProxyHeadersHashMaxSize = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_send_timeout指令
+		// process proxy_send_timeout directive
 		if isHTTPProxySendTimeoutDirective(block.Directive) {
 			http.ProxySendTimeout = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理root指令
+		// process root directive
 		if isHTTPRootDirective(block.Directive) {
 			http.Root = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_cookie_domain指令
+		// process proxy_cookie_domain directive
 		if isHTTPProxyCookieDomainDirective(block.Directive) {
 			http.ProxyCookieDomain = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_pass_request_headers指令
+		// process proxy_pass_request_headers directive
 		if isHTTPProxyPassRequestHeadersDirective(block.Directive) {
 			http.ProxyPassRequestHeaders = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_send_lowat指令
+		// process proxy_send_lowat directive
 		if isHTTPProxySendLowatDirective(block.Directive) {
 			http.ProxySendLowat = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理server_name_in_redirect指令
+		// process server_name_in_redirect directive
 		if isHTTPServerNameInRedirectDirective(block.Directive) {
 			http.ServerNameInRedirect = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理types_hash_bucket_size指令
+		// process types_hash_bucket_size directive
 		if isHTTPTypesHashBucketSizeDirective(block.Directive) {
 			http.TypesHashBucketSize = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理client_body_temp_path指令
+		// process client_body_temp_path directive
 		if isHTTPClientBodyTempPathDirective(block.Directive) {
 			http.ClientBodyTempPath = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_buffers指令
+		// process proxy_buffers directive
 		if isHTTPProxyBuffersDirective(block.Directive) {
 			http.ProxyBuffers = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_cache_convert_head on指令
+		// process proxy_cache_convert_head on directive
 		if isHTTPProxyCacheConvertHeadDirective(block.Directive) {
 			http.ProxyCacheConvertHead = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_socket_keepalive指令
+		// process proxy_socket_keepalive directive
 		if isHTTPProxySocketKeepaliveDirective(block.Directive) {
 			http.ProxySocketKeepalive = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_hide_header指令
+		// process proxy_hide_header directive
 		if isHTTPProxyHideHeaderDirective(block.Directive) {
 			http.ProxyHideHeader = processArgsArray(block.Args)
 		}
 
-		// 处理tcp_nopush指令
+		// process tcp_nopush directive
 		if isHTTPTcpNopushDirective(block.Directive) {
 			http.TcpNopush = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理variables_hash_max_size指令
+		// process variables_hash_max_size directive
 		if isHTTPVariablesHashMaxSizeDirective(block.Directive) {
 			http.VariablesHashMaxSize = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理client_body_timeout指令
+		// process client_body_timeout directive
 		if isHTTPClientBodyTimeoutDirective(block.Directive) {
 			http.ClientBodyTimeout = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理directio_alignment指令
+		// process directio_alignment directive
 		if isHTTPDirectioAlignmentDirective(block.Directive) {
 			http.DirectioAlignment = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_busy_buffers_size指令
+		// process proxy_busy_buffers_size directive
 		if isHTTPProxyBusyBuffersSizeDirective(block.Directive) {
 			http.ProxyBusyBuffersSize = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_ssl_password_file指令
+		// process proxy_ssl_password_file directive
 		if isHTTPProxySslPasswordFileDirective(block.Directive) {
 			http.ProxySslPasswordFile = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理aio_write指令
+		// process aio_write directive
 		if isHTTPAioWriteDirective(block.Directive) {
 			http.AioWrite = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理chunked_transfer_encoding指令
+		// process chunked_transfer_encoding directive
 		if isHTTPChunkedTransferEncodingDirective(block.Directive) {
 			http.ChunkedTransferEncoding = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理open_file_cache指令
+		// process open_file_cache directive
 		if isHTTPOpenFileCacheDirective(block.Directive) {
 			http.OpenFileCache = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理send_timeout指令
+		// process send_timeout directive
 		if isHTTPSendTimeoutDirective(block.Directive) {
 			http.SendTimeout = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理client_body_buffer_size指令
+		// process client_body_buffer_size directive
 		if isHTTPClientBodyBufferSizeDirective(block.Directive) {
 			http.ClientBodyBufferSize = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_cache指令
+		// process proxy_cache directive
 		if isHTTPProxyCacheDirective(block.Directive) {
 			http.ProxyCache = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_ssl_ciphers指令
+		// process proxy_ssl_ciphers directive
 		if isHTTPProxySslCiphersDirective(block.Directive) {
 			http.ProxySslCiphers = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理lingering_close指令
+		// process lingering_close directive
 		if isHTTPLingeringCloseDirective(block.Directive) {
 			http.LingeringClose = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_ssl_name指令
+		// process proxy_ssl_name directive
 		if isHTTPProxySslNameDirective(block.Directive) {
 			http.ProxySslName = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_ssl_protocols指令
+		// process proxy_ssl_protocols directive
 		if isHTTPProxySslProtocolsDirective(block.Directive) {
 			http.ProxySslProtocols = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理max_ranges指令
+		// process max_ranges directive
 		if isHTTPMaxRangesDirective(block.Directive) {
 			http.MaxRanges = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理request_pool_size指令
+		// process request_pool_size directive
 		if isHTTPRequestPoolSizeDirective(block.Directive) {
 			http.RequestPoolSize = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_force_ranges指令
+		// process proxy_force_ranges directive
 		if isHTTPProxyForceRangesDirective(block.Directive) {
 			http.ProxyForceRanges = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_max_temp_file_size指令
+		// process proxy_max_temp_file_size directive
 		if isHTTPProxyMaxTempFileSizeDirective(block.Directive) {
 			http.ProxyMaxTempFileSize = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_pass指令
+		// process proxy_pass directive
 		if isHTTPProxyPassDirective(block.Directive) {
 			http.ProxyPass = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_store_access指令
+		// process proxy_store_access directive
 		if isHTTPProxyStoreAccessDirective(block.Directive) {
 			http.ProxyStoreAccess = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理limit_rate指令
+		// process limit_rate directive
 		if isHTTPLimitRateDirective(block.Directive) {
 			http.LimitRate = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理satisfy指令
+		// process satisfy directive
 		if isHTTPSatisfyDirective(block.Directive) {
 			http.Satisfy = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理sendfile指令
+		// process sendfile directive
 		if isHTTPSendFileDirective(block.Directive) {
 			http.SendFile = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_bind指令
+		// process proxy_bind directive
 		if isHTTPProxyBindDirective(block.Directive) {
 			http.ProxyBind = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_cache_lock指令
+		// process proxy_cache_lock directive
 		if isHTTPProxyCacheLockDirective(block.Directive) {
 			http.ProxyCacheLock = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理disable_symlinks指令
+		// process disable_symlinks directive
 		if isHTTPDisableSymlinksDirective(block.Directive) {
 			http.DisableSymlinks = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_temp_path指令
+		// process proxy_temp_path directive
 		if isHTTPProxyTempPathDirective(block.Directive) {
 			http.ProxyTempPath = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理gzip指令
+		// process gzip directive
 		if isHTTPGzipDirective(block.Directive) {
 			http.Gzip = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理limit_conn_zone指令
+		// process limit_conn_zone directive
 		if isHTTPLimitConnZoneDirective(block.Directive) {
 			http.LimitConnZone = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理 limit_req_zone 指令
+		// process  limit_req_zone  directive
 		if isHTTPLimitReqZoneDirective(block.Directive) {
 			http.LimitReqZone = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理open_file_cache_errors指令
+		// process open_file_cache_errors directive
 		if isHTTPOpenFileCacheErrorsDirective(block.Directive) {
 			http.OpenFileCacheErrors = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理open_file_cache_min_uses指令
+		// process open_file_cache_min_uses directive
 		if isHTTPOpenFileCacheMinUsesDirective(block.Directive) {
 			http.OpenFileCacheMinUses = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理read_ahead指令
+		// process read_ahead directive
 		if isHTTPReadAheadDirective(block.Directive) {
 			http.ReadAhead = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_ssl_verify_depth指令
+		// process proxy_ssl_verify_depth directive
 		if isHTTPProxySslVerifyDepthDirective(block.Directive) {
 			http.ProxySslVerifyDepth = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理subrequest_output_buffer_size指令
+		// process subrequest_output_buffer_size directive
 		if isHTTPSubrequestOutputBufferSizeDirective(block.Directive) {
 			http.SubrequestOutputBufferSize = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理variables_hash_bucket_size指令
+		// process variables_hash_bucket_size directive
 		if isHTTPVariablesHashBucketSizeDirective(block.Directive) {
 			http.VariablesHashBucketSize = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_cache_key指令
+		// process proxy_cache_key directive
 		if isHTTPProxyCacheKeyDirective(block.Directive) {
 			http.ProxyCacheKey = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_cache_purge指令
+		// process proxy_cache_purge directive
 		if isHTTPProxyCachePurgeDirective(block.Directive) {
 			http.ProxyCachePurge = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_http_version指令
+		// process proxy_http_version directive
 		if isHTTPProxyHTTPVersionDirective(block.Directive) {
 			http.ProxyHttpVersion = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_pass_request_body指令
+		// process proxy_pass_request_body directive
 		if isHTTPProxyPassRequestBodyDirective(block.Directive) {
 			http.ProxyPassRequestBody = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理gzip_buffers指令
+		// process gzip_buffers directive
 		if isHTTPGzipBuffersDirective(block.Directive) {
 			http.GzipBuffers = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理client_body_in_file_only指令
+		// process client_body_in_file_only directive
 		if isHTTPClientBodyInFileOnlyDirective(block.Directive) {
 			http.ClientBodyInFileOnly = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理keepalive_requests指令
+		// process keepalive_requests directive
 		if isHTTPKeepaliveRequestsDirective(block.Directive) {
 			http.KeepaliveRequests = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理msie_refresh指令
+		// process msie_refresh directive
 		if isHTTPMsieRefreshDirective(block.Directive) {
 			http.MsieRefresh = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理client_max_body_size指令
+		// process client_max_body_size directive
 		if isHTTPClientMaxBodySizeDirective(block.Directive) {
 			http.ClientMaxBodySize = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_method指令
+		// process proxy_method directive
 		if isHTTPProxyMethodDirective(block.Directive) {
 			http.ProxyMethod = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理sendfile_max_chunk指令
+		// process sendfile_max_chunk directive
 		if isHTTPSendFileMaxChunkDirective(block.Directive) {
 			http.SendFileMaxChunk = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理client_body_in_single_buffer指令
+		// process client_body_in_single_buffer directive
 		if isHTTPClientBodyInSingleBufferDirective(block.Directive) {
 			http.ClientBodyInSingleBuffer = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_cache_use_stale指令
+		// process proxy_cache_use_stale directive
 		if isHTTPProxyCacheUseStaleDirective(block.Directive) {
 			http.ProxyCacheUseStale = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_read_timeout指令
+		// process proxy_read_timeout directive
 		if isHTTPProxyReadTimeoutDirective(block.Directive) {
 			http.ProxyReadTimeout = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_ssl_server_name指令
+		// process proxy_ssl_server_name directive
 		if isHTTPProxySslServerNameDirective(block.Directive) {
 			http.ProxySslServerName = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_temp_file_write_size指令
+		// process proxy_temp_file_write_size directive
 		if isHTTPProxyTempFileWriteSizeDirective(block.Directive) {
 			http.ProxyTempFileWriteSize = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理aio指令
+		// process aio directive
 		if isHTTPAioDirective(block.Directive) {
 			http.Aio = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_cookie_path指令
+		// process proxy_cookie_path directive
 		if isHTTPProxyCookiePathDirective(block.Directive) {
 			http.ProxyCookiePath = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理output_buffers指令
+		// process output_buffers directive
 		if isHTTPOutputBuffersDirective(block.Directive) {
 			http.OutputBuffers = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理reset_timedout_connection指令
+		// process reset_timedout_connection directive
 		if isHTTPResetTimedoutConnectionDirective(block.Directive) {
 			http.ResetTimedoutConnection = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理access_log指令
+		// process access_log directive
 		if isHTTPAccessLogDirective(block.Directive) {
 			http.AccessLog = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_cache_path指令
+		// process proxy_cache_path directive
 		if isHTTPProxyCachePathDirective(block.Directive) {
 			http.ProxyCachePath = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理connection_pool_size指令
+		// process connection_pool_size directive
 		if isHTTPConnectionPoolSizeDirective(block.Directive) {
 			http.ConnectionPoolSize = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_next_upstream_tries指令
+		// process proxy_next_upstream_tries directive
 		if isHTTPProxyNextUpstreamTriesDirective(block.Directive) {
 			http.ProxyNextUpstreamTries = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_ssl_verify指令
+		// process proxy_ssl_verify directive
 		if isHTTPProxySslVerifyDirective(block.Directive) {
 			http.ProxySslVerify = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理resolver指令
+		// process resolver directive
 		if isHTTPResolverDirective(block.Directive) {
 			http.Resolver = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理absolute_redirect指令
+		// process absolute_redirect directive
 		if isHTTPAbsoluteRedirectDirective(block.Directive) {
 			http.AbsoluteRedirect = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_buffer_size指令
+		// process proxy_buffer_size directive
 		if isHTTPProxyBufferSizeDirective(block.Directive) {
 			http.ProxyBufferSize = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_buffering指令
+		// process proxy_buffering directive
 		if isHTTPProxyBufferingDirective(block.Directive) {
 			http.ProxyBuffering = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理lingering_time指令
+		// process lingering_time directive
 		if isHTTPLingeringTimeDirective(block.Directive) {
 			http.LingeringTime = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理server_names_hash_max_size指令
+		// process server_names_hash_max_size directive
 		if isHTTPServerNamesHashMaxSizeDirective(block.Directive) {
 			http.ServerNamesHashMaxSize = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_cache_max_range_offset指令
+		// process proxy_cache_max_range_offset directive
 		if isHTTPProxyCacheMaxRangeOffsetDirective(block.Directive) {
 			http.ProxyCacheMaxRangeOffset = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理keepalive_timeout指令
+		// process keepalive_timeout directive
 		if isHTTPKeepaliveTimeoutDirective(block.Directive) {
 			http.KeepaliveTimeout = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理msie_padding指令
+		// process msie_padding directive
 		if isHTTPMsiePaddingDirective(block.Directive) {
 			http.MsiePadding = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理postpone_output指令
+		// process postpone_output directive
 		if isHTTPPostponeOutputDirective(block.Directive) {
 			http.PostponeOutput = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理send_lowat指令
+		// process send_lowat directive
 		if isHTTPSendLowatDirective(block.Directive) {
 			http.SendLowat = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理ignore_invalid_headers指令
+		// process ignore_invalid_headers directive
 		if isHTTPIgnoreInvalidHeadersDirective(block.Directive) {
 			http.IgnoreInvalidHeaders = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_cache_background_update指令
+		// process proxy_cache_background_update directive
 		if isHTTPProxyCacheBackgroundUpdateDirective(block.Directive) {
 			http.ProxyCacheBackgroundUpdate = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_ignore_headers指令
+		// process proxy_ignore_headers directive
 		if isHTTPProxyIgnoreHeadersDirective(block.Directive) {
 			http.ProxyIgnoreHeaders = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_ssl_certificate指令
+		// process proxy_ssl_certificate directive
 		if isHTTPProxySslCertificateDirective(block.Directive) {
 			http.ProxySslCertificate = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理underscores_in_headers指令
+		// process underscores_in_headers directive
 		if isHTTPUnderscoresInHeadersDirective(block.Directive) {
 			http.UnderscoresInHeaders = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_connect_timeout指令
+		// process proxy_connect_timeout directive
 		if isHTTPProxyConnectTimeoutDirective(block.Directive) {
 			http.ProxyConnectTimeout = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_intercept_errors指令
+		// process proxy_intercept_errors directive
 		if isHTTPProxyInterceptErrorsDirective(block.Directive) {
 			http.ProxyInterceptErrors = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_request_buffering指令
+		// process proxy_request_buffering directive
 		if isHTTPProxyRequestBufferingDirective(block.Directive) {
 			http.ProxyRequestBuffering = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_ssl_crl指令
+		// process proxy_ssl_crl directive
 		if isHTTPProxySslCrlDirective(block.Directive) {
 			http.ProxySslCrl = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理default_type指令
+		// process default_type directive
 		if isHTTPDefaultTypeDirective(block.Directive) {
 			http.DefaultType = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理large_client_header_buffers指令
+		// process large_client_header_buffers directive
 		if isHTTPLargeClientHeaderBuffersDirective(block.Directive) {
 			http.LargeClientHeaderBuffers = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理log_subrequest指令
+		// process log_subrequest directive
 		if isHTTPLogSubrequestDirective(block.Directive) {
 			http.LogSubrequest = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理client_header_timeout指令
+		// process client_header_timeout directive
 		if isHTTPClientHeaderTimeoutDirective(block.Directive) {
 			http.ClientHeaderTimeout = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_cache_lock_timeout指令
+		// process proxy_cache_lock_timeout directive
 		if isHTTPProxyCacheLockTimeoutDirective(block.Directive) {
 			http.ProxyCacheLockTimeout = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_ignore_client_abort指令
+		// process proxy_ignore_client_abort directive
 		if isHTTPProxyIgnoreClientAbortDirective(block.Directive) {
 			http.ProxyIgnoreClientAbort = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_set_body指令
+		// process proxy_set_body directive
 		if isHTTPProxySetBodyDirective(block.Directive) {
 			http.ProxySetBody = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理cp_nodelay指令
+		// process cp_nodelay directive
 		if isHTTPTcpNodelayDirective(block.Directive) {
 			http.TcpNodelay = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_cache_min_uses指令
+		// process proxy_cache_min_uses directive
 		if isHTTPProxyCacheMinUsesDirective(block.Directive) {
 			http.ProxyCacheMinUses = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理keepalive_disable指令
+		// process keepalive_disable directive
 		if isHTTPKeepaliveDisableDirective(block.Directive) {
 			http.KeepaliveDisable = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理lingering_timeout指令
+		// process lingering_timeout directive
 		if isHTTPLingeringTimeoutDirective(block.Directive) {
 			http.LingeringTimeout = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_cache_methods指令
+		// process proxy_cache_methods directive
 		if isHTTPProxyCacheMethodsDirective(block.Directive) {
 			http.ProxyCacheMethods = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_limit_rate指令
+		// process proxy_limit_rate directive
 		if isHTTPProxyLimitRateDirective(block.Directive) {
 			http.ProxyLimitRate = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理directio指令
+		// process directio directive
 		if isHTTPDirectIODirective(block.Directive) {
 			http.DirectIO = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理error_page指令
+		// process error_page directive
 		if isHTTPErrorPageDirective(block.Directive) {
 			http.ErrorPage = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_next_upstream指令
+		// process proxy_next_upstream directive
 		if isHTTPProxyNextUpstreamDirective(block.Directive) {
 			http.ProxyNextUpstream = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_no_cache指令
+		// process proxy_no_cache directive
 		if isHTTPProxyNoCacheDirective(block.Directive) {
 			http.ProxyNoCache = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_redirect指令
+		// process proxy_redirect directive
 		if isHTTPProxyRedirectDirective(block.Directive) {
 			http.ProxyRedirect = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_ssl_certificate_key指令
+		// process proxy_ssl_certificate_key directive
 		if isHTTPProxySslCertificateKeyDirective(block.Directive) {
 			http.ProxySslCertificateKey = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_ssl_trusted_certificate指令
+		// process proxy_ssl_trusted_certificate directive
 		if isHTTPProxySslTrustedCertificateDirective(block.Directive) {
 			http.ProxySslTrustedCertificate = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理recursive_error_pages指令
+		// process recursive_error_pages directive
 		if isHTTPRecursiveErrorPagesDirective(block.Directive) {
 			http.RecursiveErrorPages = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理limit_rate_after指令
+		// process limit_rate_after directive
 		if isHTTPLimitRateAfterDirective(block.Directive) {
 			http.LimitRateAfter = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理server_names_hash_bucket_size指令
+		// process server_names_hash_bucket_size directive
 		if isHTTPServerNamesHashBucketSizeDirective(block.Directive) {
 			http.ServerNamesHashBucketSize = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_next_upstream_timeout指令
+		// process proxy_next_upstream_timeout directive
 		if isHTTPProxyNextUpstreamTimeoutDirective(block.Directive) {
 			http.ProxyNextUpstreamTimeout = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_pass_header指令
+		// process proxy_pass_header directive
 		if isHTTPProxyPassHeaderDirective(block.Directive) {
 			http.ProxyPassHeader = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_ssl_session_reuse指令
+		// process proxy_ssl_session_reuse directive
 		if isHTTPProxySslSessionReuseDirective(block.Directive) {
 			http.ProxySslSessionReuse = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理gzip_min_length指令
+		// process gzip_min_length directive
 		if isHTTPGzipMinLengthDirective(block.Directive) {
 			http.GzipMinLength = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理gzip_compl_level指令
+		// process gzip_compl_level directive
 		if isHTTPGzipCompLevelDirective(block.Directive) {
 			http.GzipCompLevel = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理gzip_types指令
+		// process gzip_types directive
 		if isHTTPGzipTypesDirective(block.Directive) {
 			http.GzipTypes = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理gzip_vary指令
+		// process gzip_vary directive
 		if isHTTPGzipVaryDirective(block.Directive) {
 			http.GzipVary = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理gzip_disable指令
+		// process gzip_disable directive
 		if isHTTPGzipDisableDirective(block.Directive) {
 			http.GzipDisable = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理gzip_http_version指令
-		if isHTTPGzipHttpVersionDirective(block.Directive) {
+		// process gzip_http_version directive
+		if isHTTPGzipHTTPVersionDirective(block.Directive) {
 			http.GzipHttpVersion = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理gzip_proxied指令
+		// process gzip_proxied directive
 		if isHTTPGzipProxiedDirective(block.Directive) {
 			http.GzipProxied = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理open_file_cache_valid指令
+		// process open_file_cache_valid directive
 		if isHTTPOpenFileCacheValidDirective(block.Directive) {
 			http.OpenFileCacheValid = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_cache_lock_age指令
+		// process proxy_cache_lock_age directive
 		if isHTTPProxyCacheLockAgeDirective(block.Directive) {
 			http.ProxyCacheLockAge = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_headers_hash_bucket_size指令
+		// process proxy_headers_hash_bucket_size directive
 		if isHTTPProxyHeadersHashBucketSizeDirective(block.Directive) {
 			http.ProxyHeadersHashBucketSize = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理proxy_store指令
+		// process proxy_store directive
 		if isHTTPProxyStoreDirective(block.Directive) {
 			http.ProxyStore = processArgsArray(block.Args)
 			continue
 		}
 
-		// 处理deny指令
+		// process deny directive
 		if isHTTPDenyDirective(block.Directive) {
 			http.Deny = append(http.Deny, processArgsArray(block.Args))
 		}
 
-		// 处理proxy_cache_bypass指令
+		// process proxy_cache_bypass directive
 		if isHTTPProxyCacheBypassDirective(block.Directive) {
 			http.ProxyCacheBypass = append(http.ProxyCacheBypass, processArgsArray(block.Args))
 		}
 
-		// 处理proxy_cache_valid指令
+		// process proxy_cache_valid directive
 		if isHTTPProxyCacheValidDirective(block.Directive) {
 			http.ProxyCacheValid = append(http.ProxyCacheValid, processArgsArray(block.Args))
 		}
 
-		// 处理proxy_set_header指令
+		// process proxy_set_header directive
 		if isHTTPProxySetHeaderDirective(block.Directive) {
 			http.ProxySetHeader = append(http.ProxySetHeader, processArgsArray(block.Args))
 		}
 
-		// 处理allow指令
+		// process allow directive
 		if isHTTPAllowDirective(block.Directive) {
 			http.Allow = append(http.Allow, processArgsArray(block.Args))
 		}
 
-		// 处理include指令
+		// process include directive
 		if isHTTPIncludeDirective(block.Directive) {
 			http.Includes = append(http.Includes, processArgsArray(block.Args))
 		}
 
-		// 处理upstream指令
+		// process upstream directive
 		if isHTTPUpstreamDirective(block.Directive) {
 			upstream, err := ProcessUpstream(&block)
 			if err != nil {
@@ -2080,12 +2080,12 @@ func ProcessHttp(parsed *Parsed) (*Http, error) {
 			http.Upstream = append(http.Upstream, *upstream)
 		}
 
-		// 处理log_format指令
+		// process log_format directive
 		if isHTTPLogFormatDirective(block.Directive) {
 			http.LogFormat = append(http.LogFormat, processArgsArray(block.Args))
 		}
 
-		// 处理server指令
+		// process server directive
 		if isHTTPServerDirective(block.Directive) {
 			server, err := ProcessServer(&block)
 			if err != nil {
@@ -2096,7 +2096,7 @@ func ProcessHttp(parsed *Parsed) (*Http, error) {
 
 		// add_header
 		if isHTTPAddHeaderDirective(block.Directive) {
-			// 判断add_header指令里是否需要加引号
+			// add_header directive need to add quotation marks
 			for i := range block.Args {
 				block.Args[i] = nonescapeQuotation(block.Args[i])
 			}
@@ -2104,7 +2104,7 @@ func ProcessHttp(parsed *Parsed) (*Http, error) {
 			http.AddHeader = append(http.AddHeader, processArgsArray(args))
 		}
 
-		// 处理geo指令
+		// process geo directive
 		if isHTTPGeoDirective(block.Directive) {
 			geo, err := ProcessGeo(&block)
 			if err != nil {
@@ -2114,6 +2114,5 @@ func ProcessHttp(parsed *Parsed) (*Http, error) {
 		}
 
 	}
-
 	return http, nil
 }

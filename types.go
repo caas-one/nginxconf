@@ -35,7 +35,7 @@ type Upstream struct {
 	NCAddress         []string          `json:"ncAddress"`
 	GMAddress         []string          `json:"gmAddress"`
 	SJHLAddress       []string          `json:"sjhlAddress"`
-	Name              string            `json:"name,omitempty" key:"upstream" eg:"upstream yeepay_app_airsupport_http"` // yeepay_app_airsupport_http
+	Name              string            `json:"name,omitempty" key:"upstream" eg:"upstream example_app_airsupport_http"` // example_app_airsupport_http
 	KeepaliveTimeout  string            `json:"keepaliveTimeout,omitempty" key:"keepalive_timeout" eg:"keepalive_timeout 20s"`
 	Method            string            `json:"method,omitempty" key:"ip_hash" eg:"ip_hash"`               // ip_hash
 	UpstreamKeepalive UpstreamKeepalive `json:"keepalive,omitempty" key:"keepalive" eg:"keepalive 16"`     // keepalive 16
@@ -58,7 +58,7 @@ func NewUpstream() *Upstream {
 // LocationIfBlock struct
 type LocationIfBlock struct {
 	Condition string   `json:"condition,omitempty" key:"if" eg:"( $request_uri ~* /app-merchant-proxy/ )"`                  // ( $request_uri ~* /app-merchant-proxy/ )
-	ProxyPass string   `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://yeepay_app_airsupport_http"`      // proxy_pass http://yeepay_app_airsupport_http;
+	ProxyPass string   `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://example_app_airsupport_http"`      // proxy_pass http://example_app_airsupport_http;
 	SendFile  string   `json:"sendFile,omitempty" key:"send_file" eg:"send_file on"`                                        // sendfile on;
 	Root      string   `json:"root,omitempty" key:"root" eg:"root /data/w3"`                                                // root /data/w3;
 	Rewrite   []string `json:"rewrite,omitempty key:"rewrite" eg:"rewrite ^/docs/(.*)$ /yop_doc/doc/$1/default.html break"` // rewrite ^/docs/(.*)$ /yop_doc/doc/$1/default.html break;
@@ -174,7 +174,7 @@ type Location struct {
 	ProxyNextUpstreamTimeout   string            `json:"proxyNextUpstreamTimeout,omitempty" key:"proxy_next_upstream_timeout" eg:"proxy_next_upstream_timeout 0"`               // proxy_next_upstream_timeout 0;
 	ProxyNextUpstreamTries     string            `json:"proxyNextUpstreamTries,omitempty" key:"proxy_next_upstream_tries" eg:"proxy_next_upstream_tries 0"`                     // proxy_next_upstream_tries 0;
 	ProxyNoCache               string            `json:"proxyNoCache,omitempty" key:"proxy_no_cache" eg:"proxy_no_cache string ..."`                                            // proxy_no_cache string ...;
-	ProxyPass                  string            `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://yeepay_app_airsupport_http"`                                // proxy_pass http://yeepay_app_airsupport_http;
+	ProxyPass                  string            `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://example_app_airsupport_http"`                                // proxy_pass http://example_app_airsupport_http;
 	ProxyPassHeader            string            `json:"proxyPassHeader,omitempty" key:"proxy_pass_header" eg:"proxy_pass_header field"`                                        // proxy_pass_header field
 	ProxyPassRequestBody       string            `json:"proxyPassRequestBody,omitempty" key:"proxy_pass_request_body" eg:"proxy_pass_request_body on"`                          // proxy_pass_request_body on;
 	ProxyPassRequestHeaders    string            `json:"proxyPassRequestHeaders,omitempty" key:"proxy_pass_request_headers" eg:"proxy_pass_request_headers on"`                 // proxy_pass_request_headers on;
@@ -204,7 +204,7 @@ type Location struct {
 	ProxyTempPath              string            `json:"proxyTempPath,omitempty" key:"proxy_temp_path" eg:"proxy_temp_path proxy_temp"`                                         // proxy_temp_path proxy_temp;
 	Allow                      []string          `json:"allow,omitempty" key:"allow" eg:"allow 119.161.147.101"`                                                                // allow 119.161.147.101;
 	Deny                       []string          `json:"deny,omitempty" key:"deny" eg:"deny all"`                                                                               // deny all;
-	IfBlocks                   []LocationIfBlock `json:"ifInLocation,omitempty" key:"ifInLocation" eg:"if ( $request_uri ~* /app-merchant-proxy/ )"`                            // if ( $request_uri ~* /app-merchant-proxy/ ){ proxy_pass http://yeepay_app_airsupport_http; }
+	IfBlocks                   []LocationIfBlock `json:"ifInLocation,omitempty" key:"ifInLocation" eg:"if ( $request_uri ~* /app-merchant-proxy/ )"`                            // if ( $request_uri ~* /app-merchant-proxy/ ){ proxy_pass http://example_app_airsupport_http; }
 	ClientMaxBodySize          string            `json:"clientMaxBodySize,omitempty" key:"client_max_body_size" eg:"client_max_body_size 1m"`                                   // client_max_body_size 1m;
 	Expires                    string            `json:"expires,omitempty" key:"expires" eg:"expires 30s"`                                                                      // expires 30s;
 	Rewrite                    []string          `json:"rewrite,omitempty" key:"rewrite" eg:"rewrite ^/docs/(.*)$ /yop_doc/doc/$1/default.html break"`                          // rewrite ^/docs/(.*)$ /yop_doc/doc/$1/default.html break;
@@ -240,7 +240,7 @@ func NewLocation() *Location {
 
 type ServerIfBlock struct {
 	Condition      string   `json:"condition,omitempty"  key:"condition" eg:"( $request_uri ~* /app-merchant-proxy/ )"`           // ( $request_uri ~* /app-merchant-proxy/ )
-	ProxyPass      string   `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://yeepay_app_airsupport_http"`       // proxy_pass http://yeepay_app_airsupport_http;
+	ProxyPass      string   `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://example_app_airsupport_http"`       // proxy_pass http://example_app_airsupport_http;
 	SendFile       string   `json:"sendFile,omitempty" key:"sendfile" eg:"sendfile on"`                                           // sendfile on;
 	Root           string   `json:"root,omitempty" key:"root" eg:"root /data/w3"`                                                 // root /data/w3;
 	Rewrite        []string `json:"rewrite,omitempty" key:"rewrite" eg:"rewrite ^/docs/(.*)$ /yop_doc/doc/$1/default.html break"` // rewrite ^/docs/(.*)$ /yop_doc/doc/$1/default.html break;
@@ -270,7 +270,7 @@ type Server struct {
 	SslCiphers                 string          `json:"sslCiphers,omitempty" key:"ssl_ciphers" eg:"ssl_ciphers         HIGH:!aNULL:!MD5"`                   // ssl_ciphers         HIGH:!aNULL:!MD5;
 	SslSessionTimeout          string          `json:"sslSessionTimeout,omitempty" key:"ssl_session_timeout" eg:"ssl_session_timeout 5m"`                  //  ssl_session_timeout 5m;
 	SslPreferServerCiphers     string          `json:"sslPreferServerCiphers,omitempty" key:"ssl_prefer_server_ciphers" eg:"ssl_prefer_server_ciphers on"` // ssl_prefer_server_ciphers on;
-	Rewrite                    []string        `json:"rewrite,omitempty" key:"rewrite" eg:"rewrite \"^/(.*)$\" https://jinrong.yeepay.com/$1 permanent"`   // rewrite "^/(.*)$" https://jinrong.yeepay.com/$1 permanent;
+	Rewrite                    []string        `json:"rewrite,omitempty" key:"rewrite" eg:"rewrite \"^/(.*)$\" https://app.example.com/$1 permanent"`   // rewrite "^/(.*)$" https://app.example.com/$1 permanent;
 	IfBlocks                   []ServerIfBlock `json:"ifInServer,omitempty" key:"ifInServer"`                                                              //
 	Locations                  []Location      `json:"locations,omitempty" key:"locations"`
 	LimitConn                  string          `json:"limitConn,omitempty" key:"limit_conn" eg:"limit_conn conn_zone 1"`
@@ -370,7 +370,7 @@ type Server struct {
 	ProxyNextUpstreamTimeout   string          `json:"proxyNextUpstreamTimeout,omitempty" key:"proxy_next_upstream_timeout" eg:"proxy_next_upstream_timeout 0"`                                    // proxy_next_upstream_timeout 0;
 	ProxyNextUpstreamTries     string          `json:"proxyNextUpstreamTries,omitempty" key:"proxy_next_upstream_tries" eg:"proxy_next_upstream_tries 0"`                                          // proxy_next_upstream_tries 0;
 	ProxyNoCache               string          `json:"proxyNoCache,omitempty" key:"proxy_no_cache" eg:"proxy_no_cache string ..."`                                                                 // proxy_no_cache string ...;
-	ProxyPass                  string          `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://yeepay_app_airsupport_http"`                                                     // proxy_pass http://yeepay_app_airsupport_http;
+	ProxyPass                  string          `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://example_app_airsupport_http"`                                                     // proxy_pass http://example_app_airsupport_http;
 	ProxyPassHeader            string          `json:"proxyPassHeader,omitempty" key:"proxy_pass_header" eg:"proxy_pass_header field"`                                                             // proxy_pass_header field
 	ProxyPassRequestBody       string          `json:"proxyPassRequestBody,omitempty" key:"proxy_pass_request_body" eg:"proxy_pass_request_body on"`                                               // proxy_pass_request_body on;
 	ProxyPassRequestHeaders    string          `json:"proxyPassRequestHeaders,omitempty" key:"proxy_pass_request_headers" eg:"proxy_pass_request_headers on"`                                      // proxy_pass_request_headers on;
@@ -550,7 +550,7 @@ type Http struct {
 	ProxyNextUpstreamTimeout   string     `json:"proxyNextUpstreamTimeout,omitempty" key:"proxy_next_upstream_timeout" eg:"proxy_next_upstream_timeout 0"`                   // proxy_next_upstream_timeout 0;
 	ProxyNextUpstreamTries     string     `json:"proxyNextUpstreamTries,omitempty" key:"proxy_next_upstream_tries" eg:"proxy_next_upstream_tries 0"`                         // proxy_next_upstream_tries 0;
 	ProxyNoCache               string     `json:"proxyNoCache,omitempty" key:"proxy_no_cache" eg:"proxy_no_cache string ..."`                                                // proxy_no_cache string ...;
-	ProxyPass                  string     `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://yeepay_app_airsupport_http"`                                    // proxy_pass http://yeepay_app_airsupport_http;
+	ProxyPass                  string     `json:"proxyPass,omitempty" key:"proxy_pass" eg:"proxy_pass http://example_app_airsupport_http"`                                    // proxy_pass http://example_app_airsupport_http;
 	ProxyPassHeader            string     `json:"proxyPassHeader,omitempty" key:"proxy_pass_header" eg:"proxy_pass_header field"`                                            // proxy_pass_header field
 	ProxyPassRequestBody       string     `json:"proxyPassRequestBody,omitempty" key:"proxy_pass_request_body" eg:"proxy_pass_request_body on"`                              // proxy_pass_request_body on;
 	ProxyPassRequestHeaders    string     `json:"proxyPassRequestHeaders,omitempty" key:"proxy_pass_request_headers" eg:"proxy_pass_request_headers on"`                     // proxy_pass_request_headers on;

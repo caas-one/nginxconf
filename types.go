@@ -248,8 +248,6 @@ func NewServerIfBlock() *ServerIfBlock {
 
 // Server server module
 type Server struct {
-	IndexNum                   int             `json:"indexNum"`                                                                                           // 前端排序的时候需要
-	Staging                    string          `json:"staging"`                                                                                            // 此节点是否内测有
 	Name                       string          `json:"name" key:"server_name" eg:"server_name www.example.com"`                                            // server_name www.example.com;
 	Listen                     string          `json:"listen" key:"listen" eg:"listen 443 ssl"`                                                            // listen 443 ssl;
 	Return                     string          `json:"return,omitempty" key:"return" eg:"return 404"`                                                      // return 404
@@ -418,15 +416,6 @@ func NewServer() *Server {
 		Set:              make([]string, 0),
 		AddHeader:        make([]string, 0),
 	}
-}
-
-type Group struct {
-	Domain        string     `json:"domain"`
-	IndexNum      int        `json:"indexNum"`      // 前端排序的时候需要
-	Staging       string     `json:"staging"`       // 此节点是否内测有效
-	CreateSatatus string     `json:"createSatatus"` // 前端需要添加状态 T,表示这个状态是新增加的
-	Servers       []Server   `json:"servers"`
-	Upstreams     []Upstream `json:"upstreams"`
 }
 
 // Http http module

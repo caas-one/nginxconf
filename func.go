@@ -13,7 +13,7 @@ import (
 func Parse(filePath string) (*core.Global, error) {
 	parseResult, err := python.NginxConf(filePath)
 	if err != nil {
-		fmt.Errorf("python.NginxConf failed. err:%v", err)
+		return nil, fmt.Errorf("python parse failed. err:%v", err)
 	}
 	ngconf := core.CrossplaneOut{}
 	if err := json.Unmarshal([]byte(parseResult), &ngconf); err != nil {

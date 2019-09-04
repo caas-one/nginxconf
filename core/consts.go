@@ -1,4 +1,4 @@
-package nginx
+package core
 
 // Regular expression for ip and domain name
 const (

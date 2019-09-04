@@ -1,4 +1,4 @@
-package nginx
+package core
 
 import (
 	"fmt"

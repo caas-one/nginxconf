@@ -1,4 +1,4 @@
-package nginx
+package core
 
 // determine whether it is a Location module If field proxy_pass directive
 func isLocationIfProxyPassDirective(directive string) bool {

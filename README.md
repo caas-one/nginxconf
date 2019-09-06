@@ -57,7 +57,7 @@ nginx 作为用户最多的软件之一, nginx配置的变更可追溯 面对巨
 
 #### nginxconf 解析和渲染方式
 
-- 第一步: nginxconf 通过 cscrossplane 把 **nginx-in.conf** 解析成一个中间态json
+- 第一步: nginxconf 通过 cscrossplane (这是一个python库,[如何安装Python?](https://www.python.org/getit/))把 **nginx-in.conf** 解析成一个中间态json
 - 第二步: 接着通过巧妙而又暴力的方式(指令判断的方式)把 **中间态json** 中的数据转换到结构化的 **Go struct** 中, 这样就避免了 nginx.conf 中 if 指令和 location 指令带来的麻烦 
 - 第三步:最后根据 **template** 把Go struct中的数据重新渲染成 **nginx-out.conf**
 

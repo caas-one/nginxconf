@@ -3,7 +3,7 @@ package core
 import (
 	"bytes"
 
-	"github.com/caas-one/nginx-go/temp"
+	"github.com/caas-one/nginxconf/temp"
 )
 
 // TemplateBlock template block

@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/caas-one/nginx-go/core"
+	"github.com/caas-one/nginxconf/core"
 )
 
 // Parse parse nginx conf form file path

@@ -1,7 +1,7 @@
 package nginx
 
 import (
-	"github.com/caas-one/nginx-go/core"
+	"github.com/caas-one/nginxconf/core"
 )
 
 // RenderToBytes render module to nginx conf

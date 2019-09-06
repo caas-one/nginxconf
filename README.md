@@ -9,7 +9,16 @@ nginxconf 是一个 灵活的, 快捷的 nginx conf文件解析器, 能够在文
 
 ### 依赖
 
-### 环境
+- 第一步: 安装 Python 环境, Python2, Python3 均可,自行安装
+- 第二步: 安装 Python 库: `pip install cscrossplane`
+
+### 安装
+
+```
+go get -u github.com/caas-one/nginxconf
+```
+
+
 
 ### ROADMAP
 
@@ -22,7 +31,7 @@ nginxconf 是一个 灵活的, 快捷的 nginx conf文件解析器, 能够在文
 
 #### nginxconf 的解析方式
 
-nginxconf 解析nginxconf的方式如下图所示:
+nginxconf 解析nginx.conf的方式如下图所示:
 
 <div align=center><img  src="https://github.com/caas-one/nginxconf/blob/master/images/nginx-parse-method.png"/></div>
 
@@ -71,3 +80,5 @@ nginxconf 解析nginxconf的方式如下图所示:
 
 <div align=center><img width="150" height="150" src="https://github.com/caas-one/nginxconf/blob/master/images/caas-one.jpeg"/></div>
 
+
+### 示例

@@ -3,6 +3,7 @@ package nginxconf
 import (
 	"errors"
 	"fmt"
+	"os/exec"
 
 	"github.com/sbinet/go-python"
 )
@@ -19,15 +20,7 @@ func importcurrentDir() (*python.PyObject, error) {
 	if m == nil {
 		return nil, errors.New("import sys error")
 	}
-	path := m.GetAttrString("path")
-	if path != nil {
-		currentDir := python.PyString_FromString("")
-		if err := python.PyList_Insert(path, 0, currentDir); err != nil {
-			return nil, err
-		}
-		return m, nil
-	}
-	return nil, errors.New("python get path error")
+	return m, nil
 }
 
 // pyParse parse nginxconf  by python crossplane library
@@ -36,9 +29,10 @@ func pyParse(filePath string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	m = python.PyImport_ImportModule("dict_to_json")
+	// import python  crossplane.parser
+	m = python.PyImport_ImportModule("crossplane.parser")
 	if m != nil {
-		callFunc := m.GetAttrString("dict_to_json")
+		callFunc := m.GetAttrString("parse_to_json")
 		out := callFunc.CallFunction(python.PyString_FromString(filePath))
 		outstr := fmt.Sprintf("%v", out)
 		if outstr != "" {
@@ -50,9 +44,10 @@ func pyParse(filePath string) (string, error) {
 }
 
 // CMDNginxConf parse nginx conf by crossplane parse directive
-// func CMDNginxConf(filePath string) (string, error) {
-// 	args := []string{"parse", filePath}
-// 	execCmd := exec.Command("crossplane", args...)
-// 	out, err := execCmd.CombinedOutput()
-// 	return string(out), err
-// }
+// crossplane cmd must in $PATH if use the function
+func cmdNginxConf(filePath string) (string, error) {
+	args := []string{"parse", filePath}
+	execCmd := exec.Command("crossplane", args...)
+	out, err := execCmd.CombinedOutput()
+	return string(out), err
+}

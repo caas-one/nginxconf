@@ -1,4 +1,4 @@
-package nginx
+package nginxconf
 
 import (
 	"github.com/caas-one/nginxconf/core"

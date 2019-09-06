@@ -18,6 +18,8 @@ nginxconf 是一个 灵活的, 快捷的 nginx conf文件解析器, 能够在文
 go get -u github.com/caas-one/nginxconf
 ```
 
+:blue_book: 安装时,可能会发生一些意外的问题, 我们把可能的问题已经整理到文档,并[提供了解决办法, 点击查看](https://github.com/caas-one/nginxconf/blob/master/doc/install_q.md) , 如果您在文档中未查找到相关问题,欢迎向我们反馈和提 issue.
+
 
 
 ### ROADMAP

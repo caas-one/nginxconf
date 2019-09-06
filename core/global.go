@@ -1,7 +1,5 @@
 package core
 
-import "fmt"
-
 // determine whether it is a env directive
 func isGlobalEnvDirective(directive string) bool {
 	if isEqualString(directive, GlobalEnvDirective) {
@@ -198,7 +196,6 @@ func isGlobalHTTPDirective(directive string) bool {
 func ProcessGlobal(config *Config) (*Global, error) {
 	global := NewGlobal()
 	for _, parsed := range config.Parsed {
-		fmt.Printf("Directive: %s\n", parsed.Directive)
 		// process worker_cpu_affinity directive
 		if isGlobalWorkerCPUAffinityDirective(parsed.Directive) {
 			global.WorkerCpuAffinity = processArgsArray(parsed.Args)
@@ -335,7 +332,6 @@ func ProcessGlobal(config *Config) (*Global, error) {
 
 		// process http directive
 		if isGlobalHTTPDirective(parsed.Directive) {
-			fmt.Println("===================In http==============")
 			http, err := ProcessHTTP(&parsed)
 			if err != nil {
 				return global, err

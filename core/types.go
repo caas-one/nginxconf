@@ -202,14 +202,14 @@ type Location struct {
 	Set                        []string          `json:"set,omitempty" key:"set" eg:"set $limit_rate 4k"`                                                                       // set $limit_rate 4k;
 	AddHeader                  []string          `json:"addHeader,omitempty" key:"add_header" eg:"add_header X-Frame-Options SAMEORIGIN"`
 	Gzip                       string            `json:"gzip,omitempty" key:"gzip" eg:"gzip on"`
-	GzipMinLength              string            `json:"gzipMinLength" key:"gzip_min_length" eg:"gzip_min_length 20"`
-	GzipBuffers                string            `json:"gzipBuffers" key:"gzip_buffers" eg:"gzip_buffers 32 4k|16 8k"`
-	GzipCompLevel              string            `json:"gzipCompLevel" key:"gzip_comp_level" eg:"gzip_comp_level 1"`
-	GzipTypes                  string            `json:"gzipTypes" key:"gzip_types" eg:"gzip_types text/html"`
-	GzipVary                   string            `json:"gzipVary" key:"gzip_vary" eg:"gzip_vary off"`
-	GzipDisable                string            `json:"gzipDisable" key:"gzip_disable" eg:"gzip_disable \"msie6\""`
-	GzipHttpVersion            string            `json:"gzipHttpVersion" key:"gzip_disable" eg:"gzip_http_version 1.1"`
-	GzipProxied                string            `json:"gzipProxied" key:"gzip_proxied" eg:"gzip_proxied off"`
+	GzipMinLength              string            `json:"gzipMinLength,omitempty" key:"gzip_min_length" eg:"gzip_min_length 20"`
+	GzipBuffers                string            `json:"gzipBuffers,omitempty" key:"gzip_buffers" eg:"gzip_buffers 32 4k|16 8k"`
+	GzipCompLevel              string            `json:"gzipCompLevel,omitempty" key:"gzip_comp_level" eg:"gzip_comp_level 1"`
+	GzipTypes                  string            `json:"gzipTypes,omitempty" key:"gzip_types" eg:"gzip_types text/html"`
+	GzipVary                   string            `json:"gzipVary,omitempty" key:"gzip_vary" eg:"gzip_vary off"`
+	GzipDisable                string            `json:"gzipDisable,omitempty" key:"gzip_disable" eg:"gzip_disable \"msie6\""`
+	GzipHttpVersion            string            `json:"gzipHttpVersion,omitempty" key:"gzip_disable" eg:"gzip_http_version 1.1"`
+	GzipProxied                string            `json:"gzipProxied,omitempty" key:"gzip_proxied" eg:"gzip_proxied off"`
 	ProxyHideHeader            string            `json:"proxyHideHeader,omitempty" key:"proxy_hide_header" eg:"proxy_hide_header X-Powered-By"`
 }
 
@@ -395,14 +395,14 @@ type Server struct {
 	Set                        []string        `json:"set,omitempty" key:"set" eg:"set $limit_rate 4k"`                                                                                            // set $limit_rate 4k;
 	AddHeader                  []string        `json:"addHeader,omitempty" key:"add_header" eg:"add_header X-Frame-Options SAMEORIGIN"`
 	Gzip                       string          `json:"gzip,omitempty" key:"gzip" eg:"gzip on"`
-	GzipMinLength              string          `json:"gzip_min_length" key:"gzip_min_length" eg:"gzip_min_length 20"`
-	GzipBuffers                string          `json:"gzip_buffers" key:"gzip_buffers" eg:"gzip_buffers 32 4k|16 8k"`
-	GzipCompLevel              string          `json:"gzip_comp_level" key:"gzip_comp_level" eg:"gzip_comp_level 1"`
-	GzipTypes                  string          `json:"gzip_types" key:"gzip_types" eg:"gzip_types text/html"`
-	GzipVary                   string          `json:"gzip_vary" key:"gzip_vary" eg:"gzip_vary off"`
-	GzipDisable                string          `json:"gzip_disable" key:"gzip_disable" eg:"gzip_disable \"msie6\""`
-	GzipHttpVersion            string          `json:"gzip_http_version" key:"gzip_disable" eg:"gzip_http_version 1.1"`
-	GzipProxied                string          `json:"gzip_proxied" key:"gzip_proxied" eg:"gzip_proxied off"`
+	GzipMinLength              string          `json:"gzip_min_length,omitempty" key:"gzip_min_length" eg:"gzip_min_length 20"`
+	GzipBuffers                string          `json:"gzip_buffers,omitempty" key:"gzip_buffers" eg:"gzip_buffers 32 4k|16 8k"`
+	GzipCompLevel              string          `json:"gzip_comp_level,omitempty" key:"gzip_comp_level" eg:"gzip_comp_level 1"`
+	GzipTypes                  string          `json:"gzip_types,omitempty" key:"gzip_types" eg:"gzip_types text/html"`
+	GzipVary                   string          `json:"gzip_vary,omitempty" key:"gzip_vary" eg:"gzip_vary off"`
+	GzipDisable                string          `json:"gzip_disable,omitempty" key:"gzip_disable" eg:"gzip_disable \"msie6\""`
+	GzipHttpVersion            string          `json:"gzip_http_version,omitempty" key:"gzip_disable" eg:"gzip_http_version 1.1"`
+	GzipProxied                string          `json:"gzip_proxied,omitempty" key:"gzip_proxied" eg:"gzip_proxied off"`
 	ProxyHideHeader            string          `json:"proxyHideHeader,omitempty" key:"proxy_hide_header" eg:"proxy_hide_header X-Powered-By"`
 }
 

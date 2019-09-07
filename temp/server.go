@@ -258,7 +258,7 @@ const (
 	client_max_body_size {{.ClientMaxBodySize}};
 	{{- end }}
 	{{- if .ConnectionPoolSize}}
-	conenction_pool_size {{.ConnectionPoolSize}};
+	connection_pool_size {{.ConnectionPoolSize}};
 	{{- end }}
 	{{- if .DirectIO}}
 	direct_io {{.DirectIO}};

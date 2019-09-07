@@ -1116,7 +1116,7 @@ func isHTTPServerDirective(directive string) bool {
 	return false
 }
 
-// determine whether it is a upsteam directive
+// determine whether it is a upstream directive
 func isHTTPUpstreamDirective(directive string) bool {
 	if isEqualString(directive, HTTPUpstreamDirective) {
 		return true

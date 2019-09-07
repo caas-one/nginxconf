@@ -179,7 +179,7 @@ func ProcessUpstream(block *Block) (*Upstream, error) {
 		return nil, errors.New("Not upstream directive")
 	}
 
-	// process upsteam name
+	// process upstream name
 	upstream := NewUpstream()
 	name, err := processUpstreamName(block.Args)
 	if err != nil {

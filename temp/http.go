@@ -752,7 +752,7 @@ const (
 		client_max_body_size {{$server.ClientMaxBodySize}};
 		{{- end }}
 		{{- if $server.ConnectionPoolSize}}
-		conenction_pool_size {{$server.ConnectionPoolSize}};
+		connection_pool_size {{$server.ConnectionPoolSize}};
 		{{- end }}
 		{{- if $server.DirectIO}}
 		direct_io {{$server.DirectIO}};

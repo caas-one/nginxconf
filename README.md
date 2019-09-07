@@ -68,3 +68,100 @@ nginx 作为用户最多的软件之一, nginx配置的变更可追溯性面对�
 
 
 ### 示例
+
+```
+//nginx-in.conf
+
+daemon on;
+master_process on;
+pid logs/nginx.pid;
+events {
+accept_mutex off;
+accept_mutex_delay 500ms;
+use epoll;
+worker_connections 65534;
+}
+
+```
+
+使用 nginxconf 解析 nginx.conf 
+
+```
+func Example_nginxconf_Parse() {
+	path := "./nginx-in.conf"
+	global, err := nginxconf.Parse(path)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(global)
+}
+
+// result: 
+
+	&core.Global{
+		Daemon:        "on",
+		MasterProcess: "on",
+		Pid:           "logs/nginx.pid",
+		Events: core.Event{
+			AcceptMutex:       "off",
+			AcceptMutexDelay:  "500ms",
+			Use:               "epoll",
+			WorkerConnections: "65534",
+		},
+	}
+```
+
+通过 template 生成 nginx.conf
+```
+func Example_RenderServer() {
+	server := &core.Server{
+		Listen:    "80",
+		Name:      "eg.com",
+		ErrorPage: "500 502 503 504 /index.html",
+		Locations: []core.Location{
+			core.Location{
+				Path:                 "/",
+				ClientBodyBufferSize: "128k",
+				ClientMaxBodySize:    "10m",
+				ProxyRedirect:        "off",
+				IfBlocks: []core.LocationIfBlock{
+					core.LocationIfBlock{
+						Condition: "$request_uri ~* /zgt/",
+						ProxyPass: "http://eg.com/ortal_http",
+					},
+				},
+			},
+			core.Location{
+				Path: "= /index.html",
+				Root: "/eg/500",
+			},
+		},
+	}
+	result, err := nginxconf.RenderToString(server)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(result)
+}
+
+// result: 
+
+server {
+	server_name eg.com;
+	listen 80;
+	error_page 500 502 503 504 /index.html;
+	
+	location  / {
+		client_body_buffer_size 128k;
+		client_max_body_size 10m;
+		proxy_redirect off;
+		if ($request_uri ~* /zgt/) {
+			proxy_pass http://eg.com/ortal_http;
+			
+		}
+	}
+	location  = /index.html {
+		root  /eg/500;
+	}
+}
+```

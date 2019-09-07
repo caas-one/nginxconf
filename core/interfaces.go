@@ -2,6 +2,7 @@ package core
 
 import (
 	"bytes"
+	"errors"
 
 	"github.com/caas-one/nginxconf/temp"
 )
@@ -64,4 +65,42 @@ func (annotationUpstream *AnnotationUpstream) Render() ([]byte, error) {
 		return nil, err
 	}
 	return content.Bytes(), nil
+}
+
+// Render render domain group
+func (domainGroup DomainGroup) Render() ([]byte, error) {
+	var byts bytes.Buffer
+	if len(domainGroup.Upstreams) > 0 {
+		for i := range domainGroup.Upstreams {
+			upstream := domainGroup.Upstreams[i]
+			upstreamByts, err := upstream.Render()
+			if err != nil {
+				return nil, err
+			}
+			if _, err = byts.Write(upstreamByts); err != nil {
+				return nil, err
+			}
+			byts.WriteByte('\n')
+		}
+	}
+
+	if len(domainGroup.Servers) > 0 {
+		for i := range domainGroup.Servers {
+			server := domainGroup.Servers[i]
+			serverByts, err := server.Render()
+			if err != nil {
+				return nil, err
+			}
+			if _, err = byts.Write(serverByts); err != nil {
+				return nil, err
+			}
+			byts.WriteByte('\n')
+		}
+	}
+
+	r := byts.Bytes()
+	if len(r) <= 0 {
+		return nil, errors.New("data is empty")
+	}
+	return r, nil
 }

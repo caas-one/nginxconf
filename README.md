@@ -165,3 +165,66 @@ server {
 	}
 }
 ```
+
+按照一个域名一个conf的方式分组渲染
+
+```
+func Example_RenderDomainGroup() {
+	data, err := nginxconf.RenderToString(newTestDomainGroup())
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf(data)
+}
+
+// result: 
+
+upstream eg_http {
+	ip_hash;
+	server 127.0.0.1:8080 weight=99 max_fails=3 fail_timeout=10s;
+}
+upstream eg_http2 {
+	ip_hash;
+	server 127.0.0.1:8081 weight=1 max_fails=3 fail_timeout=10s;
+}
+server {
+	server_name eg.com;
+	listen 80;
+	error_page 500 502 503 504 /index.html;
+	
+	location  / {
+		client_body_buffer_size 128k;
+		client_max_body_size 10m;
+		proxy_redirect off;
+		if ($request_uri ~* /zgt/) {
+			proxy_pass http://eg.com/ortal_http;
+			
+		}
+	}
+	location  = /index.html {
+		root  /eg/500;
+	}
+}
+server {
+	server_name eg.com;
+	listen 81;
+	error_page 500 502 503 504 /index.html;
+	
+	location  / {
+		client_body_buffer_size 128k;
+		client_max_body_size 10m;
+		proxy_redirect off;
+		if ($request_uri ~* /zgt/) {
+			proxy_pass http://eg.com/ortal_http;
+			
+		}
+	}
+	location  = /index.html {
+		root  /eg/500;
+	}
+}
+
+
+```
+
+更多示例查看 ***_test.go**

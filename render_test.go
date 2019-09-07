@@ -121,6 +121,135 @@ var wantUpstream = `upstream eg_http {
 	server 127.0.0.1:8080 weight=99 max_fails=3 fail_timeout=10s;
 }`
 
+func newTestDomainGroup() *core.DomainGroup {
+	return &core.DomainGroup{
+		Servers: []core.Server{
+			core.Server{
+				Listen:    "80",
+				Name:      "eg.com",
+				ErrorPage: "500 502 503 504 /index.html",
+				Locations: []core.Location{
+					core.Location{
+						Path:                 "/",
+						ClientBodyBufferSize: "128k",
+						ClientMaxBodySize:    "10m",
+						ProxyRedirect:        "off",
+						IfBlocks: []core.LocationIfBlock{
+							core.LocationIfBlock{
+								Condition: "$request_uri ~* /zgt/",
+								ProxyPass: "http://eg.com/ortal_http",
+							},
+						},
+					},
+					core.Location{
+						Path: "= /index.html",
+						Root: "/eg/500",
+					},
+				},
+			},
+			core.Server{
+				Listen:    "81",
+				Name:      "eg.com",
+				ErrorPage: "500 502 503 504 /index.html",
+				Locations: []core.Location{
+					core.Location{
+						Path:                 "/",
+						ClientBodyBufferSize: "128k",
+						ClientMaxBodySize:    "10m",
+						ProxyRedirect:        "off",
+						IfBlocks: []core.LocationIfBlock{
+							core.LocationIfBlock{
+								Condition: "$request_uri ~* /zgt/",
+								ProxyPass: "http://eg.com/ortal_http",
+							},
+						},
+					},
+					core.Location{
+						Path: "= /index.html",
+						Root: "/eg/500",
+					},
+				},
+			},
+		},
+		Upstreams: []core.Upstream{
+			core.Upstream{
+				Name:   "eg_http",
+				Method: "ip_hash",
+				Servers: []core.UpstreamServer{
+					core.UpstreamServer{
+						Address: "127.0.0.1:8080",
+						Params: core.UpstreamServerParameters{
+							Weight:      "99",
+							MaxFails:    "3",
+							FailTimeout: "10s",
+						},
+					},
+				},
+			},
+			core.Upstream{
+				Name:   "eg_http2",
+				Method: "ip_hash",
+				Servers: []core.UpstreamServer{
+					core.UpstreamServer{
+						Address: "127.0.0.1:8081",
+						Params: core.UpstreamServerParameters{
+							Weight:      "1",
+							MaxFails:    "3",
+							FailTimeout: "10s",
+						},
+					},
+				},
+			},
+		},
+	}
+}
+
+var wantDomainGroup = `upstream eg_http {
+	ip_hash;
+	server 127.0.0.1:8080 weight=99 max_fails=3 fail_timeout=10s;
+}
+upstream eg_http2 {
+	ip_hash;
+	server 127.0.0.1:8081 weight=1 max_fails=3 fail_timeout=10s;
+}
+server {
+	server_name eg.com;
+	listen 80;
+	error_page 500 502 503 504 /index.html;
+	
+	location  / {
+		client_body_buffer_size 128k;
+		client_max_body_size 10m;
+		proxy_redirect off;
+		if ($request_uri ~* /zgt/) {
+			proxy_pass http://eg.com/ortal_http;
+			
+		}
+	}
+	location  = /index.html {
+		root  /eg/500;
+	}
+}
+server {
+	server_name eg.com;
+	listen 81;
+	error_page 500 502 503 504 /index.html;
+	
+	location  / {
+		client_body_buffer_size 128k;
+		client_max_body_size 10m;
+		proxy_redirect off;
+		if ($request_uri ~* /zgt/) {
+			proxy_pass http://eg.com/ortal_http;
+			
+		}
+	}
+	location  = /index.html {
+		root  /eg/500;
+	}
+}
+`
+
 func TestRenderToString(t *testing.T) {
 	type args struct {
 		tb core.TemplateBlock
@@ -159,6 +288,13 @@ func TestRenderToString(t *testing.T) {
 				tb: newTestUpstream(),
 			},
 			want: wantUpstream,
+		},
+		{
+			name: "renderDomainGroup",
+			args: args{
+				tb: newTestDomainGroup(),
+			},
+			want: wantDomainGroup,
 		},
 	}
 	for _, tt := range tests {

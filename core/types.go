@@ -682,3 +682,10 @@ func NewGlobal() *Global {
 		Http:    make([]Http, 0),
 	}
 }
+
+// DomainGroup domain group, a domain name, a group
+type DomainGroup struct {
+	Domain    string     `json:"domain,omitempty"`
+	Servers   []Server   `json:"servers,omitempty"`
+	Upstreams []Upstream `json:"upstreams,omitempty"`
+}

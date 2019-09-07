@@ -59,3 +59,12 @@ func Example_RenderServer() {
 	}
 	fmt.Println(result)
 }
+
+// Example_RenderDomainGroup single doamin render
+func Example_RenderDomainGroup() {
+	data, err := nginxconf.RenderToString(newTestDomainGroup())
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf(data)
+}

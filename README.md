@@ -19,9 +19,6 @@ go get -u github.com/caas-one/nginxconf
 :blue_book: 安装时,可能会发生一些意外的问题, 我们把可能的问题已经整理到文档,并[提供了解决办法, 点击查看](https://github.com/caas-one/nginxconf/blob/master/doc/install_q.md) , 如果您在文档中未查找到相关问题,欢迎向我们反馈和提 issue.
 
 
-
-### ROADMAP
-
 ### Document
 
 - [中文](https://github.com/caas-one/nginxconf/blob/master/doc/README-cn.md)
@@ -68,12 +65,6 @@ nginx 作为用户最多的软件之一, nginx配置的变更可追溯性面对�
 在 Go struct 和 nginx.conf 映射关系设计中, 完全使用了平行映射的方式(以 nginx.conf 中的指令直接作为 Go struct 中的字段名), 使用这种方式可以让开发者如丝般顺滑的接入 nginxconf ,我们以对比的方式生成了一张对比图,如下所示:
 
 <div align=center><img  src="https://github.com/caas-one/nginxconf/blob/master/images/mapper.jpg"/></div>
-
-
-
-###  caas-one
-
-<div align=center><img width="150" height="150" src="https://github.com/caas-one/nginxconf/blob/master/images/caas-one.jpeg"/></div>
 
 
 ### 示例

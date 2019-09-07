@@ -2,7 +2,7 @@
 [![GoDoc](https://godoc.org/github.com/caas-one/nginxconf?status.svg)](https://godoc.org/github.com/caas-one/nginxconf)
 [![Go Report Card](https://goreportcard.com/badge/github.com/caas-one/nginxconf)](https://goreportcard.com/badge/github.com/caas-one/nginxconf)
 
-nginxconf 是一个 灵活的, 快捷的 nginx conf文件解析器, 能够在文件, json, go-struct, template 快速转换, 是nginx conf 在线可视化配置的基石 
+nginxconf 是一个 灵活的, 快捷的 nginx conf文件解析器, 能够在文件, json, go-struct, template 快速转换, 是 nginx.conf 在线可视化配置的基石 
 
 
 ### 依赖

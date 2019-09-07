@@ -53,8 +53,6 @@ nginx 作为用户最多的软件之一, nginx配置的变更可追溯 面对巨
 - 转换成结构化的模型
 - 根据模板生成nginx配置
 
-
-
 #### nginxconf 解析和渲染方式
 
 - 第一步: nginxconf 通过 cscrossplane (这是一个python库,[如何安装Python?](https://www.python.org/getit/))把 **nginx-in.conf** 解析成一个中间态json
@@ -65,48 +63,13 @@ nginx 作为用户最多的软件之一, nginx配置的变更可追溯 面对巨
 
 <div align=center><img  src="https://github.com/caas-one/nginxconf/blob/master/images/nginx-parse-method.png"/></div>
 
-#### nginx.conf层级 和 Go struct 对应关系
+#### Go struct 和 nginx.conf 层级对应关系
+
+在 Go struct 和 nginx.conf 映射关系设计中, 完全使用了平行映射的方式(以 nginx.conf 中的指令直接作为 Go struct 中的字段名), 使用这种方式可以让开发者如丝般顺滑的接入 nginxconf ,我们以对比的方式生成了一张对比图,如下所示:
+
+<div align=center><img  src="https://github.com/caas-one/nginxconf/blob/master/images/mapper.jpg"/></div>
 
 
-
-
-```bash
-                                |---------------------------------------|
-                                |                                       |
-                                |                Global                 |
-                                |                                       |
-                                |           |----------------|          |
-                                |           |     Event      |          |
-                                |           |----------------|          |
-                                |                                       |
-                                |       |-----------------------|       |
-                                |       |         Http          |       |
-                                |       |   |----------------|  |       |
-                                |       |   |    Server      |  |       |
-                                |       |   |----------------|  |       |
-                                |       |   |    Location    |  |       |
-                                |       |   |       ……       |  |       |
-                                |       |   |       if       |  |       |
-                                |       |   |       ……       |  |       |
-                                |       |   |    Location    |  |       |
-                                |       |   |----------------|  |       |
-                                |       |                       |       |
-                                |       |   |----------------|  |       |
-                                |       |   |     Upstream   |  |       |
-                                |       |   |----------------|  |       |
-                                |       |   |       ……       |  |       |
-                                |       |   |----------------|  |       |
-                                |       |-----------------------|       |
-                                |                                       |
-                                |       |-----------------------|       |
-                                |       |         mail          |       |
-                                |       |   |----------------|  |       |
-                                |       |   |    Server      |  |       |
-                                |       |   |----------------|  |       |
-                                |       |-----------------------|       |
-                                |                                       |
-                                |---------------------------------------|
-```
 
 ###  caas-one
 

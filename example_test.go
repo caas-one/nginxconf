@@ -37,7 +37,7 @@ func Example_RenderServer() {
 		Locations: []core.Location{
 			core.Location{
 				Path:                 "/",
-				ClientBodyBufferSize: "128k",
+				ClientBodyBufferSize: "256k",
 				ClientMaxBodySize:    "15m",
 				ProxyRedirect:        "off",
 				IfBlocks: []core.LocationIfBlock{

@@ -105,5 +105,5 @@ func effective(object interface{}, tt string) bool {
 			return !(valueStr == "")
 		}
 	}
-	return false
+	return objMsg, nil
 }
